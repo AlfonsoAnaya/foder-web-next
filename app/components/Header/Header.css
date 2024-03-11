@@ -1,0 +1,59 @@
+.small-text {
+    font-size: 1.75rem;
+    transition: font-size 0.3s ease;
+}
+
+.large-text {
+    transition: font-size 0.3s ease;
+}
+
+.align-self-bottom {
+    align-self: end;
+}
+
+.nav-toggle {
+    transition: transform 200ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav-open .nav-toggle {
+    transform: translateX(0);
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-8px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background-color: var(--color-white);
+    width: 1.5em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 200ms ease-in-out;
+}
+
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hamburger::before { top: 8px; }
+.hamburger::after { bottom: 8px; }
