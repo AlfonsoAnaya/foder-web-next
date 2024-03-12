@@ -1,0 +1,12 @@
+.carousel__dot--selected {
+    background-color: var(--color-secondary);
+}
+
+.hidden-content {
+    opacity:0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-container:hover .hidden-content{
+    opacity: 1;
+}

@@ -1,5 +1,8 @@
 'use client'
 
+import Link from "next/link"
+
+
 function MobileNavMenu(
     props: { toggleMobileNav: () => void }
 ) {
@@ -30,7 +33,10 @@ function MobileNavMenu(
                     <li
                         onClick={props.toggleMobileNav}
                         className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
-                        Plan Semanal
+                        <Link href="/plan-semanal">
+                            Plan Semanal
+                        </Link>
+                        
                     </li>
                 
 

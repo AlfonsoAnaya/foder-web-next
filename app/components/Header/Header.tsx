@@ -1,7 +1,8 @@
 'use client'
 //import SearchBar from "./Shared/SearchBar";
 import MobileNavMenu from "./MobileNavMenu";
-import "./Header.css"
+import "./Header.css";
+import Link from "next/link";
 
 function Header() {
     const toggleMobileNav = () => {
@@ -28,7 +29,8 @@ function Header() {
                             text-white uppercase
                             text-[2.5em] md:text-[3.5em] leading-[1em] py-[8px]"
                             onClick={closeMobileNav}>
-                            Foder
+                            <Link href="/">Foder</Link>
+                            
                         </h1>
                     
                     <MobileNavMenu
