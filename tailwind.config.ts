@@ -21,7 +21,7 @@ const config: Config = {
         grayLight: "rgb(243, 244, 246)",
       },
       fontFamily: {
-        siteTitle: ['var(--font-tilt-neon)'],
+        siteTitle: ['var(--font-nunito)'],
         // primary: "'Josefin Sans', sans-serif",
         sans: ['var(--font-raleway)'],
         // primary: "'Jost', sans-serif",

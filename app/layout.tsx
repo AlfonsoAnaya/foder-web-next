@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway, Lora, Tilt_Neon } from "next/font/google";
+import { Raleway, Lora, Nunito } from "next/font/google";
 import "./globals.css";
 
 const raleway = Raleway({
@@ -14,10 +14,10 @@ const lora = Lora({
   variable: '--font-lora',
 })
 
-const tilt_neon = Tilt_Neon({
+const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-tilt-neon',
+  variable: '--font-nunito',
 })
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.variable} ${lora.variable} ${tilt_neon.variable}`}>{children}</body>
+      <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>{children}</body>
     </html>
   );
 }
