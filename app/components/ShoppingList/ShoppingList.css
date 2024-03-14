@@ -1,3 +1,11 @@
+.sidenav-open .recipe-sidenav {
+    transform: translateX(0px);
+}
+
+.recipe-sidenav {
+    transition: transform 200ms cubic-bezier(.5, 0, .5, 1);
+}
+
 .checkbox, .day-checkbox {
     width: .8rem;
     height: .8rem;

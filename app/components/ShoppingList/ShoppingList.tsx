@@ -133,6 +133,7 @@ function ShoppingList() {
     // OPEN SHOPPING LIST SIDENAV
     const openShoppingListSidenav = () => {
         const WeeklySection = document.querySelector('.shopping-list-section');
+        console.log(WeeklySection)
         WeeklySection?.classList.add("sidenav-open");
     };
 
