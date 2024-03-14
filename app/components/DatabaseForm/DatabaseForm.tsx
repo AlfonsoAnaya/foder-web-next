@@ -1203,18 +1203,18 @@ function DatabaseForm() {
           <p>
             {"{"}<br />
             id: {formData.id},<br />
-            name: '{formData.name}',<br />
-            tagline: '{formData.tagline}',<br />
-            primaryIngredient: '{formData.primaryIngredient}',<br />
-            secondaryIngredient: '{formData.secondaryIngredient}',<br />
+            name: &ldquo;{formData.name}&ldquo;,<br />
+            tagline: &ldquo;{formData.tagline}&ldquo;,<br />
+            primaryIngredient: &ldquo;{formData.primaryIngredient}&ldquo;,<br />
+            secondaryIngredient: &ldquo;{formData.secondaryIngredient}&ldquo;,<br />
             portions: {formData.portions},<br />
-            difficulty: '{formData.difficulty}',<br />
+            difficulty: &ldquo;{formData.difficulty}&ldquo;,<br />
             prepTime: {formData.prepTime},<br />
             totalTime: {formData.totalTime},<br />
-            img: '{formData.img}{formData.id.toString().padStart(5, "0")}.jpg',<br />
-            imgThumb: '{formData.img}{formData.id.toString().padStart(5, "0")}thumb.jpg',<br />
-            imgAlt: '{formData.imgAlt}',<br />
-            type: '{formData.type}',<br />
+            img: &ldquo;{formData.img}{formData.id.toString().padStart(5, "0")}.jpg&ldquo;,<br />
+            imgThumb: &ldquo;{formData.img}{formData.id.toString().padStart(5, "0")}thumb.jpg&ldquo;,<br />
+            imgAlt: &ldquo;{formData.imgAlt}&ldquo;,<br />
+            type: &ldquo;{formData.type}&ldquo;,<br />
             cuisine: {`['${formData.cuisine.join("','")}']`},<br />
             method: {`['${formData.method.join("','")}']`},<br />
             {formData.tips.length > 0 ?
@@ -1252,12 +1252,12 @@ function DatabaseForm() {
                 >
                   {"{"}
                   name: {"{"}
-                  singular: '{ingredients[i].ingredientNameSingular}',
-                  plural: '{ingredients[i].ingredientNamePlural}'
+                  singular: &ldquo;{ingredients[i].ingredientNameSingular}&ldquo;,
+                  plural: &ldquo;{ingredients[i].ingredientNamePlural}&ldquo;
                   {"}"},
                   quantity: {ingredients[i].ingredientQuantity},
-                  unit: '{ingredients[i].ingredientUnit}',
-                  category: '{ingredients[i].ingredientCategory}',
+                  unit: &ldquo;{ingredients[i].ingredientUnit}&ldquo;,
+                  category: &ldquo;{ingredients[i].ingredientCategory}&ldquo;,
                   {
                     element.ingredientClarification.length > 0 ?
                       `ingredientClarification: '${ingredients[i].ingredientClarification}',` :
@@ -1270,7 +1270,7 @@ function DatabaseForm() {
             {"],"}
           </p>
           {formData.extraRecipeName.length > 0 ?
-            <p>extraRecipeName: '{formData.extraRecipeName}',</p> :
+            <p>extraRecipeName: &ldquo;{formData.extraRecipeName}&ldquo;,</p> :
             ''
           }
           {(extraIngredients[0].ingredientNameSingular.length > 0) ?
@@ -1284,12 +1284,12 @@ function DatabaseForm() {
                   >
                     {"{"}
                     name: {"{"}
-                    singular: '{extraIngredients[i].ingredientNameSingular}',
-                    plural: '{extraIngredients[i].ingredientNamePlural}'
+                    singular: &ldquo;{extraIngredients[i].ingredientNameSingular}&ldquo;,
+                    plural: &ldquo;{extraIngredients[i].ingredientNamePlural}&ldquo;
                     {"}"},
                     quantity: {extraIngredients[i].ingredientQuantity},
-                    unit: '{extraIngredients[i].ingredientUnit}',
-                    category: '{extraIngredients[i].ingredientCategory}',
+                    unit: &ldquo;{extraIngredients[i].ingredientUnit}&ldquo;,
+                    category: &ldquo;{extraIngredients[i].ingredientCategory}&ldquo;,
                     {
                       element.ingredientClarification.length > 0 ?
                         `ingredientClarification: '${extraIngredients[i].ingredientClarification}',` :
