@@ -29,7 +29,9 @@ function Header() {
                             text-white uppercase
                             text-[2.5em] md:text-[3.5em] leading-[1em] py-[8px]"
                             onClick={closeMobileNav}>
-                            <Link href="/">Foder</Link>
+                            <Link href="/">
+                                Pipián
+                            </Link>
                             
                         </h1>
                     

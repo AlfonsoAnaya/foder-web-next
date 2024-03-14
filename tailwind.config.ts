@@ -21,12 +21,12 @@ const config: Config = {
         grayLight: "rgb(243, 244, 246)",
       },
       fontFamily: {
-        siteTitle: "'Tilt Neon', sans-serif",
+        siteTitle: ['var(--font-tilt-neon)'],
         // primary: "'Josefin Sans', sans-serif",
-        sans: "'Raleway', sans-serif",
+        sans: ['var(--font-raleway)'],
         // primary: "'Jost', sans-serif",
-        serif: "'Lora', serif",
-        tertiary: "sans-serif"
+        serif: ['var(--font-lora)'],
+        tertiary: "sans-serif",
       }
     },
   },

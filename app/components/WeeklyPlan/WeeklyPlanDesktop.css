@@ -1,0 +1,20 @@
+.current {
+    text-underline-offset: 15px;
+    color: var(--color-secondary);
+    border-bottom: solid 2px var(--color-secondary);
+    transition: border-bottom ease-in 50ms;
+}
+
+.weekday {
+    transition: border-bottom ease-out 50ms;
+}
+
+.carousel {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

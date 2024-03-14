@@ -1,20 +1,17 @@
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer/Footer"
+import WeeklyPlan from "../components/WeeklyPlan/WeeklyPlan"
 
-function WeeklyPlan() {
+function WeeklyPlanPage() {
 
     return (
-        <>
+        <main className="flex flex-col font-sans w-[100%]">
             <Header />
-            <section className="weekly-plan-section w-[100%] flex flex-col items-center 
-            mt-0 md:mt-4">
-                <h1>WEEKLY PLAN GOES HERE</h1>
-
-            </section>
+            <WeeklyPlan />
             <Footer />
-        </>
+        </main>
 
     )
 };
 
-export default WeeklyPlan
+export default WeeklyPlanPage
