@@ -127,9 +127,9 @@ function RecipeDesktop({ propsRecipe }: IndividualRecipeProps) {
           <h3 className="font-[600] mb-[.5rem] underline
             text-[1.1rem] md:text-[1.5rem] 
             mt-2 md:mt-0">Instrucciones</h3>
-          {recipe.method.map((text: string) => {
+          {recipe.method.map((text: string, i:number) => {
             return (
-              <p className="method-text font-[400] mb-[1rem]">
+              <p key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem]">
                 {text}
               </p>
             )

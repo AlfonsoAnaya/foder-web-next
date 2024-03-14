@@ -82,9 +82,10 @@ function RecipeMobile({ recipe }: { recipe: Recipe }) {
             </summary>
           </details>
           <div className="ingredients-content max-h-0 box-border overflow-hidden ">
-            {recipe.ingredients.map((ingredient: Ingredient) => {
+            {recipe.ingredients.map((ingredient: Ingredient, i:number) => {
               return (
-                <ul className="method-text font-[400] mb-[1rem]">
+                <ul key={`ingredient ${i}`} 
+                  className="method-text font-[400] mb-[1rem]">
                   {ingredient.unit === "unidad" ?
                     (ingredient.quantity > 1 ?
                       <span>{`${ingredient.quantity} ${ingredient.name.plural} `}</span>
@@ -136,7 +137,7 @@ function RecipeMobile({ recipe }: { recipe: Recipe }) {
             mt-2 md:mt-0">Instrucciones</h3>
           {recipe.method.map((text: string, i: number) => {
             return (
-              <p key={"paragraph" + i} className="method-text font-[400] mb-[1rem] text-[1rem] md:text-[1.2rem]">
+              <p key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem] text-[1rem] md:text-[1.2rem]">
                 {text}
               </p>
             )
