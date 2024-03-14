@@ -46,6 +46,7 @@ function RecipeCarousel( { recipes }: CarouselProps) {
       </Link>
 
       <CarouselProvider
+        className="flex flex-col items-center"
         naturalSlideWidth={200}
         naturalSlideHeight={300}
         totalSlides={recipes.length}

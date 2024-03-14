@@ -1,4 +1,4 @@
-// import DaysRecipe from "./DaysRecipe";
+import DaysRecipe from "./DaysRecipe/DaysRecipe";
 import RecipeCarousel from "./WeeklyPlanCarousel/RecipeCarousel";
 import WelcomeScreen from "./WelcomeScreen/WelcomeScreen";
 import currentWeekRecipes from "@/app/utils/CurrentWeekRecipes";
@@ -7,11 +7,12 @@ function HomePage() {
     return (
         <>
             <WelcomeScreen />
-             <RecipeCarousel
+            <RecipeCarousel
                 recipes={currentWeekRecipes}
             />
-            {/*<DaysRecipe 
-                recipes={currentWeekRecipes}/> */}
+            <DaysRecipe
+                recipes={currentWeekRecipes}
+            />
         </>
     );
 }

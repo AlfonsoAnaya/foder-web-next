@@ -44,7 +44,9 @@ function MobileNavMenu(
                     <li
                         onClick={props.toggleMobileNav}
                         className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
-                        Lista de Compras
+                        <Link href="/lista-de-compras">
+                            Lista de Compras
+                        </Link>
                     </li>
                 
             </ul>
