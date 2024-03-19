@@ -937,8 +937,8 @@ function DatabaseForm() {
                 <div
                   key={`ingredient ${index}`}
                   className={index % 2 === 0 ?
-                    "ingredient-container p-6 w-[70%]" :
-                    "ingredient-container p-6 w-[70%] bg-grayLight"
+                    "flex flex-col ingredient-container p-6 w-[70%]" :
+                    "flex flex-col ingredient-container p-6 w-[70%] bg-grayLight"
                   }>
                   {/* ==== INGREDIENT ==== */}
 
@@ -950,7 +950,7 @@ function DatabaseForm() {
                     <div className="py-2">
                       <input
                         type="text" name="ingredientNameSingular" required
-                        className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                        className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                         //value={ingredient.name.singular}
                         onChange={handleIngredientsChange(index)}
@@ -960,7 +960,7 @@ function DatabaseForm() {
 
                     <div className="py-2">
                       <input type="text" name="ingredientNamePlural" required
-                        className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                        className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                         onChange={handleIngredientsChange(index)}
                         placeholder='Name - plural'
@@ -968,9 +968,9 @@ function DatabaseForm() {
                     </div>
 
                     {/* QUANTITY */}
-                    <div className="py-2 flex flex-row">
+                    <div className="py-2">
                       <input type="number" name="ingredientQuantity" required
-                        className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                        className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                         onChange={handleIngredientsChange(index)}
                         placeholder='Quantity'
@@ -981,7 +981,7 @@ function DatabaseForm() {
                     <div className="py-2">
                       <select name="ingredientUnit" required
                         defaultValue=''
-                        className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[90%] rounded-xl 
+                        className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[100%] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                         onChange={handleIngredientsChange(index)}
                       >
@@ -1002,7 +1002,7 @@ function DatabaseForm() {
                     <div className="py-2">
                       <select name="ingredientCategory" required
                         defaultValue=''
-                        className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[90%] rounded-xl 
+                        className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[100%] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                         onChange={handleIngredientsChange(index)}
                       >
@@ -1022,7 +1022,7 @@ function DatabaseForm() {
                     {/* CLARIFICATION */}
                     <div className="py-2">
                       <input type="text" name="ingredientClarification"
-                        className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                        className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                         onChange={handleIngredientsChange(index)}
                         placeholder='Clarification OPTIONAL'
@@ -1031,7 +1031,7 @@ function DatabaseForm() {
                   </div>
 
                   <button
-                    className="text-white font-bold bg-red-400 py-[.6em] px-[1.75em] rounded-full my-4
+                    className="w-[200px] self-end text-white font-bold bg-red-400 py-[.6em] px-[1.75em] rounded-full my-4
                     hover:text-red-400 hover:bg-white border-[2px] border-red-400"
                     onClick={() => deleteIngredient(index)}>
                     Delete Ingredient
@@ -1083,7 +1083,7 @@ function DatabaseForm() {
                       <div className="py-2">
                         <input
                           type="text" name="ingredientNameSingular" required
-                          className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                          className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                           //value={ingredient.name.singular}
                           onChange={handleExtraIngredientsChange(index)}
@@ -1093,7 +1093,7 @@ function DatabaseForm() {
 
                       <div className="py-2">
                         <input type="text" name="ingredientNamePlural" required
-                          className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                          className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                           onChange={handleExtraIngredientsChange(index)}
                           placeholder='Name - plural'
@@ -1103,7 +1103,7 @@ function DatabaseForm() {
                       {/* QUANTITY */}
                       <div className="py-2 flex flex-row">
                         <input type="number" name="ingredientQuantity" required
-                          className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                          className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                           onChange={handleExtraIngredientsChange(index)}
                           placeholder='Quantity'
@@ -1114,7 +1114,7 @@ function DatabaseForm() {
                       <div className="py-2">
                         <select name="ingredientUnit" required
                           defaultValue=''
-                          className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[90%] rounded-xl 
+                          className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[100%] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                           onChange={handleExtraIngredientsChange(index)}
                         >
@@ -1135,7 +1135,7 @@ function DatabaseForm() {
                       <div className="py-2">
                         <select name="ingredientCategory" required
                           defaultValue=''
-                          className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[90%] rounded-xl 
+                          className="ml-2 p-[6px] pl-[12px] max-w-[500px] w-[100%] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                           onChange={handleExtraIngredientsChange(index)}
                         >
@@ -1155,7 +1155,7 @@ function DatabaseForm() {
                       {/* CLARIFICATION */}
                       <div className="py-2">
                         <input type="text" name="ingredientClarification"
-                          className="ml-2 p-[6px] pl-[12px] w-[90%] max-w-[500px] rounded-xl 
+                          className="ml-2 p-[6px] pl-[12px] w-[100%] max-w-[500px] rounded-xl 
                   border-[1px] border-black focus:border-[#4385be] focus:outline-none focus:bg-gray-100"
                           onChange={handleExtraIngredientsChange(index)}
                           placeholder='Clarification OPTIONAL'
@@ -1203,18 +1203,18 @@ function DatabaseForm() {
           <p>
             {"{"}<br />
             id: {formData.id},<br />
-            name: &ldquo;{formData.name}&ldquo;,<br />
-            tagline: &ldquo;{formData.tagline}&ldquo;,<br />
-            primaryIngredient: &ldquo;{formData.primaryIngredient}&ldquo;,<br />
-            secondaryIngredient: &ldquo;{formData.secondaryIngredient}&ldquo;,<br />
+            name: &apos;{formData.name}&apos;,<br />
+            tagline: &apos;{formData.tagline}&apos;,<br />
+            primaryIngredient: &apos;{formData.primaryIngredient}&apos;,<br />
+            secondaryIngredient: &apos;{formData.secondaryIngredient}&apos;,<br />
             portions: {formData.portions},<br />
-            difficulty: &ldquo;{formData.difficulty}&ldquo;,<br />
+            difficulty: &apos;{formData.difficulty}&apos;,<br />
             prepTime: {formData.prepTime},<br />
             totalTime: {formData.totalTime},<br />
-            img: &ldquo;{formData.img}{formData.id.toString().padStart(5, "0")}.jpg&ldquo;,<br />
-            imgThumb: &ldquo;{formData.img}{formData.id.toString().padStart(5, "0")}thumb.jpg&ldquo;,<br />
-            imgAlt: &ldquo;{formData.imgAlt}&ldquo;,<br />
-            type: &ldquo;{formData.type}&ldquo;,<br />
+            img: &apos;{formData.img}{formData.id.toString().padStart(5, "0")}.jpg&apos;,<br />
+            imgThumb: &apos;{formData.img}{formData.id.toString().padStart(5, "0")}thumb.jpg&apos;,<br />
+            imgAlt: &apos;{formData.imgAlt}&apos;,<br />
+            type: &apos;{formData.type}&apos;,<br />
             cuisine: {`['${formData.cuisine.join("','")}']`},<br />
             method: {`['${formData.method.join("','")}']`},<br />
             {formData.tips.length > 0 ?
@@ -1252,12 +1252,12 @@ function DatabaseForm() {
                 >
                   {"{"}
                   name: {"{"}
-                  singular: &ldquo;{ingredients[i].ingredientNameSingular}&ldquo;,
-                  plural: &ldquo;{ingredients[i].ingredientNamePlural}&ldquo;
+                  singular: &apos;{ingredients[i].ingredientNameSingular}&apos;,
+                  plural: &apos;{ingredients[i].ingredientNamePlural}&apos;
                   {"}"},
                   quantity: {ingredients[i].ingredientQuantity},
-                  unit: &ldquo;{ingredients[i].ingredientUnit}&ldquo;,
-                  category: &ldquo;{ingredients[i].ingredientCategory}&ldquo;,
+                  unit: &apos;{ingredients[i].ingredientUnit}&apos;,
+                  category: &apos;{ingredients[i].ingredientCategory}&apos;,
                   {
                     element.ingredientClarification.length > 0 ?
                       `ingredientClarification: '${ingredients[i].ingredientClarification}',` :
@@ -1270,7 +1270,7 @@ function DatabaseForm() {
             {"],"}
           </p>
           {formData.extraRecipeName.length > 0 ?
-            <p>extraRecipeName: &ldquo;{formData.extraRecipeName}&ldquo;,</p> :
+            <p>extraRecipeName: &apos;{formData.extraRecipeName}&apos;,</p> :
             ''
           }
           {(extraIngredients[0].ingredientNameSingular.length > 0) ?
@@ -1284,12 +1284,12 @@ function DatabaseForm() {
                   >
                     {"{"}
                     name: {"{"}
-                    singular: &ldquo;{extraIngredients[i].ingredientNameSingular}&ldquo;,
-                    plural: &ldquo;{extraIngredients[i].ingredientNamePlural}&ldquo;
+                    singular: &apos;{extraIngredients[i].ingredientNameSingular}&apos;,
+                    plural: &apos;{extraIngredients[i].ingredientNamePlural}&apos;
                     {"}"},
                     quantity: {extraIngredients[i].ingredientQuantity},
-                    unit: &ldquo;{extraIngredients[i].ingredientUnit}&ldquo;,
-                    category: &ldquo;{extraIngredients[i].ingredientCategory}&ldquo;,
+                    unit: &apos;{extraIngredients[i].ingredientUnit}&apos;,
+                    category: &apos;{extraIngredients[i].ingredientCategory}&apos;,
                     {
                       element.ingredientClarification.length > 0 ?
                         `ingredientClarification: '${extraIngredients[i].ingredientClarification}',` :

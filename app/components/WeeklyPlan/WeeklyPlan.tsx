@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useEffect } from "react";
-// import { useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectedDay } from '@/lib/features/selectedDay';
+import { isSidenavOpen } from "@/lib/features/isSidenavOpen";
 import "./WeeklyPlan.css";
 import currentWeekRecipes from "../../utils/CurrentWeekRecipes";
 import Recipe from "../../types/recipe.d";
@@ -10,19 +12,16 @@ import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../utils/Weekdays";
 
 function WeeklyPlan() {
-    // const { state } = useLocation();
-    // const day = state ? state.day : 0;
-    // const openSidenav = state ? state.openSidenav : false;
-    let openSidenav = false;
+
+    const currentDay:number = useSelector(selectedDay);
+    const openSidenav:boolean = useSelector(isSidenavOpen);
 
     const weeksRecipes = currentWeekRecipes;
 
-    const [currentDay, setCurrentDay] = useState(Weekdays[0]);
-    const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[0]);
+    const [currentDayState, setCurrentDay] = useState(Weekdays[currentDay]);
+    const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[currentDay]);
     const [isViewportMobile, setIsViewportMobile] = useState(window.innerWidth < 768);
     
-
-
     function handleNavClick(recipe: Recipe, day: string) {
         window.scrollTo(0, 0);
         setCurrentDay(day);
@@ -56,7 +55,6 @@ function WeeklyPlan() {
         };
     });
 
-
     return (
         <section className="weekly-plan-section w-[100%] flex flex-col items-center 
             mt-0 md:mt-4">
@@ -64,7 +62,7 @@ function WeeklyPlan() {
                 <WeeklyPlanMobile
                     weeksRecipes={weeksRecipes}
                     currentRecipe={currentRecipe}
-                    currentDay={currentDay}
+                    currentDay={currentDayState}
                     handleNavClick={handleNavClick}
                     Weekdays={Weekdays}
                 />
@@ -74,10 +72,9 @@ function WeeklyPlan() {
                     currentRecipe={currentRecipe}
                     handleNavClick={handleNavClick}
                     Weekdays={Weekdays}
-                    currentDay={currentDay}
+                    currentDay={currentDayState}
                 />
             )}
-
         </section>
     )
 };

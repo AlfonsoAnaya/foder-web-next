@@ -1,12 +1,15 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
+import { updateDay } from "@/lib/features/selectedDay";
+import { updateIsSidenavOpen } from "@/lib/features/isSidenavOpen";
 import RecipeCard from "../../Shared/RecipeCard";
 import Recipe from "@/app/types/recipe.d";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import Link from "next/link";
 import Weekdays from "@/app/utils/Weekdays";
-import '../../styles/carousel.css'
+import '../../../styles/carousel.css';
 
 interface CarouselProps {
   recipes: Recipe[];
@@ -15,6 +18,7 @@ interface CarouselProps {
 function RecipeCarousel( { recipes }: CarouselProps) {
 
   const [visibleSlides, setVisibleSlides] = useState(4); // Default to 3 visible slides
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,6 +62,10 @@ function RecipeCarousel( { recipes }: CarouselProps) {
               <Slide index={i} key={recipe.name + i}>
                 <Link
                   href={`/plan-semanal`}
+                  onClick={() => {
+                    dispatch(updateDay(i));
+                    dispatch(updateIsSidenavOpen(true));
+                  }}
                   // state={{ day: i, openSidenav: true }}
                 >
                   <RecipeCard

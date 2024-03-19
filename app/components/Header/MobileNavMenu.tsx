@@ -34,7 +34,7 @@ function MobileNavMenu(
                         onClick={props.toggleMobileNav}
                         className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
                         <Link href="/plan-semanal">
-                            Plan Semanal
+                            Plan Actual
                         </Link>
                         
                     </li>
@@ -46,6 +46,14 @@ function MobileNavMenu(
                         className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
                         <Link href="/lista-de-compras">
                             Lista de Compras
+                        </Link>
+                    </li>
+
+                    <li
+                        onClick={props.toggleMobileNav}
+                        className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                        <Link href="/acervo-planes-semanales">
+                            Planes Anteriores
                         </Link>
                     </li>
                 

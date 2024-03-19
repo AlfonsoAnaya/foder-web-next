@@ -13,7 +13,6 @@ function RecipeDesktop({ propsRecipe }: IndividualRecipeProps) {
 
   return (
     <section className="individual-recipe-section flex flex-col items-center">
-
       {/* GRID */}
       <div className="individual-recipe-grid w-[100%] md:max-w-[900px] xl:max-w-[985px] px-2 md:px-4 mt-2 md:mt-4" >
 

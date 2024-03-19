@@ -1,3 +1,4 @@
+import StoreProvider from "@/lib/StoreProvider";
 import type { Metadata } from "next";
 import { Raleway, Lora, Nunito } from "next/font/google";
 import "./globals.css";
@@ -7,7 +8,7 @@ const raleway = Raleway({
   display: 'swap',
   variable: '--font-raleway',
 })
- 
+
 const lora = Lora({
   subsets: ['latin'],
   display: 'swap',
@@ -31,8 +32,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>{children}</body>
-    </html>
+    <StoreProvider
+      selectedDay={0}
+      isSidenavOpen={false}
+    >
+      <html lang="en">
+        <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>{children}</body>
+      </html>
+    </StoreProvider>
+
   );
 }
