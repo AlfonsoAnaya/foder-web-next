@@ -33,7 +33,7 @@ function WeeklyPlanMobile(
             <div className="max-w-[1150px] w-[100%] border-b-[1px] border-b-secondary
                 block md:hidden"
             >
-                <h2 className="text-secondary text-left font-serif text-[1.5rem] pl-8 py-4">
+                <h2 className="text-secondary text-left font-serif text-[1.5rem] pl-8 py-6">
                     Plan Semanal
                 </h2>
             </div>
