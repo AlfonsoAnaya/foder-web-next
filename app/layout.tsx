@@ -2,6 +2,7 @@ import StoreProvider from "@/lib/StoreProvider";
 import type { Metadata } from "next";
 import { Raleway, Lora, Nunito } from "next/font/google";
 import "./globals.css";
+import { makeStore } from "@/lib/store";
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -33,8 +34,8 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider
-      selectedDay={3}
-      isSidenavOpen={false}
+      // selectedDay={3}
+      // isSidenavOpen={false}
     >
       <html lang="en">
         <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>{children}</body>
