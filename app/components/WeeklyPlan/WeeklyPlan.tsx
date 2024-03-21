@@ -15,6 +15,7 @@ function WeeklyPlan() {
 
     const currentDay: number = useSelector(selectedDay);
     const openSidenav: boolean = useSelector(isSidenavOpen);
+    console.log(currentDay, openSidenav)
 
     const weeksRecipes = currentWeekRecipes;
 
