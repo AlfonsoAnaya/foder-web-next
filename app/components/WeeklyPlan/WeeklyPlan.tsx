@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 // import { useSelector } from 'react-redux';
 // import { selectedDay } from '@/lib/features/selectedDay';
 // import { isSidenavOpen } from "@/lib/features/isSidenavOpen";
@@ -10,12 +10,13 @@ import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../utils/Weekdays";
+import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 
-import { CurrentDayContext } from "@/context/currentDay.context";
+// import { CurrentDayContext } from "@/context/currentDay.context";
 
 function WeeklyPlan() {
-    const { state, dispatch } = useContext(CurrentDayContext);
-    console.log(state);
+    // const { state, dispatch } = useContext(CurrentDayContext);
+    // console.log(state);
     // const currentDay: number = useSelector(selectedDay);
     // const openSidenav: boolean = useSelector(isSidenavOpen);
     // console.log(`CurrentDay is: ${currentDay}`);
@@ -59,6 +60,8 @@ function WeeklyPlan() {
         };
     });
 
+    const currentDayFromZustand = useCurrentDayStore((state) => state.currentDay)
+
     return (
         <>
             <div className="fixed btn-vegetarian-toggle top-[73px] right-[50px] md:top-[100px] md:right-[50px] z-[999] border-[1px] hover:cursor-pointer border-vegetarianGreen rounded-full p-2 hover:bg-vegetarianGreen">
@@ -66,6 +69,7 @@ function WeeklyPlan() {
             </div>
             <section className="relative weekly-plan-section w-[100%] flex flex-col items-center 
             mt-0 md:mt-4">
+                <h1>Current day from zustand: {currentDayFromZustand}</h1>
 
                 {isViewportMobile ? (
                     <WeeklyPlanMobile

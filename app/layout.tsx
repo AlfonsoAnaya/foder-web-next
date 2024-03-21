@@ -5,6 +5,7 @@ import "./globals.css";
 import { makeStore } from "@/lib/store";
 import { CurrentDayContextProvider } from "@/context/currentDay.context";
 
+
 const raleway = Raleway({
   subsets: ['latin'],
   display: 'swap',
@@ -40,7 +41,7 @@ export default function RootLayout({
     // >
       <html lang="en">
         <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>
-          <CurrentDayContextProvider>{children}</CurrentDayContextProvider>
+          {children}
         </body>
       </html>
     // </StoreProvider>
