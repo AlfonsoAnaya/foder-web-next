@@ -1,7 +1,7 @@
 'use client'
-import { useDispatch } from 'react-redux';
-import { updateDay } from "@/lib/features/selectedDay";
-import { updateIsSidenavOpen } from '@/lib/features/isSidenavOpen';
+// import { useDispatch } from 'react-redux';
+// import { updateDay } from "@/lib/features/selectedDay";
+// import { updateIsSidenavOpen } from '@/lib/features/isSidenavOpen';
 import Link from "next/link";
 import Image from "next/image";
 import getToday from "@/app/utils/Today";
@@ -13,7 +13,7 @@ interface DaysRecipeProps {
 
 function DaysRecipe({ recipes }: DaysRecipeProps) {
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const todayString = getToday();
   const rawTodayInt = new Date().getDay();
@@ -28,8 +28,8 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
           <Link
             href={`/plan-semanal`}
             onClick={() => {
-              dispatch(updateDay(todayInt));
-              dispatch(updateIsSidenavOpen(true));
+              // dispatch(updateDay(todayInt));
+              // dispatch(updateIsSidenavOpen(true));
             }}
           >
             <Image
@@ -53,8 +53,8 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
           <Link
             href={`/plan-semanal`}
             onClick={() => {
-              dispatch(updateDay(todayInt));
-              dispatch(updateIsSidenavOpen(true));
+              // dispatch(updateDay(todayInt));
+              // dispatch(updateIsSidenavOpen(true));
             }}
           
           >

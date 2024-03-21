@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Raleway, Lora, Nunito } from "next/font/google";
 import "./globals.css";
 import { makeStore } from "@/lib/store";
+import { CurrentDayContextProvider } from "@/context/currentDay.context";
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -33,14 +34,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <StoreProvider
-      // selectedDay={3}
-      // isSidenavOpen={false}
-    >
+    // <StoreProvider
+    //   // selectedDay={3}
+    //   // isSidenavOpen={false}
+    // >
       <html lang="en">
-        <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>{children}</body>
+        <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>
+          <CurrentDayContextProvider>{children}</CurrentDayContextProvider>
+        </body>
       </html>
-    </StoreProvider>
+    // </StoreProvider>
 
   );
 }

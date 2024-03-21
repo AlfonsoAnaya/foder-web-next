@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import { updateDay } from "@/lib/features/selectedDay";
+import { useState, useEffect, useContext } from "react";
+import { CurrentDayContext } from "@/context/currentDay.context";
+// import { useDispatch } from 'react-redux';
+// import { updateDay } from "@/lib/features/selectedDay";
 import { updateIsSidenavOpen } from "@/lib/features/isSidenavOpen";
 import RecipeCard from "../../Shared/RecipeCard";
 import Recipe from "@/app/types/recipe.d";
@@ -17,12 +18,13 @@ interface CarouselProps {
 
 function RecipeCarousel({ recipes }: CarouselProps) {
 
+  const { state, dispatch } = useContext(CurrentDayContext);
+
   const [visibleSlides, setVisibleSlides] = useState(4); // Default to 3 visible slides
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   function handleClick(i:number) {
-    dispatch(updateDay(i));
-    dispatch(updateIsSidenavOpen(true));
+    dispatch({ type: "UPDATE_DAY", payload: i});
   }
 
   useEffect(() => {

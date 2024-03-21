@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from "react";
-import { useSelector } from 'react-redux';
-import { selectedDay } from '@/lib/features/selectedDay';
-import { isSidenavOpen } from "@/lib/features/isSidenavOpen";
+import { useState, useEffect, useContext } from "react";
+// import { useSelector } from 'react-redux';
+// import { selectedDay } from '@/lib/features/selectedDay';
+// import { isSidenavOpen } from "@/lib/features/isSidenavOpen";
 import "./WeeklyPlan.css";
 import currentWeekRecipes from "../../utils/CurrentWeekRecipes";
 import Recipe from "../../types/recipe.d";
@@ -11,16 +11,19 @@ import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../utils/Weekdays";
 
+import { CurrentDayContext } from "@/context/currentDay.context";
+
 function WeeklyPlan() {
-
-    const currentDay: number = useSelector(selectedDay);
-    const openSidenav: boolean = useSelector(isSidenavOpen);
-    console.log(`CurrentDay is: ${currentDay}`);
-
+    const { state, dispatch } = useContext(CurrentDayContext);
+    console.log(state);
+    // const currentDay: number = useSelector(selectedDay);
+    // const openSidenav: boolean = useSelector(isSidenavOpen);
+    // console.log(`CurrentDay is: ${currentDay}`);
+    const openSidenav = false;
     const weeksRecipes = currentWeekRecipes;
 
-    const [currentDayState, setCurrentDay] = useState(Weekdays[currentDay]);
-    const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[currentDay]);
+    const [currentDayState, setCurrentDay] = useState(Weekdays[0]);
+    const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[0]);
     const [isViewportMobile, setIsViewportMobile] = useState(window.innerWidth < 768);
 
     function handleNavClick(recipe: Recipe, day: string) {

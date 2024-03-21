@@ -1,6 +1,6 @@
 import "./WeeklyPlan.css";
 import Recipe from "../../types/recipe.d";
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { updateDay } from "@/lib/features/selectedDay";
 import RecipeDesktop from "./RecipeDesktop";
 
@@ -23,11 +23,11 @@ function WeeklyPlanDesktop(
         currentDay
     }: MyComponentProps) {
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    function handleClick(i: number) {
-        dispatch(updateDay(i));
-    }
+    // function handleClick(i: number) {
+    //     dispatch(updateDay(i));
+    // }
 
     return (
         <div className="flex flex-col items-center w-[95%] max-w-[1150px]">
@@ -38,7 +38,7 @@ function WeeklyPlanDesktop(
                             <span id={`Day ${Weekdays[i]}`}
                                 onClick={() => {
                                     handleNavClick(weeksRecipes[i], Weekdays[i]);
-                                    handleClick(i);
+                                    // handleClick(i);
                                 }}
                                 className={day === currentDay ? "py-[10px] weekday current hover:cursor-pointer hover:text-secondary px-2 font-[500]" : "py-[10px] weekday hover:cursor-pointer hover:text-secondary px-2 font-[500]"}>
                                 {day.toUpperCase()}
