@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider
-      selectedDay={0}
+      selectedDay={3}
       isSidenavOpen={false}
     >
       <html lang="en">
