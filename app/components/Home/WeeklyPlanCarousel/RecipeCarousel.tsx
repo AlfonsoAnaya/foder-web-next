@@ -15,7 +15,7 @@ interface CarouselProps {
   recipes: Recipe[];
 }
 
-function RecipeCarousel( { recipes }: CarouselProps) {
+function RecipeCarousel({ recipes }: CarouselProps) {
 
   const [visibleSlides, setVisibleSlides] = useState(4); // Default to 3 visible slides
   const dispatch = useDispatch();
@@ -61,14 +61,15 @@ function RecipeCarousel( { recipes }: CarouselProps) {
         <Slider className="h-[550px] md:h-[430px] w-[100%] md:w-[95%] max-w-[1300px]">
           {recipes.map((recipe, i) => {
             return (
-              <Slide index={i} key={recipe.name + i}>
+              <Slide index={i} key={recipe.name + i}
+                onClick={() => {
+                  dispatch(updateDay(i));
+                  dispatch(updateIsSidenavOpen(true));
+                }}>
                 <Link
                   href={`/plan-semanal`}
-                  onClick={() => {
-                    dispatch(updateDay(i));
-                    dispatch(updateIsSidenavOpen(true));
-                  }}
-                  // state={{ day: i, openSidenav: true }}
+
+                // state={{ day: i, openSidenav: true }}
                 >
                   <RecipeCard
                     recipe={recipe}
@@ -90,7 +91,7 @@ function RecipeCarousel( { recipes }: CarouselProps) {
             <path className="fill-white" d="M0.510651 23.4315L2.78215 25.703L15.4872 12.998L2.78215 0.292969L0.510651 2.56447L10.9442 12.998L0.510651 23.4315H0.510651Z" fill="black" />
           </svg>
         </ButtonNext>
-        <DotGroup 
+        <DotGroup
           className="flex justify-center gap-[2px] pb-10 [&>*]:w-[45px] [&>*]:h-[19px] [&>*]:border-y-[8px] [&>*]:border-y-white md:[&>*]:border-y-grayLight [&>*]:bg-dark [&>*]:rounded-sm"
         />
       </CarouselProvider>
