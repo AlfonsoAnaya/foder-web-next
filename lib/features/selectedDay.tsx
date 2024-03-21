@@ -9,9 +9,10 @@ export const selectedDaySlice = createSlice({
   reducers: {
     initializeDay: (state, action) => {
         state.value = action.payload
+        console.log("this is on the initialize function:" , state.value, action.payload)
       },
     updateDay: (state, action) => {
-      console.log("this is on the dispatch function:" , state.value, action.payload)
+      console.log("this is on the update function:" , state.value, action.payload)
       state.value = action.payload
     }
   }

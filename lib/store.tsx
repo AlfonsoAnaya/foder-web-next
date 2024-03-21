@@ -3,6 +3,7 @@ import selectDayReducer from './features/selectedDay'
 import isSidenavOpenReducer from './features/isSidenavOpen'
 
 export const makeStore = () => {
+  console.log('making store')
   return configureStore({
     reducer: {
       selectedDay: selectDayReducer,
