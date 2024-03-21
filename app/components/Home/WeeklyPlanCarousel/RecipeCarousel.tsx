@@ -19,12 +19,8 @@ function RecipeCarousel({ recipes }: CarouselProps) {
 
   const [visibleSlides, setVisibleSlides] = useState(4); // Default to 3 visible slides
   const dispatch = useDispatch();
-  console.log(`dispatch is: ${dispatch}`);
-  console.log(`updateDay action is: ${updateDay}`);
 
   function handleClick(i:number) {
-    console.log("click on slide is registered");
-    console.log(`the result of dispatch updateDay is: ${dispatch(updateDay(i))}`)
     dispatch(updateDay(i));
     dispatch(updateIsSidenavOpen(true));
   }

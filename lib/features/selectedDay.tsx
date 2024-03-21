@@ -11,6 +11,7 @@ export const selectedDaySlice = createSlice({
         state.value = action.payload
       },
     updateDay: (state, action) => {
+      console.log("this is on the dispatch function:" , state.value, action.payload)
       state.value = action.payload
     }
   }

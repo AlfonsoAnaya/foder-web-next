@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectedDay } from '@/lib/features/selectedDay';
 import { isSidenavOpen } from "@/lib/features/isSidenavOpen";
 import "./WeeklyPlan.css";
@@ -16,7 +16,6 @@ function WeeklyPlan() {
     const currentDay: number = useSelector(selectedDay);
     const openSidenav: boolean = useSelector(isSidenavOpen);
     console.log(`CurrentDay is: ${currentDay}`);
-    console.log(`openSidenav is: ${openSidenav}`);
 
     const weeksRecipes = currentWeekRecipes;
 
