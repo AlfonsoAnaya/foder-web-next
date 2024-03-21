@@ -19,6 +19,8 @@ function RecipeCarousel( { recipes }: CarouselProps) {
 
   const [visibleSlides, setVisibleSlides] = useState(4); // Default to 3 visible slides
   const dispatch = useDispatch();
+  console.log(`dispatch is: ${dispatch}`);
+  console.log(`updateDay action is: ${updateDay}`)
 
   useEffect(() => {
     const handleResize = () => {
