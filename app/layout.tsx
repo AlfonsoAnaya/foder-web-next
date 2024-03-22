@@ -1,9 +1,9 @@
-import StoreProvider from "@/lib/StoreProvider";
+// import StoreProvider from "@/lib/StoreProvider";
 import type { Metadata } from "next";
 import { Raleway, Lora, Nunito } from "next/font/google";
 import "./globals.css";
-import { makeStore } from "@/lib/store";
-import { CurrentDayContextProvider } from "@/context/currentDay.context";
+// import { makeStore } from "@/lib/store";
+// import { CurrentDayContextProvider } from "@/context/currentDay.context";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -35,6 +35,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log("mounting layout")
   return (
     // <StoreProvider
     //   // selectedDay={3}

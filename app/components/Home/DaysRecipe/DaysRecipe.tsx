@@ -1,24 +1,29 @@
 'use client'
-// import { useDispatch } from 'react-redux';
-// import { updateDay } from "@/lib/features/selectedDay";
-// import { updateIsSidenavOpen } from '@/lib/features/isSidenavOpen';
 import Link from "next/link";
 import Image from "next/image";
 import getToday from "@/app/utils/Today";
 import Recipe from "@/app/types/recipe.d";
+import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
+import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 
 interface DaysRecipeProps {
   recipes: Recipe[];
 }
 
 function DaysRecipe({ recipes }: DaysRecipeProps) {
-
-  // const dispatch = useDispatch();
+  const updateDay = useCurrentDayStore((state) => state.updateDay);
+  const updateIsSidenavOpen = useIsSidenavOpenStore((state) => state.updateIsSidenavOpen);
 
   const todayString = getToday();
   const rawTodayInt = new Date().getDay();
   const todayInt = rawTodayInt === 0 ? 6 : rawTodayInt - 1;
   let recipe: Recipe = recipes[todayInt];
+  
+
+  const handleClick = (i:number, bool:boolean) => {
+    updateDay(i);
+    updateIsSidenavOpen(bool);
+  }
 
   return (
     <section className="todays-recipe-section flex flex-col items-center bg-grayLight md:bg-white">
@@ -27,10 +32,7 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
         <div className="relative recipe-img w-[95%] md:max-w-[50%] max-h-[650px] order-2 md:order-1">
           <Link
             href={`/plan-semanal`}
-            onClick={() => {
-              // dispatch(updateDay(todayInt));
-              // dispatch(updateIsSidenavOpen(true));
-            }}
+            onClick={()=>handleClick(todayInt, true)}
           >
             <Image
               className="block object-cover w-[100%] h-[100%] object-center"
@@ -52,11 +54,7 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
           </h2>
           <Link
             href={`/plan-semanal`}
-            onClick={() => {
-              // dispatch(updateDay(todayInt));
-              // dispatch(updateIsSidenavOpen(true));
-            }}
-          
+            onClick={()=>handleClick(todayInt, true)}
           >
             <h3 className="recipe-title underline text-[1.5rem] md:text-[1.75rem] text-primary font-serif font-[600]">
               {recipe.name}

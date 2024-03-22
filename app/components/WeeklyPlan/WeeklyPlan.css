@@ -23,7 +23,3 @@
     transform: translateY(0);
     transition: height 200ms ease;
 }
-
-.btn-vegetarian-toggle:hover svg{
-    fill: var(--color-white)
-}

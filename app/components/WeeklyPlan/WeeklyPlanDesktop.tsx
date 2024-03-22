@@ -24,14 +24,12 @@ function WeeklyPlanDesktop(
         currentDay
     }: MyComponentProps) {
 
-        const updateDay = useCurrentDayStore((state) => state.updateDay)
+    const updateDay = useCurrentDayStore((state) => state.updateDay)
     // const dispatch = useDispatch();
 
     function handleClick(i: number) {
         updateDay(i);
     }
-
-    
 
     return (
         <div className="flex flex-col items-center w-[95%] max-w-[1150px]">

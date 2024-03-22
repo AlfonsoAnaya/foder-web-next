@@ -1,11 +1,8 @@
 'use client'
 
 import { useState, useEffect } from "react";
-// import { CurrentDayContext } from "@/context/currentDay.context";
-// import { useDispatch } from 'react-redux';
-// import { updateDay } from "@/lib/features/selectedDay";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
-import { updateIsSidenavOpen } from "@/lib/features/isSidenavOpen";
+import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 import RecipeCard from "../../Shared/RecipeCard";
 import Recipe from "@/app/types/recipe.d";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
@@ -19,13 +16,13 @@ interface CarouselProps {
 
 function RecipeCarousel({ recipes }: CarouselProps) {
 
-  // const { state, dispatch } = useContext(CurrentDayContext);
+  const [visibleSlides, setVisibleSlides] = useState(4); 
+  const updateDay = useCurrentDayStore((state) => state.updateDay);
+  const updateIsSidenavOpen = useIsSidenavOpenStore((state) => state.updateIsSidenavOpen);
 
-  const [visibleSlides, setVisibleSlides] = useState(4); // Default to 3 visible slides
-  // const dispatch = useDispatch();
-  const updateDay = useCurrentDayStore((state) => state.updateDay)
-  function handleClick(i:number) {
+  function handleClick(i:number, bool:boolean) {
     updateDay(i);
+    updateIsSidenavOpen(bool);
   }
 
   useEffect(() => {
@@ -68,7 +65,7 @@ function RecipeCarousel({ recipes }: CarouselProps) {
           {recipes.map((recipe, i) => {
             return (
               <Slide index={i} key={recipe.name + i}
-                onClick={()=>handleClick(i)}>
+                onClick={()=>handleClick(i,true)}>
                 <Link
                   href={`/plan-semanal`}
 
