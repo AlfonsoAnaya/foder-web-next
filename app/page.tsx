@@ -5,9 +5,9 @@ import Footer from "./components/Footer/Footer";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen font-sans w-[100%]">
-      <Header />
+      {/* <Header /> */}
       <HomePage />
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }

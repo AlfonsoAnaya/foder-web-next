@@ -4,7 +4,8 @@ import { Raleway, Lora, Nunito } from "next/font/google";
 import "./globals.css";
 import { makeStore } from "@/lib/store";
 import { CurrentDayContextProvider } from "@/context/currentDay.context";
-
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -41,7 +42,9 @@ export default function RootLayout({
     // >
       <html lang="en">
         <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>
+          <Header />
           {children}
+          <Footer />
         </body>
       </html>
     // </StoreProvider>

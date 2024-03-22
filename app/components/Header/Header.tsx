@@ -39,7 +39,7 @@ function Header() {
                     toggleMobileNav={toggleMobileNav}
                     />
 
-                    <div id="nav-utilities" className="gap-[1rem] justify-center items-center absolute right-0
+                    <div id="nav-utilities" className="gap-[1rem] font-sans justify-center items-center absolute right-0
                         hidden md:flex">
                         {/* Search bar */}
                         {/* <div className="w-[400px]">

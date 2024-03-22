@@ -1,6 +1,3 @@
-import Header from "../components/Header/Header"
-import Footer from "../components/Footer/Footer"
-// import WeeklyPlan from "../components/WeeklyPlan/WeeklyPlan"
 import dynamic from "next/dynamic"
 
 const WeeklyPlan = dynamic(
@@ -14,9 +11,7 @@ function WeeklyPlanPage() {
 
     return (
         <main className="flex flex-col font-sans w-[100%]">
-            <Header />
             <WeeklyPlan />
-            <Footer />
         </main>
 
     )

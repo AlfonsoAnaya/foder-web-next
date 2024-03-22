@@ -7,7 +7,7 @@ function MobileNavMenu(
     props: { toggleMobileNav: () => void }
 ) {
     return (
-        <div className="nav-toggle flex self-center
+        <div className="nav-toggle font-sans flex self-center
                     fixed top-[57px] left-0 right-0 md:static
                     w-[100%] h-[calc(100vh)] md:w-auto md:h-auto 
                     translate-x-full md:translate-x-0
