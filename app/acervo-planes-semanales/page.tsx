@@ -1,18 +1,18 @@
 import dynamic from "next/dynamic"
 
-const WeeklyPlanCollection = dynamic(
-    () => import ("../components/WeeklyPlanCollection/WeeklyPlanCollection"),
+const WeeklyPlanArchive = dynamic(
+    () => import ("../components/WeeklyPlanArchive/WeeklyPlanArchive"),
     {
         ssr:false,
     }
 );
 
-function WeeklyPlanCollectionPage() {
+function WeeklyPlanArchivePage() {
     return (
         <main className="flex flex-col font-sans w-[100%]">
-            <WeeklyPlanCollection />
+            <WeeklyPlanArchive />
         </main>
     )
 };
 
-export default WeeklyPlanCollectionPage
+export default WeeklyPlanArchivePage

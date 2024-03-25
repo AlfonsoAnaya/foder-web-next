@@ -12,7 +12,7 @@ function RecipeCollection() {
           return (
           <Link 
             key={recipe.name + i} 
-            href={`/`}
+            href={`/recetas/${recipe.id}`}
           >
           <RecipeCard
             recipe = {recipe}
