@@ -2,20 +2,20 @@ import recipes from "./recipes";
 import Recipe from "../types/recipe.d";
 
 const currentWeekRecipesId = [
-    0,
-    1,
-    2,
-    3,
-    4,
+    10,
+    11,
+    6,
     9,
-    6
+    4,
+    3,
+    2
 ]
 
-const currentWeekRecipes: Recipe[] = [];
+const currentWeekRecipesVeg: Recipe[] = [];
 
 currentWeekRecipesId.forEach(i => {
     const recipe: Recipe | undefined = recipes.find(recipe => recipe.id === i);
-    if (recipe) currentWeekRecipes.push(recipe);
+    if (recipe) currentWeekRecipesVeg.push(recipe);
 })
 
-export default currentWeekRecipes;
+export default currentWeekRecipesVeg;

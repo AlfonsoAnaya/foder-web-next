@@ -2,32 +2,27 @@
 
 import { useState, useEffect } from "react";
 import "./WeeklyPlan.css";
-import currentWeekRecipes from "../../utils/CurrentWeekRecipes";
-import currentWeekRecipesVeg from "@/app/utils/CurrentWeekRecipesVeg";
 import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../utils/Weekdays";
-import VegetarianButton from "./VegetarianButton";
-import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
+// import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
-import Link from "next/link";
-import OmnivoreButton from "./OmnivoreButton";
+import WeeklyPlansArchive from "@/app/utils/WeeklyPlansArchive";
 
 interface WeeklyPlanProps {
-    isWeekVegetarian: boolean;
+    weeklyPlanNumber: number;
 }
 
-function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
 
-    const openSidenav = useIsSidenavOpenStore((state) => state.isSidenavOpen);
+function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
 
-    const weeksRecipes = isWeekVegetarian ? currentWeekRecipesVeg : currentWeekRecipes;
-    const currentDayFromZustand = useCurrentDayStore((state) => state.currentDay);
+    const openSidenav = useIsSidenavOpenStore((state)=>state.isSidenavOpen);
 
+    const weeksRecipes = WeeklyPlansArchive[weeklyPlanNumber];0    
 
-    const [currentDayState, setCurrentDay] = useState(Weekdays[currentDayFromZustand]);
-    const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[currentDayFromZustand]);
+    const [currentDayState, setCurrentDay] = useState(Weekdays[0]);
+    const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[0]);
     const [isViewportMobile, setIsViewportMobile] = useState(window.innerWidth < 768);
 
     function handleNavClick(recipe: Recipe, day: string) {
@@ -65,18 +60,7 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
 
 
     return (
-        <>  
-            {
-            isWeekVegetarian ?
-                <Link href="/plan-semanal">
-                    <OmnivoreButton />
-                </Link>
-                :
-                <Link href="/plan-actual-vegetariano">
-                    <VegetarianButton />
-                </Link>
-            }
-            
+        <>
             <section className="relative weekly-plan-section w-[100%] flex flex-col items-center 
             mt-0 md:mt-4">
 

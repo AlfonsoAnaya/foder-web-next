@@ -1,6 +1,6 @@
 import Link from "next/link";
 import WeeklyPlanCard from "./WeeklyPlanCard";
-import WeeklyPlansArchive from "@/app/utils/WeeklyPlanArchive";
+import WeeklyPlansArchive from "@/app/utils/WeeklyPlansArchive";
 
 
 function WeeklyPlanArchive() {
@@ -12,7 +12,7 @@ function WeeklyPlanArchive() {
           return (
           <Link 
             key={"weeklyPlan" + i} 
-            href={`/`}
+            href={`/acervo-planes-semanales/${i}`}
           >
           <WeeklyPlanCard
             recipeArray={plan}

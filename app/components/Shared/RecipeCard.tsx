@@ -10,7 +10,7 @@ function RecipeCard({ recipe, extraInfo }: RecipeCardProps) {
     return (
         <div className="flex justify-center align-center">
             <div
-                className="recipe-card w-[90%] max-w-[330px] h-[530px] md:max-w-[250px] md:h-[430px]
+                className="recipe-card max-w-[330px] h-[530px] md:max-w-[240px] md:h-[430px]
              flex flex-col gap-4">
 
                 {/* RECIPE IMAGE */}

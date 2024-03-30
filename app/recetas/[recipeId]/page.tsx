@@ -1,5 +1,23 @@
-export default function RecipeDetails() {
+import dynamic from "next/dynamic"
+
+const RecipeDetails = dynamic(
+    () => import("../../components/RecipeDetails/RecipeDetails"),
+    {
+        ssr: false,
+    }
+);
+
+export default function RecipeDetailsPage({params}:
+    {params:{recipeId:string}
+}) {
+    const { recipeId } = params; 
+    
     return (
-        <h2>Detalles de Una Receta</h2>
+        <>
+            <RecipeDetails 
+                recipeId={recipeId}
+            />
+        </>
+
     )
 }

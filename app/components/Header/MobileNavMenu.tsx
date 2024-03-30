@@ -56,6 +56,14 @@ function MobileNavMenu(
                             Planes Anteriores
                         </Link>
                     </li>
+
+                    <li
+                        onClick={props.toggleMobileNav}
+                        className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                        <Link href="/recetas">
+                            Recetas
+                        </Link>
+                    </li>
                 
             </ul>
         </div>

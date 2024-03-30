@@ -12,7 +12,7 @@ function WeeklyPlanPage() {
     return (
         <main className="flex flex-col font-sans w-[100%]">
             <WeeklyPlan 
-                isWeekVegetarian={false}
+                isWeekVegetarian={true}
             />
         </main>
 
