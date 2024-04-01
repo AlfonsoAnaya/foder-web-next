@@ -20,6 +20,7 @@ const config: Config = {
         beige: "rgb(240, 239, 235)",
         grayLight: "rgb(243, 244, 246)",
         vegetarianGreen: "rgb(102, 128, 11)",
+        omnivoreRed: "rgb(175, 48, 41)",
       },
       fontFamily: {
         siteTitle: ['var(--font-nunito)'],

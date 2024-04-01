@@ -3,7 +3,7 @@ import './VegetarianButton.css'
 function OmnivoreButton() {
     return (
         <div className="fixed flex flex-col items-center justify-center top-[73px] right-[50px] md:top-[100px] md:right-[30px] z-[999]">
-            <div className="btn-vegetarian-toggle border-[1px] hover:cursor-pointer border-vegetarianGreen rounded-full p-2 hover:bg-vegetarianGreen">
+            <div className="btn-vegetarian-toggle border-[1px] hover:cursor-pointer border-omnivoreRed rounded-full p-2 hover:bg-omnivoreRed">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64">
                     <defs>
                         <style>{`.cls-2{fill:#efc589;}.cls-3{fill:#2d2d2d;}.cls-4{fill:#3e2c27;}`}</style>
@@ -18,7 +18,7 @@ function OmnivoreButton() {
                         <path d="M35 44a.94.94 0 0 1-.55-.17l-3-2a1 1 0 0 1 1.1-1.66l3 2A1 1 0 0 1 35 44ZM32 37.38l-2.23-1.12A1.4 1.4 0 0 1 29 35a1.39 1.39 0 0 1 1.39-1.39h3.22A1.39 1.39 0 0 1 35 35a1.4 1.4 0 0 1-.77 1.24Z" className="cls-4" />
                     </g>
                 </svg>            </div>
-            <span className="text-vegetarianGreen font-[600] text-[.8rem] opacity-0">Ver Plan Omnivoro</span>
+            <span className="text-omnivoreRed font-[600] text-[.8rem] opacity-0">Ver Plan Omnivoro</span>
         </div>
     )
 

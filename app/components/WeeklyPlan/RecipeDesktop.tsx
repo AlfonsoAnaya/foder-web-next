@@ -123,13 +123,14 @@ function RecipeDesktop({ propsRecipe }: IndividualRecipeProps) {
 
         {/* Method */}
         <div className="font-sans leading-8 recipe-method flex flex-col justify-start items-left text-[18px]">
-          <h3 className="font-[600] mb-[.5rem] underline
+          <h3 className="font-[600] mb-[.5rem] underline 
             text-[1.1rem] md:text-[1.5rem] 
             mt-2 md:mt-0">Instrucciones</h3>
           {recipe.method.map((text: string, i:number) => {
             return (
               <p key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem]">
-                {text}
+                <span className="font-[600] underline underline-offset-4 decoration-2 decoration-primary">Paso {i}</span>
+                 {` ${text}`}
               </p>
             )
           })}
