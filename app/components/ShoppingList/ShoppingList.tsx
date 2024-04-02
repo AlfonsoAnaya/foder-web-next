@@ -5,6 +5,7 @@ import currentWeekRecipes from "../../utils/CurrentWeekRecipes";
 import RecipeCategories from "../../utils/RecipeCategories";
 import "./ShoppingList.css";
 import ShoppingListCard from "./ShoppingListWeeklyCard";
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 const { IngredientCategories } = RecipeCategories;
 
@@ -14,11 +15,15 @@ const initialIngredientsState = Object.fromEntries(
 
 
 function ShoppingList() {
+    const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+    useEffect(() => {
+      setCurrentNavSection('lista-de-compras');
+    }, []);
+
     const [ingredientsState, setIngredientsState] = useState<{ [key: string]: Ingredient[] }>(initialIngredientsState);
     const [selectedRecipes, setSelectedRecipes] = useState<number[]>([])
     const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
     const weeklyRecipes = currentWeekRecipes;
-
 
     const weekDays = [
         "1",

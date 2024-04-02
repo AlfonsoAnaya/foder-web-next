@@ -1,11 +1,15 @@
 'use client'
-
-import Link from "next/link"
+import { useState } from "react";
+import Link from "next/link";
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 
 function MobileNavMenu(
     props: { toggleMobileNav: () => void }
 ) {
+
+    const currentNavSection = useCurrentNavSectionStore((state) => state.currentNavSection);
+  
     return (
         <div className="nav-toggle font-sans flex self-center
                     fixed top-[57px] left-0 right-0 md:static
@@ -23,7 +27,10 @@ function MobileNavMenu(
             >
                 {/* <Link to={`/`}>
                     <li
-                        onClick={props.toggleMobileNav}
+                        onClick={() => {
+                            props.toggleMobileNav;
+                            handleSectionClick("lista-de-compras")
+                        }}
                         className="pb-[2px] hover:text-secondary cursor-pointer border-b-[transparent] border-b-[3px] 
                                 hover:border-b-secondary hover:border-b-[3px] transition-fill duration-300">
                         Recetas
@@ -32,7 +39,7 @@ function MobileNavMenu(
                 
                     <li
                         onClick={props.toggleMobileNav}
-                        className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                        className={`${currentNavSection === "plan-actual" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
                         <Link href="/plan-semanal">
                             Plan Actual
                         </Link>
@@ -40,10 +47,9 @@ function MobileNavMenu(
                     </li>
                 
 
-                
                     <li
                         onClick={props.toggleMobileNav}
-                        className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                        className={`${currentNavSection === "lista-de-compras" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
                         <Link href="/lista-de-compras">
                             Lista de Compras
                         </Link>
@@ -51,7 +57,7 @@ function MobileNavMenu(
 
                     <li
                         onClick={props.toggleMobileNav}
-                        className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                        className={`${currentNavSection === "planes-anteriores" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
                         <Link href="/acervo-planes-semanales">
                             Planes Anteriores
                         </Link>
@@ -59,7 +65,7 @@ function MobileNavMenu(
 
                     <li
                         onClick={props.toggleMobileNav}
-                        className="hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                        className={`${currentNavSection === "recetas" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
                         <Link href="/recetas">
                             Recetas
                         </Link>

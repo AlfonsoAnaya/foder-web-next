@@ -3,6 +3,7 @@
 import MobileNavMenu from "./MobileNavMenu";
 import "./Header.css";
 import Link from "next/link";
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 function Header() {
     const toggleMobileNav = () => {
@@ -14,6 +15,8 @@ function Header() {
         const navToggle = document.querySelector('.header-nav');
         navToggle?.classList.remove("nav-open");
     }
+
+    const updateCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
 
     return (
         <header className="sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-10 nav: border-b-primary border-b-[1px]
@@ -28,8 +31,14 @@ function Header() {
                             font-siteTitle
                             text-white uppercase
                             text-[2.5em] md:text-[3.15em] leading-[1em] py-[12px]"
-                            onClick={closeMobileNav}>
-                            <Link href="/">
+                            onClick={() => {
+                                closeMobileNav;
+                                updateCurrentNavSection("");
+                            }}>
+                            <Link 
+                                href="/"
+                                onClick={toggleMobileNav}
+                            >
                                 Pipián
                             </Link>
                             

@@ -131,15 +131,16 @@ function RecipeMobile({ recipe }: { recipe: Recipe }) {
         </div>
 
         {/* Method */}
-        <div className="font-sans leading-7 recipe-method flex flex-col justify-start items-left text-[19px]">
+        <div className="font-sans leading-7 recipe-method flex flex-col justify-start items-left text-[16px]">
           <h3 className="font-[600] mb-[.5rem] underline
             text-[1.1rem] md:text-[1.5rem] 
             mt-2 md:mt-0">Instrucciones</h3>
           {recipe.method.map((text: string, i: number) => {
             return (
-              <p key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem] text-[1rem] md:text-[1.2rem]">
-                {text}
-              </p>
+              <p key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem] flex gap-2">
+              <span className="font-[600] text-primary">{i + 1}</span>
+              <span>{`${text}`}</span>
+            </p>  
             )
           })}
         </div>

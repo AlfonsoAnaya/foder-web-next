@@ -1,6 +1,6 @@
 // import StoreProvider from "@/lib/StoreProvider";
 import type { Metadata } from "next";
-import { Raleway, Lora, Nunito } from "next/font/google";
+import { Raleway, Lora, Tilt_Neon } from "next/font/google";
 import "./globals.css";
 // import { makeStore } from "@/lib/store";
 // import { CurrentDayContextProvider } from "@/context/currentDay.context";
@@ -19,10 +19,10 @@ const lora = Lora({
   variable: '--font-lora',
 })
 
-const nunito = Nunito({
+const tiltNeon = Tilt_Neon({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-nunito',
+  variable: '--font-tilt-neon',
 })
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export default function RootLayout({
     //   // isSidenavOpen={false}
     // >
       <html lang="en">
-        <body className={`${raleway.variable} ${lora.variable} ${nunito.variable}`}>
+        <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable}`}>
           <Header />
           {children}
           <Footer />

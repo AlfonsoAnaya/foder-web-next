@@ -41,7 +41,7 @@
 .hamburger::after {
     background-color: var(--color-white);
     width: 1.5em;
-    height: 3px;
+    height: 2px;
     border-radius: 1em;
     transition: transform 200ms ease-in-out;
 }
@@ -57,3 +57,9 @@
 
 .hamburger::before { top: 8px; }
 .hamburger::after { bottom: 8px; }
+
+.current-nav-section {
+    text-underline-offset: 8px;
+    text-decoration: underline;
+    text-decoration-color: var(--color-secondary);
+}

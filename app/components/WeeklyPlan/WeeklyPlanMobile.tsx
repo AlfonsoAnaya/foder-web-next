@@ -64,7 +64,7 @@ function WeeklyPlanMobile(
 
                 {/* SIDENAV WITH RECIPE */}
 
-                <div className="recipe-sidenav w-[100%] 
+                <div className="recipe-sidenav w-[100%] z-[2] 
                     fixed top-[57px] left-0 right-0 bottom-0 
                     translate-x-[calc(100%)] 
                     backdrop-blur-[2px] bg-[#31313138] "

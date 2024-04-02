@@ -1,13 +1,20 @@
 'use client'
-
+import { useEffect } from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import LandingComponent from './LandingComponent';
 import ShoppingListDemo from './ShoppingListDemo';
 import MailingList from './MailingList';
 import './WelcomeScreen.css';
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
+
 
 function WelcomeScreen() {
+    const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+    useEffect(() => {
+      setCurrentNavSection('');
+    }, []);
+
     return (
         <div className="relative carousel-container">
             <CarouselProvider

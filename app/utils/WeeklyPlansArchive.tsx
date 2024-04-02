@@ -2,8 +2,9 @@ import recipes from "./recipes";
 import Recipe from "../types/recipe.d";
 
 const WeeklyPlansIds = [
-    [1, 2,  3,  4,  5,  10, 7],
-    [6, 10, 11, 12, 13, 26, 4] 
+    [ 1,  2,  3,  4,  5, 10,  7],
+    [11, 12,  6, 14, 26, 13,  9],
+    [17, 20, 12, 26, 13,  9, 11] 
 ]
 
 const WeeklyPlansArchive: any[] = [];

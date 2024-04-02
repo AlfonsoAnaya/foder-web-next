@@ -11,6 +11,7 @@ import Weekdays from "../../utils/Weekdays";
 import VegetarianButton from "./VegetarianButton";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import Link from "next/link";
 import OmnivoreButton from "./OmnivoreButton";
 
@@ -19,6 +20,11 @@ interface WeeklyPlanProps {
 }
 
 function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
+    const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+  
+    useEffect(() => {
+      setCurrentNavSection('plan-actual');
+    }, []);
 
     const openSidenav = useIsSidenavOpenStore((state) => state.isSidenavOpen);
 

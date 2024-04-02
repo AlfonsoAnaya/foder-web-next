@@ -1,7 +1,6 @@
 import "./WeeklyPlan.css";
 import Recipe from "../../types/recipe.d";
 // import { useDispatch } from 'react-redux';
-import { updateDay } from "@/lib/features/selectedDay";
 import RecipeDesktop from "./RecipeDesktop";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 
@@ -24,7 +23,7 @@ function WeeklyPlanDesktop(
         currentDay
     }: MyComponentProps) {
 
-    const updateDay = useCurrentDayStore((state) => state.updateDay)
+    const updateDay = useCurrentDayStore((state) => state.updateDay);
     // const dispatch = useDispatch();
 
     function handleClick(i: number) {
@@ -53,7 +52,7 @@ function WeeklyPlanDesktop(
 
             </nav>
 
-            <article className="recipe-sidenav pl-2  static translate-x-0 bg-transparent overflow-y-scroll md:overflow-auto"
+            <article className="pl-2  static translate-x-0 bg-transparent overflow-y-scroll md:overflow-auto"
             >
                 <RecipeDesktop
                     propsRecipe={currentRecipe}

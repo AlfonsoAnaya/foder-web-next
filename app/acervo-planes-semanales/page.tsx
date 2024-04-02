@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic"
+import dynamic from "next/dynamic";
 
 const WeeklyPlanArchive = dynamic(
     () => import ("../components/WeeklyPlanArchive/WeeklyPlanArchive"),
@@ -8,6 +8,7 @@ const WeeklyPlanArchive = dynamic(
 );
 
 function WeeklyPlanArchivePage() {
+
     return (
         <main className="flex flex-col font-sans w-[100%]">
             <WeeklyPlanArchive />

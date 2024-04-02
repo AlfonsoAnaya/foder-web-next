@@ -23,7 +23,7 @@ const config: Config = {
         omnivoreRed: "rgb(175, 48, 41)",
       },
       fontFamily: {
-        siteTitle: ['var(--font-nunito)'],
+        siteTitle: ['var(--font-tilt-neon)'],
         // primary: "'Josefin Sans', sans-serif",
         sans: ['var(--font-raleway)'],
         // primary: "'Jost', sans-serif",

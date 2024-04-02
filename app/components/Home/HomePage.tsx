@@ -4,6 +4,7 @@ import WelcomeScreen from "./WelcomeScreen/WelcomeScreen";
 import currentWeekRecipes from "@/app/utils/CurrentWeekRecipes";
 
 function HomePage() {
+
     return (
         <>
             <WelcomeScreen />

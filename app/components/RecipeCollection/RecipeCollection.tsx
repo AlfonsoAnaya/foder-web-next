@@ -1,9 +1,17 @@
+'use client'
+import { useEffect } from "react";
 import Link from "next/link";
 import RecipeCard from "../Shared/RecipeCard";
 import recipes from "../../utils/recipes";
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 
 function RecipeCollection() {
+  const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+  useEffect(() => {
+    setCurrentNavSection('recetas');
+  }, []);
+
   return (
     <section className="todays-recipe-section flex flex-col items-center my-[2rem]">
       <h3 className="text-[2rem] text-primary font-[600] p-4">Todas nuestras recetas</h3>
