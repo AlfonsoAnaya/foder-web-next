@@ -42,7 +42,7 @@ export default function RootLayout({
     //   // isSidenavOpen={false}
     // >
       <html lang="en">
-        <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable}`}>
+        <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white`}>
           <Header />
           {children}
           <Footer />

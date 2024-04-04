@@ -29,6 +29,9 @@ const config: Config = {
         // primary: "'Jost', sans-serif",
         serif: ['var(--font-lora)'],
         tertiary: "sans-serif",
+      },
+      height: {
+        landingHeightDesktop: "73vh",
       }
     },
   },

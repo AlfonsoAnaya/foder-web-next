@@ -4,7 +4,7 @@ import Image from "next/image";
 interface RecipeCardProps {
     recipe: Recipe;
     extraInfo?: string;
-  }
+}
 
 function RecipeCard({ recipe, extraInfo }: RecipeCardProps) {
     return (

@@ -1,7 +1,7 @@
 function MailingList() {
     return (
-        <div className="w-[100%] h-[78vh] md:h-auto todays-recipe-section flex flex-row justify-center items-center bg-grayLight md:bg-white">
-            <div className="md:h-[500px] flex flex-col md:flex-row justify-start md:justify-center items-center md:items-stretch w-[100%] md:w-[95%] max-w-[1200px] md:mt-[50px] mb-[70px]">
+        <div className="w-[100%] h-[78vh] md:h-landingHeightDesktop todays-recipe-section flex flex-row justify-center items-center bg-grayLight md:bg-white">
+            <div className="md:h-[90%] flex flex-col md:flex-row justify-start md:justify-center items-center md:items-stretch w-[100%] md:w-[95%] max-w-[1200px]">
     
                 <div className="w-[90%] md:w-[40%] mt-4 md:mt-0 text-center flex flex-col justify-center items-center gap-2 md:gap-6">
                     <h2 className="text-[1.5rem]  md:text-[2.25rem] text-primary font-[600]">

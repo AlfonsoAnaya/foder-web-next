@@ -19,14 +19,14 @@ function WelcomeScreen() {
         <div className="relative carousel-container">
             <CarouselProvider
                 naturalSlideWidth={100}
-                naturalSlideHeight={125}
+                naturalSlideHeight={100}
                 totalSlides={3}
                 infinite={true}
-                isPlaying={true}
+                isPlaying={false}
                 interval={8000}
                 playDirection='forward'>
 
-                <Slider className="w-[100%] h-[78vh] md:h-[610px] bg-grayLight md:bg-white">
+                <Slider className="w-[100%] h-[78vh] md:h-landingHeightDesktop bg-grayLight md:bg-white">
                     <Slide index={0}>
                         <LandingComponent />
                     </Slide>
@@ -49,7 +49,7 @@ function WelcomeScreen() {
                     </svg>
                 </ButtonNext>
                 <DotGroup 
-                    className="w-[100%] flex justify-center gap-6 pb-6 md:pb-10 bg-grayLight md:bg-white [&>*]:w-[28px] [&>*]:h-[28px] [&>*]:border-[6px] [&>*]:border-grayLight md:[&>*]:border-white [&>*]:bg-dark [&>*]:rounded-full"
+                    className="w-[100%] flex justify-center gap-6 pb-4 md:pb-6 bg-grayLight md:bg-white [&>*]:w-[28px] [&>*]:h-[28px] [&>*]:border-[6px] [&>*]:border-grayLight md:[&>*]:border-white [&>*]:bg-dark [&>*]:rounded-full"
                 />
             </CarouselProvider>
         </div>
