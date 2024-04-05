@@ -55,17 +55,17 @@ function RecipeCollection() {
       <h3 className="text-[2rem] text-primary font-[600] p-4">Todas nuestras ({recipes.length}) recetas</h3>
       <div className="flex gap-4 justify-center items-center">
         <FilterButton 
-          title={"vegetarian"}
+          title={"vegetariano"}
           filterStr={"isVegetarian"}
           handleClick={handleFilterClick}
         />
         <FilterButton 
-          title={"gluten free"}
+          title={"sin gluten"}
           filterStr={"isGlutenFree"}
           handleClick={handleFilterClick}
         />
         <FilterButton 
-          title={"vegan"}
+          title={"vegano"}
           filterStr={"isVegan"}
           handleClick={handleFilterClick}
         />
