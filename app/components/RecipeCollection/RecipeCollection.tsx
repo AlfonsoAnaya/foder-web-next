@@ -5,23 +5,49 @@ import RecipeCard from "../Shared/RecipeCard";
 import recipes from "../../utils/recipes";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import FilterButton from "../Shared/FilterButton";
+import Recipe from "@/app/types/recipe.d";
 
 
 function RecipeCollection() {
   const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+  const [currentRecipes, setCurrentRecipes] = useState(recipes);
+  const [filters, setFilters] = useState<string[]>([]);
+
+
   useEffect(() => {
     setCurrentNavSection('recetas');
   }, []);
 
-  const [currentRecipes, setCurrentRecipes] = useState(recipes);
-  const [filters, setFilters] = useState<string[]>([""]);
-  
+
+  useEffect(() => {
+    console.log(filters)
+    if (filters.length === 0) {
+      setCurrentRecipes(recipes)
+    } else {
+      let newRecipesArray:Recipe[] = []
+      filters.forEach((filter) => {
+        recipes.forEach((recipe) => {
+          if ((recipe as any)[filter] === true) {
+            newRecipesArray.push(recipe);
+          }
+        })
+      })
+      setCurrentRecipes(newRecipesArray)
+    }
+  }, [filters]);
+
+
   const handleFilterClick = (str:string) => {
-    setFilters(prevState => [
-      ...prevState,
-      str
-    ]);
-    console.log(filters);
+    if (filters.includes(str)) {
+      // If the string is already in the array, remove it
+      setFilters(prevState => prevState.filter(item => item !== str));
+    } else {
+      // If the string is not in the array, add it
+      setFilters(prevState => [
+        ...prevState,
+        str
+      ]);
+    }
   }
 
   return (
@@ -30,14 +56,17 @@ function RecipeCollection() {
       <div className="flex gap-4 justify-center items-center">
         <FilterButton 
           title={"vegetarian"}
+          filterStr={"isVegetarian"}
           handleClick={handleFilterClick}
         />
         <FilterButton 
-          title={"pasta"}
+          title={"gluten free"}
+          filterStr={"isGlutenFree"}
           handleClick={handleFilterClick}
         />
         <FilterButton 
           title={"vegan"}
+          filterStr={"isVegan"}
           handleClick={handleFilterClick}
         />
       </div>
