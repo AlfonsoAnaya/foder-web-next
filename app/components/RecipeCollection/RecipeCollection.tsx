@@ -52,7 +52,7 @@ function RecipeCollection() {
 
   return (
     <section className="todays-recipe-section flex flex-col items-center md:my-[1rem]">
-      <h3 className="text-[2rem] text-primary font-[600] p-4">Todas nuestras ({currentRecipes.length}) recetas</h3>
+      <h3 className="text-[2rem] text-primary font-[600] pt-4 pb-8">Todas nuestras ({currentRecipes.length}) recetas</h3>
       <div className="flex gap-4 justify-center items-center">
         <FilterButton 
           title={"vegetariano"}
@@ -70,7 +70,7 @@ function RecipeCollection() {
           handleClick={handleFilterClick}
         />
       </div>
-      <div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1100px] mx-[2rem] my-[1rem]">
+      <div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1100px] mx-[2rem] my-[1.5rem]">
         {currentRecipes.map((recipe, i) => {
           return (
           <Link 

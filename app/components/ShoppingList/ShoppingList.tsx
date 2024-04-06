@@ -195,7 +195,7 @@ function ShoppingList() {
 
                 {isViewportMobile ?
                     <div className="recipe-sidenav w-[100%] 
-                    fixed top-[57px] left-0 right-0 bottom-0 
+                    fixed top-[65px] left-0 right-0 bottom-0 
                     translate-x-[calc(100%)] 
                     backdrop-blur-[2px] bg-[#31313138]"
                         onClick={(e) => closeShoppingListSidenav(e)}>

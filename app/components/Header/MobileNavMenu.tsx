@@ -12,14 +12,14 @@ function MobileNavMenu(
   
     return (
         <div className="nav-toggle font-sans flex self-center
-                    fixed top-[57px] left-0 right-0 md:static
-                    w-[100%] h-[calc(100vh)] md:w-auto md:h-auto 
+                    fixed top-[65px] left-0 right-0 md:static
+                    w-[100%] h-[calc(100vh-65px)] md:w-auto md:h-auto 
                     translate-x-full md:translate-x-0
                     bg-primary md:bg-transparent
                     justify-center md:justify-start"
         >
             <ul className="flex gap-[2rem] font-[600] uppercase
-                        pt-40 md:pt-0
+                        pt-10 md:pt-0
                         text-white 
                         flex-col md:flex-row
                         items-center md:items-start

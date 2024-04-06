@@ -32,20 +32,31 @@ function WeeklyPlanDesktop(
 
     return (
         <div className="flex flex-col items-center w-[95%] max-w-[1150px]">
+
+            {/* Days navigation bar */}
             <nav className="sticky font-sans top-[73px] z-10 border-box bg-white py-[8px] w-[100%] flex flex-row justify-center gap-[.75em]">
                 {Weekdays.map((day, i) => {
                     return (
-                        <div key={`Day ${Weekdays[i]}`}>
+                        <div className="relative" key={`Day ${Weekdays[i]}`}>
                             <span id={`Day ${Weekdays[i]}`}
                                 onClick={() => {
                                     handleNavClick(weeksRecipes[i], Weekdays[i]);
                                     handleClick(i);
                                 }}
-                                className={day === currentDay ? "py-[10px] weekday current hover:cursor-pointer hover:text-secondary px-2 font-[500]" : "py-[10px] weekday hover:cursor-pointer hover:text-secondary px-2 font-[500]"}>
+                                className={day === currentDay ? "day-container relative py-[10px] weekday current hover:cursor-pointer hover:text-secondary px-2 font-[500]" : "day-container relative py-[10px] weekday hover:cursor-pointer hover:text-secondary px-2 font-[500]"}>
                                 {day.toUpperCase()}
+                                
+                                {/* Bubble recipe name on hover */}
+                                <span className="days-recipe-title opacity-0 absolute left-[-150%] w-[400%] top-[40px] text-center text-[.8rem]">
+                                    <span className="text-dark bg-tertiary rounded-full py-2 px-4">
+                                        {weeksRecipes[i].name}
+                                    </span>
+                                </span>
                             </span>
                             <span className={day === "Domingo" ? 'hidden' : 'ml-[.75em]'}>|</span>
+                            
                         </div>
+                        
 
                     )
                 })}

@@ -32,7 +32,7 @@ const config: Config = {
       },
       height: {
         landingHeightDesktop: "73vh",
-      }
+      },
     },
   },
   plugins: [],

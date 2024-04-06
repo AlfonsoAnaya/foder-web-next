@@ -1,5 +1,4 @@
 import Ingredient from '../../types/ingredientd.d';
-import Recipe from '../../types/recipe.d';
 import "./RecipeDetails.css"
 import recipes from '@/app/utils/recipes';
 import Image from 'next/image';
@@ -18,7 +17,7 @@ function RecipeDetails( { recipeId }: { recipeId: string } ) {
     <section className="individual-recipe-section flex flex-col items-center">
 
       {/* GRID */}
-      <div className="individual-recipe-grid w-[100%] md:max-w-[900px] xl:max-w-[985px] px-2 md:px-4 mt-2 md:mt-4" >
+      <div className="individual-recipe-grid w-[100%] md:max-w-[900px] xl:max-w-[985px] px-2 md:px-4 mt- md:mt-12" >
 
         {/* Recipe Info */}
         <div className="recipe-title flex gap-10 flex-col justify-center items-left md:border-b-[1px] md:border-b-gray-400">
