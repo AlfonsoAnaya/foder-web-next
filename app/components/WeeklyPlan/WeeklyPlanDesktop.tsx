@@ -43,18 +43,18 @@ function WeeklyPlanDesktop(
                                     handleNavClick(weeksRecipes[i], Weekdays[i]);
                                     handleClick(i);
                                 }}
-                                className={day === currentDay ? "day-container relative py-[10px] weekday current hover:cursor-pointer hover:text-secondary px-2 font-[500]" : "day-container relative py-[10px] weekday hover:cursor-pointer hover:text-secondary px-2 font-[500]"}>
+                                className={day === currentDay ? "day-container py-[10px] weekday current hover:cursor-pointer hover:text-secondary px-2 font-[500]" : "day-container relative py-[10px] weekday hover:cursor-pointer hover:text-secondary px-2 font-[500]"}>
                                 {day.toUpperCase()}
                                 
-                                {/* Bubble recipe name on hover */}
-                                <span className="days-recipe-title opacity-0 absolute left-[-150%] w-[400%] top-[40px] text-center text-[.8rem]">
-                                    <span className="text-dark bg-tertiary rounded-full py-2 px-4">
-                                        {weeksRecipes[i].name}
-                                    </span>
+                                
+                            </span>
+                            {/* Bubble recipe name on hover */}
+                            <span className="days-recipe-title opacity-0 absolute left-[calc(-150%-.75em)] w-[400%] top-[40px] text-center text-[.8rem]">
+                                <span className="text-darker bg-tertiary rounded-full py-2 px-4">
+                                    {weeksRecipes[i].name}
                                 </span>
                             </span>
                             <span className={day === "Domingo" ? 'hidden' : 'ml-[.75em]'}>|</span>
-                            
                         </div>
                         
 

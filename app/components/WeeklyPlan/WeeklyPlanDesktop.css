@@ -19,16 +19,15 @@
     align-items: center;
 }
 
-.day-container:hover .days-recipe-title {
+.day-container:hover + .days-recipe-title {
     opacity: 1;
     transition: opacity 200ms ease;
 }
 
 .days-recipe-title {
     transition: opacity 200ms ease;
-    opacity: 0;
 }
 
-.current:hover .days-recipe-title {
-    display: none;
+.current:hover + .days-recipe-title {
+    opacity: 0;
 }
