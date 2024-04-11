@@ -71,6 +71,7 @@ function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
                         currentDay={currentDayState}
                         handleNavClick={handleNavClick}
                         Weekdays={Weekdays}
+                        isWeekVegetarian={false}
                     />
                 ) : (
                     <WeeklyPlanDesktop
