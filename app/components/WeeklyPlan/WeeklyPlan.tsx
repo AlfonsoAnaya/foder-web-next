@@ -9,11 +9,13 @@ import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../utils/Weekdays";
 import VegetarianButton from "./VegetarianButton";
+import OmnivoreButton from "./OmnivoreButton";
+import ShoppingListButton from "./ShoppingListButton";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import Link from "next/link";
-import OmnivoreButton from "./OmnivoreButton";
+
 
 interface WeeklyPlanProps {
     isWeekVegetarian: boolean;
@@ -23,7 +25,12 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
     const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
   
     useEffect(() => {
-      setCurrentNavSection('plan-actual');
+        if (isWeekVegetarian) {
+            setCurrentNavSection('plan-actual-vegetariano');
+        } else {
+            setCurrentNavSection('plan-actual');
+        }
+      
     }, []);
 
     const openSidenav = useIsSidenavOpenStore((state) => state.isSidenavOpen);
@@ -72,16 +79,11 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
 
     return (
         <>  
-            {
-            isWeekVegetarian ?
-                <Link href="/plan-semanal">
-                    <OmnivoreButton />
-                </Link>
-                :
-                <Link href="/plan-actual-vegetariano">
-                    <VegetarianButton />
-                </Link>
-            }
+            
+            <Link href="/lista-de-compras">
+                <ShoppingListButton />
+            </Link>
+                
             
             <section className="relative weekly-plan-section w-[100%] flex flex-col items-center 
             mt-0 md:mt-4">
@@ -93,6 +95,7 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
                         currentDay={currentDayState}
                         handleNavClick={handleNavClick}
                         Weekdays={Weekdays}
+                        isWeekVegetarian={isWeekVegetarian}
                     />
                 ) : (
                     <WeeklyPlanDesktop

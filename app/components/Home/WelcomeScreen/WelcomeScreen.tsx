@@ -5,7 +5,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import LandingComponent from './LandingComponent';
 import ShoppingListDemo from './ShoppingListDemo';
 import MailingList from './MailingList';
-import './WelcomeScreen.css';
+import '../../../styles/carousel.css';
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 
@@ -22,7 +22,7 @@ function WelcomeScreen() {
                 naturalSlideHeight={100}
                 totalSlides={3}
                 infinite={true}
-                isPlaying={false}
+                isPlaying={true}
                 interval={8000}
                 playDirection='forward'>
 

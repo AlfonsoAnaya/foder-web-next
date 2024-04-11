@@ -9,7 +9,7 @@
     transition: border-bottom ease-out 50ms;
 }
 
-.carousel {
+/* .carousel {
     margin: 0 auto;
     position: relative;
     max-width: 1400px;
@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .day-container:hover + .days-recipe-title {
     opacity: 1;

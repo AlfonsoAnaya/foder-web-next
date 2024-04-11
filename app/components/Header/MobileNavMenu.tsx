@@ -49,9 +49,9 @@ function MobileNavMenu(
 
                     <li
                         onClick={props.toggleMobileNav}
-                        className={`${currentNavSection === "lista-de-compras" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
-                        <Link href="/lista-de-compras">
-                            Lista de Compras
+                        className={`${currentNavSection === "plan-actual-vegetariano" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
+                        <Link href="/plan-actual-vegetariano">
+                            Plan actual veg
                         </Link>
                     </li>
 

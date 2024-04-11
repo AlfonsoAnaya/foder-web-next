@@ -4,6 +4,7 @@ import Image from "next/image";
 function WeeklyPlanCard(
   { recipeArray, planNumber }: { recipeArray: Recipe[], planNumber: number }
 ) {
+  
   return (
     <div className="weeklyplancard w-[90%] h-[80vh] md:h-[300px] flex flex-col md:flex-row gap-0 md:gap-6 bg-gray-200 hover:shadow-lg rounded-[5px] md:rounded-none">
       <div className="md:w-[25%] h-[55%] md:h-[100%] relative">

@@ -15,11 +15,6 @@ const initialIngredientsState = Object.fromEntries(
 
 
 function ShoppingList() {
-    const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
-    useEffect(() => {
-      setCurrentNavSection('lista-de-compras');
-    }, []);
-
     const [ingredientsState, setIngredientsState] = useState<{ [key: string]: Ingredient[] }>(initialIngredientsState);
     const [selectedRecipes, setSelectedRecipes] = useState<number[]>([])
     const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
