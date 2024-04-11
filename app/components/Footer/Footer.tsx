@@ -4,7 +4,7 @@ function Footer() {
 
     return (
         <footer className="w-100% h-[200px] mt-10 flex flex-col md:flex-row gap-2 md:gap-10 justify-center items-start md:items-center p-6 bg-primary text-white">
-            <div className="company-info">© PIPIÁN Inc.</div>
+            <div className="font-siteTitle company-info">© PIPIÁN Inc.</div>
             <div className="social-media">
                 <Link href="https://instagram.com/somospipian">
                         <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" className="fill-[#fffcfb] hover:fill-dark" >
@@ -12,7 +12,7 @@ function Footer() {
                         </svg>
                 </Link>
             </div>
-            <div className="footer-links flex flex-col md:flex-row gap-2 md:gap-6">
+            <div className="font-siteTitle footer-links flex flex-col md:flex-row gap-2 md:gap-6">
                 <Link href="https://pipian.vercel.app/" className="contact hover:text-dark underline">Contacto</Link>
                 <Link href="https://pipian.vercel.app/" className="terms-of-use hover:text-dark underline">Términos y Condiciones</Link>
                 <Link href="https://pipian.vercel.app/" className="privacy-policy hover:text-dark underline">Política de Privacidad</Link>

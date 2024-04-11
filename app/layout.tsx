@@ -28,6 +28,9 @@ const tiltNeon = Tilt_Neon({
 export const metadata: Metadata = {
   title: "Pipián Planes Semanales",
   description: "Crea automáticamente planes de comida semanales",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -35,7 +38,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log("mounting layout")
   return (
     // <StoreProvider
     //   // selectedDay={3}
@@ -43,6 +45,7 @@ export default function RootLayout({
     // >
       <html lang="en">
         <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white`}>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
           <Header />
           {children}
           <Footer />

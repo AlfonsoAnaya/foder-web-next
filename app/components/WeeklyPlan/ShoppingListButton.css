@@ -1,0 +1,13 @@
+.btn-vegetarian-toggle:hover svg,
+.btn-text:hover + svg{
+    fill: var(--color-white)
+}
+.btn-vegetarian-toggle:hover + span{
+    opacity: 1;
+    
+}
+.btn-vegetarian-toggle,
+.btn-vegetarian-toggle + span,
+.btn-vegetarian-toggle svg {
+    transition: all ease-in 300ms;
+}
