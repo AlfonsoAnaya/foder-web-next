@@ -7,7 +7,7 @@ function MailingList() {
                     <h2 className="text-[1.5rem]  md:text-[2.25rem] text-primary font-[600]">
                         No te pierdas ninguno de nuestros planes.
                     </h2>
-                    <h3 className="recipe-title text-[1rem] md:text-[1.5rem] text-dark font-serif font-[600]">
+                    <h3 className="recipe-title text-[1rem] md:text-[1.5rem] text-dark   font-[600]">
                         Dejanos tu mail y recibirás el plan y la lista de compras directo en tu correo                    </h3>
                     <div>
                         <input

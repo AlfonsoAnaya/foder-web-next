@@ -56,7 +56,7 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
             href={`/plan-semanal`}
             onClick={()=>handleClick(todayInt, true)}
           >
-            <h3 className="recipe-title underline text-[1.5rem] md:text-[1.75rem] text-primary font-serif font-[600]">
+            <h3 className="recipe-title underline text-[1.5rem] md:text-[1.75rem] text-primary  font-[600]">
               {recipe.name}
             </h3>
           </Link>

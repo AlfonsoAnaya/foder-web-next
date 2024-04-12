@@ -21,7 +21,7 @@ function ShoppingListDemo() {
                     <h2 className="hidden md:block text-[1.5rem] md:text-[2.25rem] text-primary font-[600]">
                         Crea listas de compras interactivas en unos cuantos clicks
                     </h2>
-                    <h3 className="recipe-title text-[.9rem] md:text-[1.5rem] text-dark font-serif font-[500]">
+                    <h3 className="recipe-title text-[.9rem] md:text-[1.5rem] text-dark   font-[500]">
                         Selecciona tus recetas y ordenamos los ingredientes automáticamente
                     </h3>
                     <p className="welcome-text text-dark text-[.9rem] font-[500] md:text-[1.15rem]">

@@ -8,7 +8,8 @@ import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore
 function Header() {
     const toggleMobileNav = () => {
         const navToggle = document.querySelector('.header-nav');
-        navToggle?.classList.toggle("nav-open");
+        if (navToggle?.classList.contains("nav-open")) navToggle?.classList.remove("nav-open")
+        else {navToggle?.classList.add("nav-open")}
     }
 
     const closeMobileNav = () => {
@@ -37,7 +38,7 @@ function Header() {
                             }}>
                             <Link 
                                 href="/"
-                                onClick={toggleMobileNav}
+                                onClick={closeMobileNav}
                             >
                                 Pipián
                             </Link>

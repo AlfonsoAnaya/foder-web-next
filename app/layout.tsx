@@ -44,7 +44,7 @@ export default function RootLayout({
     //   // isSidenavOpen={false}
     // >
       <html lang="en">
-        <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white`}>
+        <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white font-sans`}>
         <link rel="icon" href="/favicon.ico" sizes="any" />
           <Header />
           {children}

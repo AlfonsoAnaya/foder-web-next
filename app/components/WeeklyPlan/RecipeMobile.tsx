@@ -31,7 +31,7 @@ function RecipeMobile({ recipe }: { recipe: Recipe }) {
             text-[1.75em] md:text-[2.5em]">
             {recipe.name}
           </h2>
-          <h3 className="recipe-title   text-secondary font-serif font-[600]
+          <h3 className="recipe-title   text-secondary   font-[600]
             text-[1-15rem] md:text-[1.75rem]">
             {recipe.tagline}
           </h3>

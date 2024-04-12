@@ -21,7 +21,7 @@ function RecipeDesktop({ propsRecipe }: IndividualRecipeProps) {
           <h2 className="text-[1.35rem] md:text-[2.5rem] text-primary font-[600] font-sans">
             {recipe.name}
           </h2>
-          <h3 className="recipe-title  text-[1rem] md:text-[1.75rem] text-secondary font-serif font-[600]">
+          <h3 className="recipe-title  text-[1rem] md:text-[1.75rem] text-secondary   font-[600]">
             {recipe.tagline}
           </h3>
           <div className="small-info font-sans flex flex-wrap flex-row gap-4 text-darker text-[.80rem] font-[500] my-1

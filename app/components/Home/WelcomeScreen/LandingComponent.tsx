@@ -20,7 +20,7 @@ function LandingComponent() {
                     <h2 className="text-[1.25rem] md:text-[2.25rem] text-primary font-[600]">
                         ¿Qué vas a comer hoy? 
                     </h2>
-                    <h3 className="recipe-title text-[1rem] md:text-[1.5rem] text-dark font-serif font-[600]">
+                    <h3 className="recipe-title text-[1rem] md:text-[1.5rem] text-dark   font-[600]">
                     Nuestros planes semanales tienen la respuesta
                     </h3>
                     <p className="welcome-text text-dark text-[.9rem] md:text-[1.15rem]">
