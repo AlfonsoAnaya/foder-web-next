@@ -5,9 +5,9 @@ interface MethodProps {
     recipe: Recipe
 }
 
-function Method({recipe}: MethodProps) {
+function Method({ recipe }: MethodProps) {
     return (
-        <div className="font-sans leading-8 recipe-method flex flex-col justify-start items-left text-[18px]">
+        <div className="font-sans leading-8  recipe-method flex flex-col gap-4 justify-start items-left text-[18px]">
             <h3 className="font-[600] mb-[.5rem] underline 
             text-[1.1rem] md:text-[1.5rem] 
             mt-2 md:mt-0">Instrucciones</h3>
@@ -21,9 +21,13 @@ function Method({recipe}: MethodProps) {
                     )
                 })}
             </div>
-            <TipBox 
-                recipe={recipe}
-            />
+            {recipe.tips ?
+                <TipBox
+                    recipe={recipe}
+                />
+                : ''
+            }
+
         </div>
     )
 }

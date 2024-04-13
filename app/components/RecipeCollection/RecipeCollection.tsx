@@ -52,7 +52,7 @@ function RecipeCollection() {
 
   return (
     <section className="todays-recipe-section flex flex-col items-center md:my-[1rem]">
-      <h3 className="text-[2rem] text-primary font-[600] pt-4 pb-8">Todas nuestras ({currentRecipes.length}) recetas</h3>
+      <h3 className="text-[2rem] text-primary font-[600] pt-4 pb-8">Todas nuestras recetas</h3>
       <div className="flex gap-4 justify-center items-center">
         <FilterButton 
           title={"vegetariano"}
