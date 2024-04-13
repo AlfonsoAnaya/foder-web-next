@@ -20,8 +20,13 @@ function ShoppingList({recipes} : ShoppingListProps) {
     );
     
     const [ingredientsState, setIngredientsState] = useState<{ [key: string]: Ingredient[] }>(initialIngredientsState);
-    const [selectedRecipes, setSelectedRecipes] = useState<number[]>([])
+    const [selectedRecipes, setSelectedRecipes] = useState<number[]>([]);
     const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
+
+    const selectedRecipesLocalStorage = localStorage.getItem("recipes") ? 
+    localStorage.getItem("recipes") :
+    localStorage.setItem("recipes", "[1,2,3]");
+
 
     const weekDays = [
         "1",
@@ -108,7 +113,7 @@ function ShoppingList({recipes} : ShoppingListProps) {
             newState.splice(newState.indexOf(dayNum), 1);
             setSelectedRecipes(newState);
         }
-
+        console.log(selectedRecipes)
         e.currentTarget.classList.toggle("selected-day")
     };
 
