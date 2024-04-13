@@ -8,8 +8,6 @@ import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../utils/Weekdays";
-import VegetarianButton from "./VegetarianButton";
-import OmnivoreButton from "./OmnivoreButton";
 import ShoppingListButton from "./ShoppingListButton";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
@@ -80,7 +78,9 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
     return (
         <>  
             
-            <Link href="/lista-de-compras">
+            <Link href={ isWeekVegetarian ? 
+                "/plan-actual-vegetariano/lista-de-compras": 
+                "/plan-actual/lista-de-compras"}>
                 <ShoppingListButton />
             </Link>
                 

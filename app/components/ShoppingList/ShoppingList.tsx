@@ -1,24 +1,27 @@
 'use client'
 import { useState, useEffect } from "react";
+import Recipe from "@/app/types/recipe.d";
 import Ingredient from "../../types/ingredientd.d";
-import currentWeekRecipes from "../../utils/CurrentWeekRecipes";
 import RecipeCategories from "../../utils/RecipeCategories";
-import "./ShoppingList.css";
 import ShoppingListCard from "./ShoppingListWeeklyCard";
-import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
-
-const { IngredientCategories } = RecipeCategories;
-
-const initialIngredientsState = Object.fromEntries(
-    IngredientCategories.map((category: string) => [category, []])
-);
+import "./ShoppingList.css";
 
 
-function ShoppingList() {
+interface ShoppingListProps {
+    recipes: Recipe[]
+}
+
+function ShoppingList({recipes} : ShoppingListProps) {
+
+    const { IngredientCategories } = RecipeCategories;
+
+    const initialIngredientsState = Object.fromEntries(
+        IngredientCategories.map((category: string) => [category, []])
+    );
+    
     const [ingredientsState, setIngredientsState] = useState<{ [key: string]: Ingredient[] }>(initialIngredientsState);
     const [selectedRecipes, setSelectedRecipes] = useState<number[]>([])
     const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
-    const weeklyRecipes = currentWeekRecipes;
 
     const weekDays = [
         "1",
@@ -45,7 +48,7 @@ function ShoppingList() {
         setListIngredients([]);
         setListIngredients(prevListIngredients => {
             let updatedIngredients = [...prevListIngredients]; // Create a copy of prevListIngredients
-            let updatedWeeklyRecipes = JSON.parse(JSON.stringify(weeklyRecipes)); // Create a deep copy of weeklyRecipes
+            let updatedWeeklyRecipes = JSON.parse(JSON.stringify(recipes)); // Create a deep copy of weeklyRecipes
 
             selectedRecipes.forEach(i => {
                 updatedWeeklyRecipes[i].ingredients.forEach((ingredient: Ingredient) => {
@@ -76,7 +79,7 @@ function ShoppingList() {
             });
             return updatedIngredients; // Return the updated array
         });
-    }, [selectedRecipes, weeklyRecipes]);
+    }, [selectedRecipes, recipes]);
     
 
     // UPDATE THE STATE HOLDING THE INGREDIENTS BY CATEGORY EACH TIME THE LIST OF INGREDIENTS CHANGE
@@ -158,7 +161,7 @@ function ShoppingList() {
                         </h3>
                         : ''}
                     <div className="w-[100%] flex flex-col gap-[.5em]">
-                        {weeklyRecipes.map((recipe, i) => {
+                        {recipes.map((recipe, i) => {
                             return (
                                 <div key={`Day ${i}`} id={`Day ${i + 1}`}>
                                     <div

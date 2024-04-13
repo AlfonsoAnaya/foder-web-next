@@ -48,7 +48,7 @@ function RecipeCarousel({ recipes }: CarouselProps) {
   return (
 
     <div className="carousel-container relative bg-white md:bg-gray-100">
-      <Link href={`/plan-semanal`}>
+      <Link href={`/plan-actual`}>
         <h3 className="flex justify-center text-[2rem]  text-dark hover:text-secondary font-[600] pt-4 pb-8 md:py-8 bg-dark-10 underline decoration-secondary">
           El plan de esta semana
         </h3>
@@ -67,7 +67,7 @@ function RecipeCarousel({ recipes }: CarouselProps) {
               <Slide index={i} key={recipe.name + i}
                 onClick={()=>handleClick(i,true)}>
                 <Link
-                  href={`/plan-semanal`}
+                  href={`/plan-actual`}
 
                 // state={{ day: i, openSidenav: true }}
                 >

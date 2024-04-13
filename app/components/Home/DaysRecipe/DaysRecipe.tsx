@@ -31,7 +31,7 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
 
         <div className="relative recipe-img w-[95%] md:max-w-[50%] max-h-[650px] order-2 md:order-1">
           <Link
-            href={`/plan-semanal`}
+            href={`/plan-actual`}
             onClick={()=>handleClick(todayInt, true)}
           >
             <Image
@@ -53,7 +53,7 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
             La receta del día
           </h2>
           <Link
-            href={`/plan-semanal`}
+            href={`/plan-actual`}
             onClick={()=>handleClick(todayInt, true)}
           >
             <h3 className="recipe-title underline text-[1.5rem] md:text-[1.75rem] text-primary  font-[600]">

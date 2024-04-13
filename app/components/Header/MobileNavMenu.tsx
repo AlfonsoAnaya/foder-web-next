@@ -1,5 +1,3 @@
-'use client'
-import { useState } from "react";
 import Link from "next/link";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
@@ -40,7 +38,7 @@ function MobileNavMenu(
                     <li
                         onClick={props.toggleMobileNav}
                         className={`${currentNavSection === "plan-actual" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
-                        <Link href="/plan-semanal">
+                        <Link href="/plan-actual">
                             Plan Actual
                         </Link>
                         
