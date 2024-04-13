@@ -104,6 +104,7 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
                         handleNavClick={handleNavClick}
                         Weekdays={Weekdays}
                         currentDay={currentDayState}
+                        isWeekVegetarian={isWeekVegetarian}
                     />
                 )}
             </section>

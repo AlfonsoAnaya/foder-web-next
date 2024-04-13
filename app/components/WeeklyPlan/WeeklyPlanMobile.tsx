@@ -65,6 +65,7 @@ function WeeklyPlanMobile(
 
                             <RecipeMobile
                                 recipe={currentRecipe}
+                                isWeekVegetarian={isWeekVegetarian}
                             />
                         </article>
                     </div>

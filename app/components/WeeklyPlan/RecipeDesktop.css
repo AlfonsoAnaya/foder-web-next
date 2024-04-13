@@ -68,13 +68,12 @@ details[open] + div.ingredients-content {
     font-size: 1rem;
     transition: all 200ms 400ms ease-out;
     text-decoration: none;
-    rotate: 0;
+    transform:rotate(180deg);
     width: auto;
     text-decoration: none !important;
-    margin-left: .5em;
 }
 
 details[open] .ingredients-arrow {
-    rotate: 90deg;
+    transform: rotate(0deg);
     transition: all 200ms ease-out;
 }

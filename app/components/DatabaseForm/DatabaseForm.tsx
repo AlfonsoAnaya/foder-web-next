@@ -24,9 +24,11 @@ function DatabaseForm() {
     method: [],
     tips: [],
     isVegan: false,
+    hasVeganOption: false,
     isDairyFree: false,
     isVegetarian: false,
     isGlutenFree: false,
+    hasGlutenFreeOption: false,
     isSpicy: false,
     isQuickAndEasy: false,
     isBudgetFriendly: false,
@@ -460,6 +462,32 @@ function DatabaseForm() {
             </div>
 
             <div className="py-2 flex border-b-[1px] border-b-gray-500 gap-4 justify-center">
+            <span className="w-[30%] min-w-[155px] block">Has Vegan Option 🥦:</span>
+              <label className="true-label">
+
+                <input
+                  type="radio"
+                  name="hasVeganOption"
+                  value="true"
+                  checked={formData.hasVeganOption}
+                  onChange={handleChange}
+                />
+                True
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="hasVeganOption"
+                  value="false"
+                  checked={!formData.hasVeganOption}
+                  onChange={handleChange}
+                />
+                False
+              </label>
+            </div>
+
+            <div className="py-2 flex border-b-[1px] border-b-gray-500 gap-4 justify-center">
               <span className="w-[30%] min-w-[155px] block">Dairy Free 🥛⛔:</span>
               <label className="true-label">
 
@@ -531,6 +559,32 @@ function DatabaseForm() {
                   name="isGlutenFree"
                   value="false"
                   checked={!formData.isGlutenFree}
+                  onChange={handleChange}
+                />
+                False
+              </label>
+            </div>
+
+            <div className="py-2 flex border-b-[1px] border-b-gray-500 gap-4 justify-center">
+              <span className="w-[30%] min-w-[155px] block">Has Gluten Free Option:</span>
+              <label className="true-label">
+
+                <input
+                  type="radio"
+                  name="hasGlutenFreeOption"
+                  value="true"
+                  checked={formData.hasGlutenFreeOption}
+                  onChange={handleChange}
+                />
+                True
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="hasGlutenFreeOption"
+                  value="false"
+                  checked={!formData.hasGlutenFreeOption}
                   onChange={handleChange}
                 />
                 False
@@ -1222,9 +1276,11 @@ function DatabaseForm() {
               ''}
             {formData.tips.length > 0 && <br />}
             isVegan: {formData.isVegan.toString()},<br />
+            hasVeganOption: {formData.hasVeganOption.toString()},<br />
             isDairyFree: {formData.isDairyFree.toString()},<br />
             isVegetarian: {formData.isVegetarian.toString()},<br />
             isGlutenFree: {formData.isGlutenFree.toString()},<br />
+            hasGlutenFreeOption: {formData.hasGlutenFreeOption.toString()},<br />
             isSpicy: {formData.isSpicy.toString()},<br />
             isQuickAndEasy: {formData.isQuickAndEasy.toString()},<br />
             isBudgetFriendly: {formData.isBudgetFriendly.toString()},<br />

@@ -1,13 +1,20 @@
-.btn-vegetarian-toggle:hover svg,
-.btn-text:hover + svg{
-    fill: var(--color-white)
+.btn-toggle:hover svg {
+    fill: var(--color-secondary);
 }
-.btn-vegetarian-toggle:hover + span{
-    opacity: 1;
-    
+.btn-toggle:hover .btn-container {
+    background-color: var(--color-white);
 }
-.btn-vegetarian-toggle,
-.btn-vegetarian-toggle + span,
-.btn-vegetarian-toggle svg {
-    transition: all ease-in 300ms;
+.btn-text {
+    text-decoration: underline transparent;
+}
+.btn-toggle:hover .btn-text {
+    text-decoration: underline;
+}
+
+
+.btn-toggle,
+.btn-toggle + span,
+.btn-container,
+.btn-toggle:hover .btn-text {
+    transition: all ease-in 250ms;
 }

@@ -12,6 +12,7 @@ interface MyComponentProps {
     handleNavClick: any;
     Weekdays: string[];
     currentDay: string;
+    isWeekVegetarian: boolean;
 }
 
 
@@ -20,7 +21,8 @@ function WeeklyPlanDesktop(
         currentRecipe,
         handleNavClick,
         Weekdays,
-        currentDay
+        currentDay,
+        isWeekVegetarian
     }: MyComponentProps) {
 
     const updateDay = useCurrentDayStore((state) => state.updateDay);
@@ -66,7 +68,8 @@ function WeeklyPlanDesktop(
             <article className="pl-2  static translate-x-0 bg-transparent overflow-y-scroll md:overflow-auto"
             >
                 <RecipeDesktop
-                    propsRecipe={currentRecipe}
+                    recipe={currentRecipe}
+                    isWeekVegetarian={isWeekVegetarian}
                 />
             </article>
 

@@ -9,10 +9,10 @@ function WeeklyPlanCard(
 ) {
 
   return (
-    <div className="w-[100%] h-[85vh] flex flex-col gap-0 md:gap-6 bg-gray-200 hover:shadow-lg rounded-[5px] md:rounded-none">
-      <div className="w-[100%] h-[60%]">
+    <div className="w-[100%] h-[auto] flex flex-col gap-0 md:gap-6 bg-gray-200 hover:shadow-lg rounded-[5px] md:rounded-none">
+      <div className="w-[100%]">
         <CarouselProvider
-          className="flex flex-col h-[100%] w-[100%] items-center relative"
+          className="flex flex-col w-[100%] max-[350px]:max-h-[300px] max-h-[350px] items-center relative"
           naturalSlideWidth={100}
           naturalSlideHeight={125}
           totalSlides={recipeArray.length}
@@ -21,12 +21,12 @@ function WeeklyPlanCard(
           isPlaying={true}
           interval={3000}
         >
-          <Slider className="w-[100%] h-auto">
+          <Slider className="w-[100%]">
             {recipeArray.map((recipe, i) => {
               return (
                 <Slide index={i} key={recipe.name + i}>
                   <Image
-                    className="block object-cover w-[100%] h-[100%] object-center rounded-t-[5px] md:rounded-t-[0px]"
+                    className="block object-cover object-center w-[100%] max-[350px]:max-h-[300px] max-h-[350px] border-2 rounded-t-[5px] md:rounded-t-[0px]"
                     src={`/images/recipes/${recipe.img}`}
                     // alt={recipe.imgAlt} 
                     alt="un plato de comida"
@@ -43,7 +43,8 @@ function WeeklyPlanCard(
         </CarouselProvider>
       </div>
 
-      <div className="flex flex-col gap-2 h-[40%] md:h-[100%] justify-center px-4 md:px-0 text-[.95rem] md:text-[1.25rem] items-start text-primary font-[500] md:font-[600]">
+      {/* Recipe List */}
+      <div className="flex flex-col md:gap-2 h-[40%] min-h-[250px] md:h-[100%] justify-between md:justify-center p-3 md:px-0 text-[.95rem] md:text-[1.25rem] items-start text-primary font-[500] md:font-[600]">
         {recipeArray.map((recipe, i: number) => {
           return (
             <h3

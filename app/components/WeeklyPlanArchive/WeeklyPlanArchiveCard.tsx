@@ -1,8 +1,13 @@
 import Recipe from "@/app/types/recipe.d";
 import Image from "next/image";
 
-function WeeklyPlanCard(
-  { recipeArray, planNumber }: { recipeArray: Recipe[], planNumber: number }
+interface WeeklyPlanArchiveCardProps {
+  recipeArray: Recipe[]
+  planNumber: number
+}
+
+function WeeklyPlanArchiveCard(
+  { recipeArray, planNumber }: WeeklyPlanArchiveCardProps
 ) {
   
   return (
@@ -16,8 +21,9 @@ function WeeklyPlanCard(
           width={666}
           height={848}
         />
-        <div className="absolute top-[10px] left-[10px] bg-tertiary py-[.4em] px-[1.4em] rounded-full font-sans text-darker text-[1.15rem] font-[600]">
-          Plan #{planNumber + 1}
+        <div className="absolute flex justify-center items-center w-[65px] h-[65px] top-[10px] left-[10px] bg-tertiary rounded-full font-sans text-darker text-[1.35rem] font-[600]">
+          #{planNumber + 1}
+          <div className=" flex justify-center items-center w-[35px] h-[35px] absolute bottom-[-10px] right-[-10px] rounded-full text-[.8rem] bg-vegetarianGreen text-white font-[700]">VEG</div>
         </div>
       </div>
 
@@ -33,4 +39,4 @@ function WeeklyPlanCard(
   );
 }
 
-export default WeeklyPlanCard;
+export default WeeklyPlanArchiveCard;

@@ -21,9 +21,11 @@ interface Recipe {
     method: string[];
     tips?: string[];
     isVegan: boolean;
+    hasVeganOption: boolean;
     isDairyFree: boolean;
     isVegetarian: boolean;
     isGlutenFree: boolean;
+    hasGlutenFreeOption: boolean;
     isSpicy: boolean;
     isQuickAndEasy: boolean;
     isBudgetFriendly: boolean;

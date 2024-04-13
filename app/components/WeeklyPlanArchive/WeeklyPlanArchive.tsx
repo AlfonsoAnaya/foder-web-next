@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from "react";
 import Link from "next/link";
-import WeeklyPlanCard from "./WeeklyPlanCard";
+import WeeklyPlanArchiveCard from "./WeeklyPlanArchiveCard";
 import WeeklyPlansArchive from "@/app/utils/WeeklyPlansArchive";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
@@ -24,7 +24,7 @@ function WeeklyPlanArchive() {
             href={`/acervo-planes-semanales/${i}`}
             className="w-[100%] flex justify-center items-center"
           >
-          <WeeklyPlanCard
+          <WeeklyPlanArchiveCard
             recipeArray={plan}
             planNumber={i}
           />
