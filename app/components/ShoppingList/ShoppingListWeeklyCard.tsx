@@ -1,7 +1,11 @@
 import Recipe from "../../types/recipe.d";
 
+interface ShoppingListCardProps {
+    recipe: Recipe
+}
+
 function ShoppingListCard(
-    { recipe, weekDay }: { recipe: Recipe; weekDay: string }
+    { recipe }: ShoppingListCardProps
 ) {
     return (
         <div

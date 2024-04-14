@@ -11,32 +11,33 @@ interface ShoppingListProps {
     recipes: Recipe[]
 }
 
-function ShoppingList({recipes} : ShoppingListProps) {
+function ShoppingList({ recipes }: ShoppingListProps) {
 
     const { IngredientCategories } = RecipeCategories;
 
     const initialIngredientsState = Object.fromEntries(
         IngredientCategories.map((category: string) => [category, []])
     );
-    
+
     const [ingredientsState, setIngredientsState] = useState<{ [key: string]: Ingredient[] }>(initialIngredientsState);
     const [selectedRecipes, setSelectedRecipes] = useState<number[]>([]);
     const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
+    const [clicks, setClicks] = useState(0);
 
-    const selectedRecipesLocalStorage = localStorage.getItem("recipes") ? 
-    localStorage.getItem("recipes") :
-    localStorage.setItem("recipes", "[1,2,3]");
+    //initialize local storage
+    useEffect(() => {
+        const localStorageRecipes = localStorage.getItem("recipes");
+        if (localStorageRecipes !== null) {
+            setSelectedRecipes(JSON.parse(localStorageRecipes));
+        } else {
+            localStorage.setItem("recipes", JSON.stringify([]));
+        }
+    }, []);
 
-
-    const weekDays = [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-    ];
+    //update local storage on selected changes
+    useEffect(() => {
+        if (clicks > 0) localStorage.setItem("recipes", JSON.stringify(selectedRecipes))
+    }, [clicks]);
 
     const updateIngredientsState = (category: string, newIngredient: Ingredient) => {
         setIngredientsState((prevState) => {
@@ -47,6 +48,14 @@ function ShoppingList({recipes} : ShoppingListProps) {
             };
         });
     };
+
+    // UPDATE THE STATE HOLDING THE INGREDIENTS BY CATEGORY EACH TIME THE LIST OF INGREDIENTS CHANGE
+    useEffect(() => {
+        setIngredientsState(initialIngredientsState);
+        listIngredients.forEach((ingredient) => {
+            updateIngredientsState(ingredient.category, ingredient)
+        })
+    }, [listIngredients]);
 
     // UPDATE THE LIST OF INGREDIENTS EACH TIME THE SELECTED RECIPES CHANGE
     useEffect(() => {
@@ -85,15 +94,6 @@ function ShoppingList({recipes} : ShoppingListProps) {
             return updatedIngredients; // Return the updated array
         });
     }, [selectedRecipes, recipes]);
-    
-
-    // UPDATE THE STATE HOLDING THE INGREDIENTS BY CATEGORY EACH TIME THE LIST OF INGREDIENTS CHANGE
-    useEffect(() => {
-        setIngredientsState(initialIngredientsState);
-        listIngredients.forEach((ingredient) => {
-            updateIngredientsState(ingredient.category, ingredient)
-        })
-    }, [listIngredients])
 
     // TOGGLE STRIKETHROUGH
     const toggleStrikethrough = (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
@@ -103,18 +103,15 @@ function ShoppingList({recipes} : ShoppingListProps) {
     }
 
     // ADD AND DELETE RECIPES FROM SELECTION
-    function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>, day: string) {
-        const dayNum = parseInt(day) - 1;
-
-        if (!selectedRecipes.includes(dayNum)) {
-            setSelectedRecipes((prevState) => [...prevState, dayNum]);
+    function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>, day: number) {
+        setClicks(prevState => prevState + 1)
+        if (!selectedRecipes.includes(day)) {
+            setSelectedRecipes((prevState) => [...prevState, day]);
         } else {
             let newState = [...selectedRecipes];
-            newState.splice(newState.indexOf(dayNum), 1);
+            newState.splice(newState.indexOf(day), 1);
             setSelectedRecipes(newState);
         }
-        console.log(selectedRecipes)
-        e.currentTarget.classList.toggle("selected-day")
     };
 
     // boolean state to store whether the viewport is mobile
@@ -125,13 +122,10 @@ function ShoppingList({recipes} : ShoppingListProps) {
         const handleResize = () => {
             setIsViewportMobile(window.innerWidth < 768);
         };
-
         // Initial check on component mount
         handleResize();
-
         // Event listener for window resize
         window.addEventListener('resize', handleResize);
-
         // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -170,15 +164,14 @@ function ShoppingList({recipes} : ShoppingListProps) {
                             return (
                                 <div key={`Day ${i}`} id={`Day ${i + 1}`}>
                                     <div
-                                        className={`border-b-[1px] border-b-gray-500 flex flex-col`}
+                                        className={`border-b-[1px] border-b-gray-500 flex flex-col hover:cursor-pointer`}
                                     >
                                         <div
-                                            className="hover:cursor-pointer"
-                                            onClick={(e) => handleClick(e, weekDays[i])}
+                                            className={selectedRecipes.includes(i) ? "selected-day" : ""}
+                                            onClick={(e) => handleClick(e, i)}
                                         >
                                             <ShoppingListCard
                                                 recipe={recipe}
-                                                weekDay={weekDays[i]}
                                             />
                                         </div>
                                     </div>
