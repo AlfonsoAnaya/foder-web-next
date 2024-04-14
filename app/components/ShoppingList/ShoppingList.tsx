@@ -9,9 +9,10 @@ import "./ShoppingList.css";
 
 interface ShoppingListProps {
     recipes: Recipe[]
+    isWeekVegetarian: boolean
 }
 
-function ShoppingList({ recipes }: ShoppingListProps) {
+function ShoppingList({ recipes, isWeekVegetarian }: ShoppingListProps) {
 
     const { IngredientCategories } = RecipeCategories;
 
@@ -22,21 +23,22 @@ function ShoppingList({ recipes }: ShoppingListProps) {
     const [ingredientsState, setIngredientsState] = useState<{ [key: string]: Ingredient[] }>(initialIngredientsState);
     const [selectedRecipes, setSelectedRecipes] = useState<number[]>([]);
     const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
+    const localStorageKey = isWeekVegetarian ? "recipesVegetarian" : "recipesOmnivore";
     const [clicks, setClicks] = useState(0);
 
     //initialize local storage
     useEffect(() => {
-        const localStorageRecipes = localStorage.getItem("recipes");
+        const localStorageRecipes = localStorage.getItem(localStorageKey);
         if (localStorageRecipes !== null) {
             setSelectedRecipes(JSON.parse(localStorageRecipes));
         } else {
-            localStorage.setItem("recipes", JSON.stringify([]));
+            localStorage.setItem(localStorageKey, JSON.stringify([]));
         }
     }, []);
 
     //update local storage on selected changes
     useEffect(() => {
-        if (clicks > 0) localStorage.setItem("recipes", JSON.stringify(selectedRecipes))
+        if (clicks > 0) localStorage.setItem(localStorageKey, JSON.stringify(selectedRecipes))
     }, [clicks]);
 
     const updateIngredientsState = (category: string, newIngredient: Ingredient) => {

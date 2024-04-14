@@ -14,6 +14,7 @@ function ShoppingListPage() {
         <main className="flex flex-col font-sans w-[100%]">
             <ShoppingList 
                 recipes={currentWeekRecipes}
+                isWeekVegetarian={false}
             />
         </main>
 
