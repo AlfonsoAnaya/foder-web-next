@@ -20,7 +20,7 @@ function WelcomeScreen() {
             <CarouselProvider
                 naturalSlideWidth={100}
                 naturalSlideHeight={100}
-                totalSlides={3}
+                totalSlides={2}
                 infinite={true}
                 isPlaying={true}
                 interval={8000}
@@ -33,9 +33,9 @@ function WelcomeScreen() {
                     <Slide index={1}>
                         <ShoppingListDemo />
                     </Slide>
-                    <Slide index={2}>
+                    {/* <Slide index={2}>
                         <MailingList />
-                    </Slide>
+                    </Slide> */}
                 </Slider>
 
                 <ButtonBack className="hidden md:flex hidden-content absolute justify-center items-center left-[10px] top-[50%]  w-[50px] h-[50px] rounded-full bg-dark">
