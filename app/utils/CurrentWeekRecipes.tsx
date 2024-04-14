@@ -7,8 +7,8 @@ const currentWeekRecipesId = [
     3,
     4,
     5,
-    10,
-    7
+    7,
+    10
 ]
 
 const currentWeekRecipes: Recipe[] = [];

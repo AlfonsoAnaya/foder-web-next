@@ -27,6 +27,7 @@ function WeeklyPlanArchive() {
           <WeeklyPlanArchiveCard
             recipeArray={plan}
             planNumber={i}
+            isWeekVegetarian={i % 2 === 1}
           />
           </Link>
         )})}

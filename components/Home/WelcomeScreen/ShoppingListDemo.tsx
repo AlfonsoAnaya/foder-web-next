@@ -25,7 +25,7 @@ function ShoppingListDemo() {
                         Selecciona tus recetas y ordenamos los ingredientes automáticamente
                     </h3>
                     <p className="welcome-text text-dark text-[.9rem] font-[500] md:text-[1.15rem]">
-                        Hazte usuario y guarda tus listas de compras
+                        Recordamos tu selección de recetas incluso si cierras tu explorador.
                     </p>
                 </div>
             </div>

@@ -19,7 +19,7 @@ function IngredientList({ recipe, isWeekVegetarian }: IngredientListProps) {
             mt-2 md:mt-0">
           <span className="ingredients-span items-center flex">Ingredientes</span>
           <span className="ingredients-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" className="self-start" fill="none" viewBox="0 0 24 24"><path stroke="rgb(16, 15, 15)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9 6 6 6-6" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" className="self-start" fill="none" viewBox="0 0 24 24"><path stroke="rgb(16, 15, 15)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m6 9 6 6 6-6" /></svg>
           </span>
         </summary>
       </details>

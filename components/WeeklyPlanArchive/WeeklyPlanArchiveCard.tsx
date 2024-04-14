@@ -4,12 +4,13 @@ import Image from "next/image";
 interface WeeklyPlanArchiveCardProps {
   recipeArray: Recipe[]
   planNumber: number
+  isWeekVegetarian: boolean
 }
 
 function WeeklyPlanArchiveCard(
-  { recipeArray, planNumber }: WeeklyPlanArchiveCardProps
+  { recipeArray, planNumber, isWeekVegetarian }: WeeklyPlanArchiveCardProps
 ) {
-  
+
   return (
     <div className="weeklyplancard w-[90%] h-[80vh] md:h-[300px] flex flex-col md:flex-row gap-0 md:gap-6 bg-gray-200 hover:shadow-lg rounded-[5px] md:rounded-none">
       <div className="md:w-[25%] h-[55%] md:h-[100%] relative">
@@ -22,8 +23,14 @@ function WeeklyPlanArchiveCard(
           height={848}
         />
         <div className="absolute flex justify-center items-center w-[65px] h-[65px] top-[10px] left-[10px] bg-tertiary rounded-full font-sans text-darker text-[1.35rem] font-[600]">
-          #{planNumber + 1}
-          <div className=" flex justify-center items-center w-[35px] h-[35px] absolute bottom-[-10px] right-[-10px] rounded-full text-[.8rem] bg-vegetarianGreen text-white font-[700]">VEG</div>
+          #{planNumber%2===0? + planNumber + 1 : Math.floor(planNumber/2)+1}
+          {
+            isWeekVegetarian ?
+              <div className=" flex justify-center items-center w-[35px] h-[35px] absolute bottom-[-10px] right-[-10px] rounded-full text-[.8rem] bg-vegetarianGreen text-white font-[700]">
+                VEG
+              </div>
+              : ''
+          }
         </div>
       </div>
 

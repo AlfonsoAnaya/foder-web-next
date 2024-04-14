@@ -20,7 +20,6 @@ function RecipeCollection() {
 
 
   useEffect(() => {
-    console.log(filters)
     if (filters.length === 0) {
       setCurrentRecipes(recipes)
     } else {
