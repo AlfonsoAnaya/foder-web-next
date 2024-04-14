@@ -1,5 +1,5 @@
 import recipes from "./recipes";
-import Recipe from "../types/recipe.d";
+import Recipe from "../../types/recipe.d";
 
 const currentWeekRecipesId = [
     1,

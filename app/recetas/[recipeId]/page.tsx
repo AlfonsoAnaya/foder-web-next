@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 
 const RecipeDetails = dynamic(
-    () => import("../../components/RecipeDetails/RecipeDetails"),
+    () => import("../../../components/RecipeDetails/RecipeDetails"),
     {
         ssr: false,
     }

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 
 const WeeklyPlanForArchive = dynamic(
-    () => import("../../components/WeeklyPlan/WeeklyPlanForArchive"),
+    () => import("../../../components/WeeklyPlan/WeeklyPlanForArchive"),
     {
         ssr: false,
     }

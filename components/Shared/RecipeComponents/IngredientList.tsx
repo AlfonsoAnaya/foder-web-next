@@ -1,6 +1,6 @@
 import './IngredientList.css'
-import Recipe from '@/app/types/recipe.d';
-import Ingredient from '@/app/types/ingredientd.d';
+import Recipe from '@/types/recipe.d';
+import Ingredient from '@/types/ingredientd.d';
 import ShoppingListButtonIngredients from './ShoppingListButtonIngredients';
 import Link from 'next/link';
 

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import getToday from "@/app/utils/Today";
-import Recipe from "@/app/types/recipe.d";
+import Recipe from "@/types/recipe.d";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 

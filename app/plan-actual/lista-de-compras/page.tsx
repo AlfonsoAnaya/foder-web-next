@@ -2,7 +2,7 @@ import dynamic from "next/dynamic"
 import currentWeekRecipes from "@/app/utils/CurrentWeekRecipes";
 
 const ShoppingList = dynamic(
-    () => import ("../../components/ShoppingList/ShoppingList"),
+    () => import ("../../../components/ShoppingList/ShoppingList"),
     {
         ssr:false,
     }

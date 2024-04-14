@@ -1,4 +1,4 @@
-import Recipe from "@/app/types/recipe.d"
+import Recipe from "@/types/recipe.d"
 import TipBox from "./TipBox"
 
 interface MethodProps {

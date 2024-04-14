@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import RecipeCategories from '../../utils/RecipeCategories'
+import RecipeCategories from '../../app/utils/RecipeCategories'
 const { Cuisine, Difficulty, IngredientCategories , DishType, Units } = RecipeCategories;
 
 function DatabaseForm() {

@@ -5,7 +5,7 @@ import "./WeeklyPlan.css";
 import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
-import Weekdays from "../../utils/Weekdays";
+import Weekdays from "../../app/utils/Weekdays";
 // import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 import WeeklyPlansArchive from "@/app/utils/WeeklyPlansArchive";

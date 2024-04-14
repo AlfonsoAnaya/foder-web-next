@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 
 const RecipeCollection = dynamic(
-    () => import ("../components/RecipeCollection/RecipeCollection"),
+    () => import ("../../components/RecipeCollection/RecipeCollection"),
     {
         ssr:false,
     }

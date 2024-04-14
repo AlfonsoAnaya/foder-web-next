@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 
 const DatabaseForm = dynamic(
-    () => import ("../components/DatabaseForm/DatabaseForm"),
+    () => import ("../../components/DatabaseForm/DatabaseForm"),
     {
         ssr:false,
     }

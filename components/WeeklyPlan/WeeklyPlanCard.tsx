@@ -1,4 +1,4 @@
-import Recipe from "@/app/types/recipe.d";
+import Recipe from "@/types/recipe.d";
 import Image from "next/image";
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';

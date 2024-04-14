@@ -2,10 +2,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import RecipeCard from "../Shared/RecipeCard";
-import recipes from "../../utils/recipes";
+import recipes from "../../app/utils/recipes";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import FilterButton from "../Shared/FilterButton";
-import Recipe from "@/app/types/recipe.d";
+import Recipe from "@/types/recipe.d";
 
 
 function RecipeCollection() {

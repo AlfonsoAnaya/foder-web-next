@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from "react";
 import "./WeeklyPlan.css";
-import currentWeekRecipes from "../../utils/CurrentWeekRecipes";
+import currentWeekRecipes from "../../app/utils/CurrentWeekRecipes";
 import currentWeekRecipesVeg from "@/app/utils/CurrentWeekRecipesVeg";
 import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
-import Weekdays from "../../utils/Weekdays";
+import Weekdays from "../../app/utils/Weekdays";
 import ShoppingListButton from "./ShoppingListButton";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";

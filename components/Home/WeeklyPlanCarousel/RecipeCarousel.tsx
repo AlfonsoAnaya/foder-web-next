@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 import RecipeCard from "../../Shared/RecipeCard";
-import Recipe from "@/app/types/recipe.d";
+import Recipe from "@/types/recipe.d";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import Link from "next/link";
 import Weekdays from "@/app/utils/Weekdays";
