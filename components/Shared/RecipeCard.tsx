@@ -7,7 +7,9 @@ interface RecipeCardProps {
     isVegetarian?: boolean
 }
 
-function RecipeCard({ recipe, extraInfo, isVegetarian }: RecipeCardProps) {
+function RecipeCard(
+    { recipe, extraInfo, isVegetarian }: RecipeCardProps
+    ) {
     return (
         <div className="flex justify-center align-center">
             <div
