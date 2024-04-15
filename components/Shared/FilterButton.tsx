@@ -1,7 +1,6 @@
 'use client'
 import { useState } from "react";
 import './FilterButton.css'
-
 interface FilterButtonProps {
     title: string;
     filterStr: string;
