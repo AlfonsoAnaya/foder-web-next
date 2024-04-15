@@ -1,19 +1,19 @@
 import recipes from "./recipes";
 import Recipe from "../../types/recipe.d";
 
-const currentWeekRecipesId = [
-    34,
+const RecipesId = [
+    34, //veg
     2,
     3,
-    50,
+    50, //veg
     5,
-    53,
+    53, //veg
     10
 ]
 
 const currentWeekRecipesVeg: Recipe[] = [];
 
-currentWeekRecipesId.forEach(i => {
+RecipesId.forEach(i => {
     const recipe: Recipe | undefined = recipes.find(recipe => recipe.id === i);
     if (recipe) currentWeekRecipesVeg.push(recipe);
 })

@@ -26,7 +26,7 @@ function WeeklyPlanCard(
               return (
                 <Slide index={i} key={recipe.name + i}>
                   <Image
-                    className="block object-cover object-center w-[100%] max-[350px]:max-h-[300px] max-h-[350px] border-2 rounded-t-[5px] md:rounded-t-[0px]"
+                    className="block object-cover object-center w-[100%] max-[350px]:max-h-[300px] max-h-[350px] rounded-t-[5px] md:rounded-t-[0px]"
                     src={`/images/recipes/${recipe.img}`}
                     // alt={recipe.imgAlt} 
                     alt="un plato de comida"

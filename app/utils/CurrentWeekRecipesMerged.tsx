@@ -3,19 +3,22 @@ import Recipe from "../../types/recipe.d";
 
 const RecipesId = [
     1,
+    34, //veg
     2,
     3,
     4,
+    50, //veg
     5,
     7,
+    53, //veg
     10
 ]
 
-const currentWeekRecipes: Recipe[] = [];
+const currentWeekRecipesMerged: Recipe[] = [];
 
 RecipesId.forEach(i => {
     const recipe: Recipe | undefined = recipes.find(recipe => recipe.id === i);
-    if (recipe) currentWeekRecipes.push(recipe);
+    if (recipe) currentWeekRecipesMerged.push(recipe);
 })
 
-export default currentWeekRecipes;
+export default currentWeekRecipesMerged;

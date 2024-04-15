@@ -2,11 +2,12 @@ import Recipe from "../../types/recipe.d";
 import Image from "next/image";
 
 interface RecipeCardProps {
-    recipe: Recipe;
-    extraInfo?: string;
+    recipe: Recipe
+    extraInfo?: string
+    isVegetarian?: boolean
 }
 
-function RecipeCard({ recipe, extraInfo }: RecipeCardProps) {
+function RecipeCard({ recipe, extraInfo, isVegetarian }: RecipeCardProps) {
     return (
         <div className="flex justify-center align-center">
             <div
@@ -23,11 +24,16 @@ function RecipeCard({ recipe, extraInfo }: RecipeCardProps) {
                         width={666}
                         height={848}
                     />
-                    {extraInfo 
-                    ? <span className="absolute top-[10px] left-[10px] bg-tertiary py-[.4em] px-[1.4em] rounded-full font-sans text-darker text-[1rem] font-[600]">
-                    {extraInfo}
+                    {extraInfo ? 
+                        <span className="absolute top-[10px] left-[10px] bg-tertiary py-[.4em] px-[1.4em] rounded-full font-sans text-darker text-[1rem] font-[600]">
+                            {extraInfo}
+                            {isVegetarian ?
+                                <div className=" flex justify-center items-center w-[35px] h-[35px] absolute bottom-[-10px] right-[-20px] rounded-full text-[.8rem] bg-vegetarianGreen text-white font-[700]">
+                                    VEG
+                                </div> 
+                                : ''}
                         </span>
-                    : ''}
+                        : ''}
                 </div>
 
                 {/* RECIPE INFO */}

@@ -1,4 +1,10 @@
 import dynamic from "next/dynamic";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Explora todos nuestros planes de comidas semanales - recetas",
+    description: "Explora nuestros planes anteriores. Si te perdiste un plan o quieres repetir, aquí encontrarás la receta que buscas."
+  };
 
 const WeeklyPlanArchive = dynamic(
     () => import ("../../components/WeeklyPlanArchive/WeeklyPlanArchive"),

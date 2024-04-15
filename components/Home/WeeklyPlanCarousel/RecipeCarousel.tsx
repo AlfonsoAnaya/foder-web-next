@@ -73,7 +73,8 @@ function RecipeCarousel({ recipes }: CarouselProps) {
                 >
                   <RecipeCard
                     recipe={recipe}
-                    extraInfo={Weekdays[i]}
+                    extraInfo={Weekdays.merged[i]}
+                    isVegetarian={(i===1 || i===5 || i===8)? true : false}
                   />
                 </Link>
               </Slide>

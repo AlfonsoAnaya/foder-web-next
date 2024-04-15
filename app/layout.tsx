@@ -29,8 +29,8 @@ const tiltNeon = Tilt_Neon({
 })
 
 export const metadata: Metadata = {
-  title: "Pipián Planes Semanales",
-  description: "Crea automáticamente planes de comida semanales",
+  title: "Pipián | Planes de comida semanales",
+  description: "¿Qué vas a comer hoy? Deja de pensar y encuentra la respuesta en nuestros planes de comida semanales. Encuentra recetas sanas, variadas y económicas, con opciones vegetarianas, gluten free y veganas",
   icons: {
     icon: "/favicon.ico",
   },

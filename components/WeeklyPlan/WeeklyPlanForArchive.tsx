@@ -21,7 +21,7 @@ function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
 
     const weeksRecipes = WeeklyPlansArchive[weeklyPlanNumber];0    
 
-    const [currentDayState, setCurrentDay] = useState(Weekdays[0]);
+    const [currentDayState, setCurrentDay] = useState(Weekdays.omnivore[0]);
     const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[0]);
     const [isViewportMobile, setIsViewportMobile] = useState(window.innerWidth < 768);
 
@@ -70,7 +70,7 @@ function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
                         currentRecipe={currentRecipe}
                         currentDay={currentDayState}
                         handleNavClick={handleNavClick}
-                        Weekdays={Weekdays}
+                        Weekdays={Weekdays.omnivore}
                         isWeekVegetarian={false}
                     />
                 ) : (
@@ -78,7 +78,7 @@ function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
                         weeksRecipes={weeksRecipes}
                         currentRecipe={currentRecipe}
                         handleNavClick={handleNavClick}
-                        Weekdays={Weekdays}
+                        Weekdays={Weekdays.omnivore}
                         currentDay={currentDayState}
                         isWeekVegetarian={false}
                     />
