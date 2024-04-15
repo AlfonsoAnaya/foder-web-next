@@ -16,11 +16,11 @@ interface CarouselProps {
 
 function RecipeCarousel({ recipes }: CarouselProps) {
 
-  const [visibleSlides, setVisibleSlides] = useState(4); 
+  const [visibleSlides, setVisibleSlides] = useState(4);
   const updateDay = useCurrentDayStore((state) => state.updateDay);
   const updateIsSidenavOpen = useIsSidenavOpenStore((state) => state.updateIsSidenavOpen);
 
-  function handleClick(i:number, bool:boolean) {
+  function handleClick(i: number, bool: boolean) {
     updateDay(i);
     updateIsSidenavOpen(bool);
   }
@@ -65,17 +65,20 @@ function RecipeCarousel({ recipes }: CarouselProps) {
           {recipes.map((recipe, i) => {
             return (
               <Slide index={i} key={recipe.name + i}
-                onClick={()=>handleClick(i,true)}>
+                onClick={() => handleClick(i, true)}>
                 <Link
                   href={`/plan-actual`}
 
                 // state={{ day: i, openSidenav: true }}
                 >
-                  <RecipeCard
-                    recipe={recipe}
-                    extraInfo={Weekdays.merged[i]}
-                    isVegetarian={(i===1 || i===5 || i===8)? true : false}
-                  />
+                  <div className="px-2">
+                    <RecipeCard
+                      recipe={recipe}
+                      extraInfo={Weekdays.merged[i]}
+                      isVegetarian={(i === 1 || i === 5 || i === 8) ? true : false}
+                    />
+                  </div>
+
                 </Link>
               </Slide>
             )
