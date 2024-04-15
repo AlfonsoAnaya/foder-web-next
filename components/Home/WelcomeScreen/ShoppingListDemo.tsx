@@ -5,8 +5,8 @@ function ShoppingListDemo() {
                 <h2 className="block md:hidden text-[1.1rem] md:text-[1.25rem] text-primary font-[600]">
                         Crea listas de compras interactivas en unos cuantos clicks
                     </h2>
-                <div className="w-[100%] md:w-[40%] md:h-auto flex flex-wrap gap-4 justify-center items-center">
-                    <video autoPlay muted loop playsInline className="rounded-[10px] border-[1px] border-grayLight w-[50vw] md:w-[320px] md:max-h-[100%]">
+                <div className="flex flex-wrap gap-4 justify-center items-center">
+                    <video autoPlay muted loop playsInline className="rounded-[10px] border-[1px] border-grayLight h-[57vh] md:h-[100%] w-[auto]">
                         <source 
                             src="/videos/shopping-list-demo.webm" 
                             type='video/webm;codecs="vp8, vorbis"'

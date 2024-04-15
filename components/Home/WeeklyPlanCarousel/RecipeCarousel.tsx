@@ -93,7 +93,7 @@ function RecipeCarousel({ recipes }: CarouselProps) {
           </svg>
         </ButtonNext>
         <DotGroup
-          className="flex justify-center gap-[2px] pb-10 [&>*]:w-[45px] [&>*]:h-[19px] [&>*]:border-y-[8px] [&>*]:border-y-white md:[&>*]:border-y-grayLight [&>*]:bg-dark [&>*]:rounded-sm"
+          className="flex justify-center gap-[2px] pb-10 max-w-[95%] [&>*]:w-[45px] [&>*]:h-[19px] [&>*]:border-y-[8px] [&>*]:border-y-white md:[&>*]:border-y-grayLight [&>*]:bg-dark [&>*]:rounded-sm"
         />
       </CarouselProvider>
 
