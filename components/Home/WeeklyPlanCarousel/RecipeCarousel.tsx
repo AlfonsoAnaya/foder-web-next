@@ -20,8 +20,9 @@ function RecipeCarousel({ recipes }: CarouselProps) {
   const updateDay = useCurrentDayStore((state) => state.updateDay);
   const updateIsSidenavOpen = useIsSidenavOpenStore((state) => state.updateIsSidenavOpen);
 
-  function handleClick(i: number, bool: boolean) {
-    updateDay(i);
+  function handleClick(Weekday: string, bool: boolean) {
+    const indexOfDay = Weekdays.omnivore.findIndex(day => day === Weekday);
+    updateDay(indexOfDay);
     updateIsSidenavOpen(bool);
   }
 
@@ -65,11 +66,9 @@ function RecipeCarousel({ recipes }: CarouselProps) {
           {recipes.map((recipe, i) => {
             return (
               <Slide index={i} key={recipe.name + i}
-                onClick={() => handleClick(i, true)}>
+                onClick={() => handleClick(Weekdays.merged[i], true)}>
                 <Link
-                  href={`/plan-actual`}
-
-                // state={{ day: i, openSidenav: true }}
+                  href={(i === 1 || i === 5 || i === 8) ? '/plan-actual-vegetariano' : '/plan-actual'}
                 >
                   <div className="px-2">
                     <RecipeCard
