@@ -12,13 +12,14 @@ interface MyComponentProps {
     isWeekVegetarian: boolean
 }
 
-function WeeklyPlanMobile(
-    {   weeksRecipes,
+function WeeklyPlanMobile({ 
+        weeksRecipes,
         currentRecipe,
         currentDay,
         handleNavClick,
         Weekdays,
-        isWeekVegetarian }: MyComponentProps) {
+        isWeekVegetarian 
+    }: MyComponentProps) {
 
     const closeRecipeSidenav = (e: any) => {
         if (e.target === e.currentTarget) {

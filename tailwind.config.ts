@@ -19,6 +19,7 @@ const config: Config = {
         darker: "rgb(16, 15, 15)",
         beige: "rgb(240, 239, 235)",
         grayLight: "rgb(243, 244, 246)",
+        gray_2: "rgb(227, 229, 232)",
         vegetarianGreen: "rgb(102, 128, 11)",
         omnivoreRed: "rgb(175, 48, 41)",
       },
