@@ -14,16 +14,24 @@ function InteractiveCardSelected(
     const recipe = recipes[8];
     const isVegetarian = false;
 
-    function handleClick() {
+    function handleHover() {
         const optionsContainer = document.getElementById(`options-${extraInfo}`);
-        console.log(optionsContainer)
+        optionsContainer?.classList.toggle("invisible");
+    }
+
+    function handleMouseLeave () {
+        const optionsContainer = document.getElementById(`options-${extraInfo}`);
         optionsContainer?.classList.toggle("invisible");
     }
 
     return (
         <div className="flex flex-col gap-2 max-w-[330px]  md:w-[13%]">
             {/* ===== RECIPE CARD ====== */}
-            <div className="flex justify-center align-center border-[1px] border-primary rounded-lg h-[530px] md:max-h-[240px]">
+            <div 
+                className="flex justify-center align-center border-[1px] border-primary rounded-lg h-[530px] md:max-h-[240px]"
+                onMouseEnter={handleHover}
+                onMouseLeave={handleMouseLeave}
+            >
                 <div className="recipe-card  flex flex-col">
 
                     {/* RECIPE IMAGE */}
@@ -63,14 +71,13 @@ function InteractiveCardSelected(
             </div>
 
             {/* SELECT ARROW */}
-            <div 
+            {/* <div 
                 className="flex justify-center items center bg-gray_2 rounded-md cursor-pointer"
-                onClick={handleClick}
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" className="arrow" fill="none" viewBox="0 0 24 24"><path className="stroke-primary" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m6 9 6 6 6-6" /></svg>
-            </div>
+            </div> */}
 
-            {/* SELECT ARROW */}
+            {/* Options card */}
             <div id={`options-${extraInfo}`} className={`options-${extraInfo} invisible flex flex-col justify-center items-center gap-4`}>
                 <InteractiveCardOption
                     recipe={recipes[4]}
