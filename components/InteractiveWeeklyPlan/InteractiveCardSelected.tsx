@@ -1,8 +1,11 @@
 'use client'
-
+import { useState } from "react";
 import recipes from "@/app/utils/recipes";
 import Image from "next/image";
-import InteractiveCardOption from "./InteractiveCardOption";
+// import InteractiveCardOption from "./InteractiveCardOption";
+import ModalInteractivePlan from "./ModalInteractivePlan";
+import Recipe from "@/types/recipe.d";
+import { LiaExchangeAltSolid } from "react-icons/lia";
 
 interface InteractiveCardSelectedProps {
     extraInfo: string
@@ -13,24 +16,35 @@ function InteractiveCardSelected(
 ) {
     const recipe = recipes[8];
     const isVegetarian = false;
+    const recipeOptions: Recipe[] = [recipes[8], recipes[10], recipes[12], recipes[14]]
 
-    function handleHover() {
-        const optionsContainer = document.getElementById(`options-${extraInfo}`);
-        optionsContainer?.classList.toggle("invisible");
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [showChangeButton, setShowChangeButton] = useState(false);
+
+    function handleToggleModal(e: any) {
+        if (e.target === e.currentTarget) {
+            setIsModalVisible(!isModalVisible);
+        }
     }
 
-    function handleMouseLeave () {
-        const optionsContainer = document.getElementById(`options-${extraInfo}`);
-        optionsContainer?.classList.toggle("invisible");
+    function handleHover() {
+        setShowChangeButton(true);
+    }
+
+    function handleMouseLeave() {
+        setShowChangeButton(false);
     }
 
     return (
-        <div className="flex flex-col gap-2 max-w-[330px]  md:w-[13%]">
+        <div
+            className="flex flex-col gap-2 max-w-[330px]  md:w-[13%]"
+            onMouseEnter={handleHover}
+            onMouseLeave={handleMouseLeave}
+        >
             {/* ===== RECIPE CARD ====== */}
-            <div 
+            <div
                 className="flex justify-center align-center border-[1px] border-primary rounded-lg h-[530px] md:max-h-[240px]"
-                onMouseEnter={handleHover}
-                onMouseLeave={handleMouseLeave}
+
             >
                 <div className="recipe-card  flex flex-col">
 
@@ -71,14 +85,37 @@ function InteractiveCardSelected(
             </div>
 
             {/* SELECT ARROW */}
-            {/* <div 
-                className="flex justify-center items center bg-gray_2 rounded-md cursor-pointer"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" className="arrow" fill="none" viewBox="0 0 24 24"><path className="stroke-primary" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m6 9 6 6 6-6" /></svg>
-            </div> */}
+            {showChangeButton ?
+                <div
+                    className="flex justify-center gap-[10px] items center bg-gray_2 rounded-md cursor-pointer text-primary px-[20px] py-[10px]"
+                    onClick={(e) => handleToggleModal(e)}
+                >
+                    <span 
+                        className="text-[13px] font-[500]"
+                        onClick={(e) => handleToggleModal(e)}>
+                            Cambiar
+                    </span>
+                    <LiaExchangeAltSolid 
+                    className=" text-[20px]" 
+                    onClick={(e) => handleToggleModal(e)}
+                    />
+                </div>
+                : ''
+            }
+
+
+            {/* MODAL */}
+            {isModalVisible ?
+                <ModalInteractivePlan
+                    handleToggleModal={handleToggleModal}
+                    recipeOptions={recipeOptions}
+                    extraInfo={extraInfo}
+                />
+                : ''
+            }
 
             {/* Options card */}
-            <div id={`options-${extraInfo}`} className={`options-${extraInfo} invisible flex flex-col justify-center items-center gap-4`}>
+            {/* <div id={`options-${extraInfo}`} className={`options-${extraInfo} invisible flex flex-col justify-center items-center gap-4`}>
                 <InteractiveCardOption
                     recipe={recipes[4]}
                 />
@@ -88,7 +125,7 @@ function InteractiveCardSelected(
                 <InteractiveCardOption
                     recipe={recipes[9]}
                 />
-            </div>
+            </div> */}
         </div>
     )
 }
