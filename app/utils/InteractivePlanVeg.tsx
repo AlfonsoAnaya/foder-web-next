@@ -2,12 +2,12 @@ import recipes from "./recipes";
 import Recipe from "../../types/recipe.d";
 
 const RecipesId = [
-    52, //veg
+    11, 
     12,
     6,
-    47, //veg
+    14, 
     26,
-    54, //veg
+    9, 
     13
 ]
 
