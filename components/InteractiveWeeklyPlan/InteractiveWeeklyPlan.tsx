@@ -1,46 +1,27 @@
 import recipes from "@/app/utils/recipes";
-import Image from "next/image";
-import InteractiveCardSelected from "./InteractiveCardSelected";
-import ModalInteractivePlan from "./ModalInteractivePlan";
+import CardSelected from "./CardSelected";
 import './InteractiveWeeklyPlan.css'
+import Weekdays from "@/app/utils/Weekdays";
+import InteractivePlan from "@/app/utils/InteractivePlan";
 
 const InteractiveWeeklyPlan = () => {
-
-    const recipe = recipes[8];
-    const extraInfo = "Lunes"
-    const isVegetarian = false
-
+    
     return (
         <>
             <div className="flex justify-center items-center align-center p-8">
             <h2 className="text-primary text-[2rem] font-[600]">Arma tu propio plan</h2>
             </div>
             
-            <div className="flex justify-center items-start min-h-[80vh] gap-2 mx-[50px] ">
-
-
+            <div className="flex justify-center items-start min-h-[60vh] max-w-[1300px] gap-2 mx-auto">
                 {/* ===== SELECT RECIPE COMPONENT ====== */}
-                <InteractiveCardSelected
-                    extraInfo={"Lunes"}
-                />
-                <InteractiveCardSelected
-                    extraInfo={"Martes"}
-                />
-                <InteractiveCardSelected
-                    extraInfo={"Miércoles"}
-                />
-                <InteractiveCardSelected
-                    extraInfo={"Jueves"}
-                />
-                <InteractiveCardSelected
-                    extraInfo={"Viernes"}
-                />
-                <InteractiveCardSelected
-                    extraInfo={"Sábado"}
-                />
-                <InteractiveCardSelected
-                    extraInfo={"Domingo"}
-                />
+                {InteractivePlan.map((day,i) => {
+                    return (
+                        <CardSelected 
+                            key={`${day}${i}`}
+                            day={InteractivePlan[i]}
+                        />
+                    )
+                })}
 
             </div>
         </>

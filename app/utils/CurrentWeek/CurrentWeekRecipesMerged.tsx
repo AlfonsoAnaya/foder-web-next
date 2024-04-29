@@ -1,17 +1,17 @@
-import recipes from "./recipes";
-import Recipe from "../../types/recipe.d";
+import recipes from "../recipes";
+import Recipe from "../../../types/recipe.d";
 
 const RecipesId = [
-    11,
-    52, //veg
-    12,
-    6,
-    14,
-    47, //veg
-    26,
-    9,
-    54, //veg
-    13
+    17, 
+    46, //veg
+    20,
+    18,
+    21, 
+    67, //veg
+    16,
+    19,
+    38, //veg
+    29
 ]
 
 const currentWeekRecipesMerged: Recipe[] = [];

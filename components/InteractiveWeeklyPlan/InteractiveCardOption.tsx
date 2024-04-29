@@ -14,7 +14,7 @@ function InteractiveCardOption(
 
     return (
 
-        <div className="flex justify-center align-center md:max-w-[150px] border-[1px] border-gray-400 hover:border-primary rounded-lg">
+        <div className="card-option flex justify-center align-center md:max-w-[150px] border-[1px] border-gray-400 hover:border-primary bg-gray_2 rounded-lg cursor-pointer">
             <div className="recipe-card max-w-[330px] h-[530px] md:max-h-[220px] flex flex-col">
 
                 {/* RECIPE IMAGE */}

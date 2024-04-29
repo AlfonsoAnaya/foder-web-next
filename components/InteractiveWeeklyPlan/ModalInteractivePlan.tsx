@@ -1,33 +1,46 @@
 import Recipe from "@/types/recipe.d"
 import InteractiveCardOption from "./InteractiveCardOption"
 import { TfiClose } from "react-icons/tfi";
+import { Dispatch, SetStateAction } from "react";
 
 interface ModalInteractivePlanProps {
     handleToggleModal: any
     recipeOptions: Recipe[]
-    extraInfo: string
+    day: string
+    selectedOption: number
+    setSelectedOption: Dispatch<SetStateAction<number>>
 }
 
 function ModalInteractivePlan(
-    { handleToggleModal, recipeOptions, extraInfo }: ModalInteractivePlanProps
+    { handleToggleModal, recipeOptions, day, selectedOption, setSelectedOption }: ModalInteractivePlanProps
 ) {
+    function handleSelectRecipe (num:number) {
+        setSelectedOption(num)
+    }
     return (
         <div
             className="fixed w-[100%] h-[100%] top-0 left-0 bg-opacity-20 bg-white backdrop-blur-sm shadow-md z-[99]"
             onClick={(e) => handleToggleModal(e)}>
-            <div className="fixed flex flex-col gap-6 justify-center items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[60%] h-[60%] bg-gray_2 rounded-xl shadow-md">
+            <div className="fixed flex flex-col gap-6 justify-center items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[60%] md:min-w-[750px] h-[60%] bg-gray_2 rounded-xl shadow-md">
                 
                 <h2 className="text-primary font-[600] text-[2rem]">
-                    Cambia tu receta del {extraInfo}
+                    Cambia tu receta del {day}
                 </h2>
 
                 <div className="flex gap-[10px] justify-center items-center">
                 {recipeOptions.map((recipe, i) => {
                     return (
-                        <InteractiveCardOption
+                        <div
+                            key={`card ${recipe.id}`}
+                            onClick={() => handleSelectRecipe(i)}
+                            className={selectedOption === i? 'modal-card-selected relative' : ''}
+                        >
+                            <InteractiveCardOption
                             key={`card ${i}`}
                             recipe={recipe}
                         />
+                        </div>
+                        
                     )
 
                 })}

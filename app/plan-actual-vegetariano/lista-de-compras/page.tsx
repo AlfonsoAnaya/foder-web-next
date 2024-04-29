@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import currentWeekRecipesVeg from "@/app/utils/CurrentWeekRecipesVeg";
+import currentWeekRecipesVeg from "@/app/utils/CurrentWeek/CurrentWeekRecipesVeg";
 
 const ShoppingList = dynamic(
     () => import ("../../../components/ShoppingList/ShoppingList"),
