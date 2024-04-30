@@ -1,0 +1,26 @@
+.modal-card-selected .card-option {
+    border: 1px solid var(--color-primary);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 00;
+}
+
+.modal-card-selected .card-option::after {
+    content: 'receta seleccionada';
+    position: absolute;
+    z-index: -1;
+    height: 40px;
+    width: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    justify-items:center;
+    align-items: center;
+    bottom: 8px;
+    transform: translateY(100%);
+    padding: 8px 5px 0 5px;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    
+}

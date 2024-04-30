@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import "./WeeklyPlan.css";
-import currentWeekRecipes from "../../app/utils/CurrentWeekRecipes";
-import currentWeekRecipesVeg from "@/app/utils/CurrentWeekRecipesVeg";
+import currentWeekRecipes from "../../app/utils/CurrentWeek/CurrentWeekRecipes";
+import currentWeekRecipesVeg from "@/app/utils/CurrentWeek/CurrentWeekRecipesVeg";
 import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
