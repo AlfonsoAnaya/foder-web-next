@@ -6,6 +6,7 @@ import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 import RecipeCard from "../../Shared/RecipeCard";
 import Recipe from "@/types/recipe.d";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import Link from "next/link";
 import Weekdays from "@/app/utils/Weekdays";
 import '../../../styles/carousel.css';
