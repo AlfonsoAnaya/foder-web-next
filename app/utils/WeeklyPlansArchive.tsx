@@ -10,6 +10,7 @@ const WeeklyPlansIds = [
     [46, 20, 18, 67, 16, 38, 29], //3 VEG
     [25, 24, 27, 23,  8, 22, 28], //4
     [57, 24, 27, 61,  8, 41, 28], //4 VEG
+
 ]
 
 const WeeklyPlansArchive: any[] = [];
