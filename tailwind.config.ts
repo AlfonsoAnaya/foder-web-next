@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "rgb(36, 131, 123)",
+        primaryAlpha: "rgb(36, 131, 123, .8)",
         secondary: "rgb(218, 112, 44)",
         tertiary: "#fcba03",
         quatertiary: "#d15036",
