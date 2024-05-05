@@ -6,6 +6,7 @@ const RecipesId = [
     57, //veg
     24,
     27,
+    6, //extraVeg
     23,
     61, //veg
     8,

@@ -4,7 +4,7 @@ import Recipe from "../../../types/recipe.d";
 const RecipesId = [
     57, //veg
     24,
-    27,
+    6,
     61, //veg
     8,
     41, //veg
