@@ -46,7 +46,7 @@ function CardSelectedRecipe(
                 className="flex justify-center align-center border-[1px] border-primary rounded-lg h-[65vh] md:max-h-[330px]"
 
             >
-                <div className="recipe-card  flex flex-col">
+                <div className="recipe-card w-[100%] flex flex-col">
 
                     {/* RECIPE IMAGE */}
                     <div className="relative recipe-img w-[100%] h-[80%] md:h-[70%] rounded-t-lg">
