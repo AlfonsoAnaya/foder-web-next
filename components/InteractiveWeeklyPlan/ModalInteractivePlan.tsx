@@ -22,6 +22,7 @@ function ModalInteractivePlan(
             ...prevState, 
             [day]: num
         }));
+        setTimeout(() => toggleModal(), 800)
     }
 
     useEffect(() => {

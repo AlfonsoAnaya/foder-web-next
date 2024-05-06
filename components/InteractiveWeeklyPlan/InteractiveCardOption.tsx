@@ -14,7 +14,7 @@ function InteractiveCardOption(
     const isVegetarian = false
 
     return (
-        <div className="card-option flex w-[120px] md:max-w-[155px] h-[200px] md:h-[530px] md:max-h-[220px] justify-center align-center border-[1px] border-gray-400 hover:border-primary bg-gray_2 rounded-lg cursor-pointer">
+        <div className="card-option flex w-[120px] md:w-[150px] h-[200px] md:h-[530px] md:max-h-[220px] justify-center align-center border-[1px] border-gray-400 hover:border-primary bg-gray_2 rounded-lg cursor-pointer">
             <div className="recipe-card flex flex-col w-[100%]">
 
                 {/* RECIPE IMAGE */}
