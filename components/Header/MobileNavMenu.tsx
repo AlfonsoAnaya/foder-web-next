@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
@@ -8,7 +9,13 @@ function MobileNavMenu(
 ) {
 
     const currentNavSection = useCurrentNavSectionStore((state) => state.currentNavSection);
-    const isCustomPlanSelected = localStorage.getItem("interactivePlanSelection") !== null;
+    const [isCustomPlanSelected, setIsCustomPlanSelected] = useState(false)
+
+    useEffect(() => {
+        const storedValue = localStorage.getItem("interactivePlanSelection");
+        setIsCustomPlanSelected(storedValue !== null);
+        console.log(isCustomPlanSelected)
+    }, []);
 
     return (
         <div className="nav-toggle font-sans flex self-center
