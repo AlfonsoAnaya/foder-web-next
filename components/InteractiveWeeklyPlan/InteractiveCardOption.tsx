@@ -1,21 +1,33 @@
 import Recipe from "@/types/recipe.d";
 import Image from "next/image";
 import { RxLapTimer } from "react-icons/rx";
+import './InteractiveWeeklyPlan.css'
+
 
 interface InteractiveCardOptionProps {
     recipe: Recipe
+    handleSelectRecipe: any
+    selectedOptions: any
+    day: string
+    i: number
+    
 }
 
 function InteractiveCardOption(
-    { recipe }: InteractiveCardOptionProps
+    { recipe, handleSelectRecipe, selectedOptions, day, i }: InteractiveCardOptionProps
 ) {
 
     const extraInfo = undefined;
     const isVegetarian = false
 
     return (
-        <div className="card-option flex w-[120px] md:w-[150px] h-[200px] md:h-[530px] md:max-h-[220px] justify-center align-center border-[1px] border-gray-400 hover:border-primary bg-gray_2 rounded-lg cursor-pointer">
-            <div className="recipe-card flex flex-col w-[100%]">
+        <div 
+            className={`${
+                selectedOptions[day] === i ? 'modal-card-selected relative ' : ''
+              } card-option flex w-[45%] md:w-[150px] h-[200px] md:h-[530px] md:max-h-[220px] justify-center align-center  bg-gray_2  cursor-pointer`}
+            onClick={() => handleSelectRecipe(i)}
+        >
+            <div className="recipe-card border-[1px] border-gray-400 hover:border-primary rounded-lg flex flex-col w-[100%]">
 
                 {/* RECIPE IMAGE */}
                 <div className="relative recipe-img w-[100%] h-[60%] rounded-t-lg">

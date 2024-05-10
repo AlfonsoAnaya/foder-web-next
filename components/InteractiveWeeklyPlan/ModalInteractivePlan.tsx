@@ -34,28 +34,24 @@ function ModalInteractivePlan(
             className="modal-select-recipe fixed w-[100%] h-[100%] top-0 left-0 bg-opacity-20 bg-white backdrop-blur-sm shadow-md z-[99]"
             onClick={(e) => handleClickOutside(e)}
         >
-            <div className="fixed flex flex-col gap-6 justify-start p-4 md:p-8 items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[95%] md:w-[700px] h-[90%] md:h-[60%] bg-gray_2 rounded-xl shadow-md">
+            <div className="fixed flex flex-col gap-6 justify-start p-4 md:p-8 items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[95%] md:w-[700px] h-[90%] md:h-[400px] bg-gray_2 rounded-xl shadow-md">
                 
                 <h2 className="text-primary font-[600] text-[1.2rem] md:text-[2rem] pt-8 md:pt-0">
                     Cambia tu receta del {day}
                 </h2>
 
-                <div className="flex flex-wrap gap-x-[10px] gap-y-[60px] md:gap-[10px] justify-center items-center">
+                <div className="flex flex-wrap gap-x-[10px] gap-y-[45px] md:gap-[10px] justify-center items-center">
                 {recipeOptions.map((recipe, i) => {
                     return (
-                        <div
+                        <InteractiveCardOption
                             key={`card ${recipe.id}`}
-                            onClick={() => handleSelectRecipe(i)}
-                            className={selectedOptions[day] === i? 'modal-card-selected relative' : ''}
-                        >
-                            <InteractiveCardOption
-                            key={`card ${i}`}
                             recipe={recipe}
+                            handleSelectRecipe={handleSelectRecipe}
+                            selectedOptions={selectedOptions}
+                            day={day}
+                            i={i}
                         />
-                        </div>
-                        
                     )
-
                 })}
                 </div>
                 <div 
