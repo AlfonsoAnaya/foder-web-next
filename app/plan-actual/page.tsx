@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic"
 import type { Metadata } from "next";
+import currentWeekRecipes from "../utils/CurrentWeek/CurrentWeekRecipes";
 
 export const metadata: Metadata = {
     title: "Plan  actual de comidas - explora recetas",
@@ -19,6 +20,7 @@ function WeeklyPlanPage() {
         <main className="flex flex-col font-sans w-[100%]">
             <WeeklyPlan 
                 isWeekVegetarian={false}
+                recipes={currentWeekRecipes}
             />
         </main>
 

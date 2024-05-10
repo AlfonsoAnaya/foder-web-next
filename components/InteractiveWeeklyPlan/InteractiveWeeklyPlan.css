@@ -1,14 +1,6 @@
-.modal-select-recipe {
-    contain: strict;
-}
 
-.modal-card-selected .card-option {
-    border: 1px solid var(--color-primary);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 00;
-}
 
-.modal-card-selected .card-option::after {
+.modal-card-selected.card-option::after {
     content: 'receta seleccionada';
     position: absolute;
     /* z-index: -1; */
@@ -28,8 +20,8 @@
     border-bottom-right-radius: .5rem;
 }
 
-@media screen and (max-width: 400px) {
-    .modal-card-selected .card-option::after  {
+@media screen and (max-width: 450px) {
+    .modal-card-selected::after  {
         content: 'selección';
         text-align: center;
     }

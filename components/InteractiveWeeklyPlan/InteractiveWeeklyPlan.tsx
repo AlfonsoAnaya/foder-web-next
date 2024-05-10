@@ -3,11 +3,15 @@ import { useState, useEffect } from "react";
 import CardSelected from "./CardSelected";
 import './InteractiveWeeklyPlan.css'
 import Recipe from "@/types/recipe.d";
-import InteractivePlan from "@/app/utils/InteractivePlan";
+import InteractivePlan from "@/app/utils/InteractivePlanRecipes";
 import ModalInteractivePlan from "./ModalInteractivePlan";
+import Link from "next/link";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../../styles/carousel.css'
+import '../../styles/buttons.css'
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
+
 
 const InteractiveWeeklyPlan = () => {
 
@@ -27,6 +31,11 @@ const InteractiveWeeklyPlan = () => {
             Domingo: 0,
         };
     });
+    const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+
+    useEffect(() => {
+        setCurrentNavSection('arma-tu-plan');
+    }, []);
 
     function handleClickOutside(e: any) {
         if (e.target === e.currentTarget) {
@@ -42,10 +51,10 @@ const InteractiveWeeklyPlan = () => {
         const handleResize = () => {
             if (window.innerWidth <= 1350) setVisibleSlides(6);
             if (window.innerWidth <= 1100) setVisibleSlides(5);
-            if (window.innerWidth <= 900) setVisibleSlides(4);
-            if (window.innerWidth <= 700) setVisibleSlides(3);
-            if (window.innerWidth <= 500) setVisibleSlides(2);
-            if (window.innerWidth <= 400) setVisibleSlides(1);
+            if (window.innerWidth <= 1000) setVisibleSlides(4);
+            if (window.innerWidth <= 850) setVisibleSlides(3);
+            if (window.innerWidth <= 600) setVisibleSlides(2);
+            if (window.innerWidth <= 375) setVisibleSlides(1);
             if (window.innerWidth >= 1350) setVisibleSlides(7);
         };
 
@@ -66,8 +75,7 @@ const InteractiveWeeklyPlan = () => {
                 <h2 className="text-primary text-[2rem] font-[600]">Arma tu propio plan</h2>
             </div>
 
-
-            <div className="carousel-container flex flex-colr md:flex-row justify-center items-center md:items-start min-h-[60vh] max-w-[1400px] w-[90%]">
+            <div className="carousel-container flex flex-colr md:flex-row justify-center items-center md:items-start min-h-[430px] max-w-[1400px] w-[80%] min-[376px]:w-[90%]">
                 {/* ===== SELECT RECIPE COMPONENT ====== */}
                 <CarouselProvider
                     className="w-[100%] flex flex-col items-center relative"
@@ -77,7 +85,7 @@ const InteractiveWeeklyPlan = () => {
                     visibleSlides={visibleSlides}
                     infinite={true}
                 >
-                    <Slider className="h-[65vh] md:h-[330px] w-[100%]">
+                    <Slider className="h-[65vh] md:h-[380px] w-[100%]">
                         {InteractivePlan.map((day, i) => {
                             return (
                                 <Slide index={i} key={`${day}${i}`}>
@@ -95,12 +103,12 @@ const InteractiveWeeklyPlan = () => {
 
                     {visibleSlides < 7 ?
                         <>
-                            <ButtonBack className="hidden md:flex hidden-content absolute justify-center items-center left-[10px] top-[175px] --translate-y-[-50%] w-[50px] h-[50px] rounded-full bg-dark">
+                            <ButtonBack className="hidden md:flex hidden-content absolute justify-center items-center left-[-30px] top-[175px] --translate-y-[-50%] w-[50px] h-[50px] rounded-full bg-dark">
                                 <svg width="26" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path className="fill-white" d="M15.4894 2.56853L13.2179 0.29703L0.51288 13.002L13.2179 25.707L15.4894 23.4355L5.05588 13.002L15.4894 2.56853H15.4894Z" />
                                 </svg>
                             </ButtonBack>
-                            <ButtonNext className="hidden md:flex hidden-content absolute justify-center items-center top-[175px] --translate-y-[-50%] right-[10px] w-[50px] h-[50px] rounded-full bg-dark">
+                            <ButtonNext className="hidden md:flex hidden-content absolute justify-center items-center top-[175px] --translate-y-[-50%] right-[-30px] w-[50px] h-[50px] rounded-full bg-dark">
                                 <svg width="26" height="26" viewBox="0 0 11 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path className="fill-white" d="M0.510651 23.4315L2.78215 25.703L15.4872 12.998L2.78215 0.292969L0.510651 2.56447L10.9442 12.998L0.510651 23.4315H0.510651Z" fill="black" />
                                 </svg>
@@ -112,6 +120,14 @@ const InteractiveWeeklyPlan = () => {
                         : ''}
 
                 </CarouselProvider>
+            </div>
+            <div>
+                <Link href="/mi-plan">
+                    <button className="my-6 btn-primary btn-text bg-secondary rounded-full">
+                        Ver Plan Customizado
+                    </button>
+                </Link>
+
             </div>
             {isModalVisible ?
                 <ModalInteractivePlan

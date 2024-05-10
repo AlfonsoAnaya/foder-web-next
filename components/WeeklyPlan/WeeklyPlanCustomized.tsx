@@ -8,19 +8,17 @@ import WeeklyPlanMobile from "./WeeklyPlanMobile";
 import Weekdays from "../../app/utils/Weekdays";
 // import useCurrentDayStore from "@/app/ZustandStore/CurrentDayStore";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
-import WeeklyPlansArchive from "@/app/utils/WeeklyPlansArchive";
-
-interface WeeklyPlanProps {
-    weeklyPlanNumber: number;
-}
+import selectRecipes from "@/app/utils/InteractivePlanSelectedRecipes";
+import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 
-function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
 
-    const openSidenav = useIsSidenavOpenStore((state)=>state.isSidenavOpen);
+function WeeklyPlan() {
+    const InteractivePlanSelectedRecipes = selectRecipes();
+    const openSidenav = useIsSidenavOpenStore((state) => state.isSidenavOpen);
+    const weeksRecipes = InteractivePlanSelectedRecipes;
 
-    const weeksRecipes = WeeklyPlansArchive[weeklyPlanNumber]; 
-
+    const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
     const [currentDayState, setCurrentDay] = useState(Weekdays.omnivore[0]);
     const [currentRecipe, setCurrentRecipe] = useState(weeksRecipes[0]);
     const [isViewportMobile, setIsViewportMobile] = useState(window.innerWidth < 768);
@@ -38,6 +36,10 @@ function WeeklyPlan({ weeklyPlanNumber }: WeeklyPlanProps) {
         const WeeklySection = document.querySelector('.weekly-plan-section');
         WeeklySection?.classList.add("sidenav-open");
     };
+
+    useEffect(() => {
+        setCurrentNavSection('mi-plan');
+      }, []);
 
     useEffect(() => {
         // Function to check if the viewport width is smaller than 768px
