@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
+import useIsCustomPlanSelectedStore from "@/app/ZustandStore/IsCustomPlanSelectedStore";
 
 
 function MobileNavMenu(
@@ -9,13 +10,17 @@ function MobileNavMenu(
 ) {
 
     const currentNavSection = useCurrentNavSectionStore((state) => state.currentNavSection);
-    const [isCustomPlanSelected, setIsCustomPlanSelected] = useState(false)
+    const isCustomPlanSelected = useIsCustomPlanSelectedStore((state) => state.isCustomPlanSelected);
+    const updateIsCustomPlanSelected = useIsCustomPlanSelectedStore((state) => state.updateisCustomPlanSelected);
 
     useEffect(() => {
         const storedValue = localStorage.getItem("interactivePlanSelection");
-        setIsCustomPlanSelected(storedValue !== null);
-        console.log(isCustomPlanSelected)
-    }, []);
+        if (storedValue !== null) {
+            updateIsCustomPlanSelected(true);
+        } else {
+            updateIsCustomPlanSelected(false);
+        }
+    }, [isCustomPlanSelected]);
 
     return (
         <div className="nav-toggle font-sans flex self-center
