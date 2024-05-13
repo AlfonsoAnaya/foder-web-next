@@ -17,7 +17,6 @@ const Weekdays = {
         "Jueves",
         "Viernes",
         "Sábado",
-        "Sábado",
         "Domingo"
     ],
 }
