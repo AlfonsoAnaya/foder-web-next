@@ -11,7 +11,7 @@ const RecipesId = [
     8,
     19, 
     38, //veg
-    6
+    13
 ]
 
 const currentWeekRecipesMerged: Recipe[] = [];
