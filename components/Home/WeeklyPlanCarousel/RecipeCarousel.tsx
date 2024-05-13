@@ -69,13 +69,13 @@ function RecipeCarousel({ recipes }: CarouselProps) {
               <Slide index={i} key={recipe.name + i}
                 onClick={() => handleClick(Weekdays.merged[i], true)}>
                 <Link
-                  href={(i === 1 || i === 4 || i === 6 || i === 9) ? '/plan-actual-vegetariano' : '/plan-actual'}
+                  href={(i === 1 || i === 5 || i === 8 ) ? '/plan-actual-vegetariano' : '/plan-actual'}
                 >
                   <div className="px-2">
                     <RecipeCard
                       recipe={recipe}
                       extraInfo={Weekdays.merged[i]}
-                      isVegetarian={(i === 1 || i === 4 || i === 6 || i === 9) ? true : false}
+                      isVegetarian={(i === 1 || i === 5 || i === 8 ) ? true : false}
                     />
                   </div>
 
