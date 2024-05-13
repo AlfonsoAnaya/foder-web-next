@@ -13,7 +13,6 @@ const Weekdays = {
         "Lunes",
         "Martes",
         "Miércoles",
-        "Miércoles",
         "Jueves",
         "Jueves",
         "Viernes",

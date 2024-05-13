@@ -2,7 +2,7 @@ import Recipe from "@/types/recipe.d";
 import Image from "next/image";
 import { RxLapTimer } from "react-icons/rx";
 import './InteractiveWeeklyPlan.css'
-
+import useIsCustomPlanSelectedStore from "@/app/ZustandStore/IsCustomPlanSelectedStore";
 
 interface InteractiveCardOptionProps {
     recipe: Recipe
@@ -20,12 +20,18 @@ function InteractiveCardOption(
     const extraInfo = undefined;
     const isVegetarian = false
 
+    const updateIsCustomPlanSelected = useIsCustomPlanSelectedStore((state) => state.updateisCustomPlanSelected)
+
+
     return (
         <div 
             className={`${
                 selectedOptions[day] === i ? 'modal-card-selected relative ' : ''
               } card-option flex w-[45%] md:w-[150px] h-[200px] md:h-[530px] md:max-h-[220px] justify-center align-center  bg-gray_2  cursor-pointer`}
-            onClick={() => handleSelectRecipe(i)}
+            onClick={() => {
+                handleSelectRecipe(i);
+                updateIsCustomPlanSelected(true);
+            }}
         >
             <div className="recipe-card border-[1px] border-gray-400 hover:border-primary rounded-lg flex flex-col w-[100%]">
 
