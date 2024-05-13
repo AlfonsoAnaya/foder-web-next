@@ -2,13 +2,13 @@ import recipes from "../recipes";
 import Recipe from "../../../types/recipe.d";
 
 const RecipesId = [
-    25, //veg
-    24,
-    27,
-    23, //veg
+    11, //veg
+    2,
+    18,
+    14, //veg
     8,
-    22, //veg
-    28
+    19, //veg
+    13
 ]
 
 const currentWeekRecipes: Recipe[] = [];
