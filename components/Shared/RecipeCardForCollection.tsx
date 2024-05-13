@@ -7,7 +7,7 @@ interface RecipeCardProps {
     isVegetarian?: boolean
 }
 
-function RecipeCard(
+function RecipeCardCollection(
     { recipe, extraInfo, isVegetarian }: RecipeCardProps
     ) {
     return (
@@ -55,4 +55,4 @@ function RecipeCard(
     );
 }
 
-export default RecipeCard;
+export default RecipeCardCollection;

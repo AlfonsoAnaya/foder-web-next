@@ -41,15 +41,18 @@ function CardSelectedRecipe(
             onMouseEnter={handleHover}
             onMouseLeave={handleMouseLeave}
         >
+            <h3 className="text-[1.25rem] text-dark uppercase font-[500] text-center">
+                {day.day}
+            </h3>
             {/* ===== RECIPE CARD ====== */}
             <div
-                className="flex justify-center align-center border-[1px] border-primary rounded-lg h-[65vh] md:max-h-[330px]"
+                className="flex justify-center items-start border-[1px] border-primary rounded-lg h-[55vh] md:max-h-[330px]"
 
             >
-                <div className="recipe-card  flex flex-col">
+                <div className="recipe-card w-[100%] h-[100%] flex flex-col">
 
                     {/* RECIPE IMAGE */}
-                    <div className="relative recipe-img w-[100%] h-[80%] md:h-[70%] rounded-t-lg">
+                    <div className="relative recipe-img w-[100%] h-[70%] rounded-t-lg">
                         <Image
                             className="block object-cover w-[100%] h-[100%] object-center rounded-t-[7px]"
                             src={`/images/recipes/${selectedRecipe.img}`}
@@ -58,7 +61,7 @@ function CardSelectedRecipe(
                             width={666}
                             height={848}
                         />
-                        <span className="absolute top-[10px] left-[50%] -translate-x-1/2 bg-tertiary py-[.3em] px-[1.1em] rounded-full font-sans text-darker text-[.75rem] font-[600]">
+                        {/* <span className="absolute top-[10px] left-[50%] -translate-x-1/2 bg-tertiary py-[.3em] px-[1.1em] rounded-full font-sans text-darker text-[.75rem] font-[600]">
                             {day.day}
                             {isVegetarian ?
                                 <div className=" flex justify-center items-center w-[35px] h-[35px] absolute bottom-[-10px] right-[-20px] rounded-full text-[.8rem] bg-vegetarianGreen text-white font-[700]">
@@ -66,11 +69,24 @@ function CardSelectedRecipe(
                                 </div>
                                 : ''
                             }
+                        </span> */}
+                        <span 
+                            className="absolute text-nowrap cursor-pointer flex flex-row gap-2 items-center bottom-[10px] left-[50%] -translate-x-1/2 bg-tertiary py-[.3em] px-[1.1em] rounded-full font-sans text-darker text-[.75rem] font-[600]"
+                            onClick={() => {
+                            toggleModal();
+                            handleUpdateOptions();
+                            setModalDay(day.day);
+                        }}
+                        >
+                            Cambiar receta
+                            {/* <LiaExchangeAltSolid
+                            className=" text-[20px]"
+                            /> */}
                         </span>
                     </div>
 
                     {/* RECIPE INFO */}
-                    <div className="recipe-info h-[20%] md:h-[30%] flex flex-col gap-1 justify-start p-2 bg-transparent">
+                    <div className="recipe-info h-[30%] flex flex-col gap-1 justify-start p-2 bg-transparent">
                         <h4 className="recipe-title text-[.8rem] text-primary font-[600]">
                             {selectedRecipe.name}
                         </h4>
@@ -88,7 +104,7 @@ function CardSelectedRecipe(
             </div>
 
             {/* Change button */}
-            {showChangeButton ?
+            {/* {showChangeButton ?
                 <div className="w-[calc(100%-8px)] h-[100%] absolute bg-primaryAlpha flex justify-center items-center rounded-lg">
                     <div
                         className="flex justify-center gap-[10px] items center bg-gray_2 rounded-md cursor-pointer text-primary px-[20px] py-[10px]"
@@ -100,19 +116,19 @@ function CardSelectedRecipe(
                     >
                         <span
                             className="text-[13px] font-[500]"
-                            // onClick={(e) => handleToggleModal(e)}
+                            
                         >
                             Cambiar
                         </span>
                         <LiaExchangeAltSolid
                             className=" text-[20px]"
-                            // onClick={(e) => handleToggleModal(e)}
+                            
                         />
                     </div>
                 </div>
 
                 : ''
-            }
+            } */}
 
             {/* Options card */}
             {/* <div id={`options-${extraInfo}`} className={`options-${extraInfo} invisible flex flex-col justify-center items-center gap-4`}>

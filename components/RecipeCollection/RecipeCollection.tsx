@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import RecipeCard from "../Shared/RecipeCard";
+import RecipeCardCollection from "../Shared/RecipeCardForCollection";
 import recipes from "../../app/utils/recipes";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import FilterButton from "../Shared/FilterButton";
@@ -76,7 +76,7 @@ function RecipeCollection() {
             key={recipe.name + i} 
             href={`/recetas/${recipe.id}`}
           >
-          <RecipeCard
+          <RecipeCardCollection
             recipe = {recipe}
           />
           </Link>

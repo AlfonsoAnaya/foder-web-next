@@ -17,9 +17,10 @@ import Link from "next/link";
 
 interface WeeklyPlanProps {
     isWeekVegetarian: boolean;
+    recipes: Recipe[]
 }
 
-function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
+function WeeklyPlan({ isWeekVegetarian, recipes }: WeeklyPlanProps) {
     const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
   
     useEffect(() => {
@@ -33,7 +34,7 @@ function WeeklyPlan({ isWeekVegetarian }: WeeklyPlanProps) {
 
     const openSidenav = useIsSidenavOpenStore((state) => state.isSidenavOpen);
 
-    const weeksRecipes = isWeekVegetarian ? currentWeekRecipesVeg : currentWeekRecipes;
+    const weeksRecipes = recipes;
     const currentDayFromZustand = useCurrentDayStore((state) => state.currentDay);
 
 
