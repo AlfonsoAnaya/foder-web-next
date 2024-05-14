@@ -11,6 +11,8 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../../styles/carousel.css'
 import '../../styles/buttons.css'
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
+import useIsCustomPlanSelectedStore from "@/app/ZustandStore/IsCustomPlanSelectedStore";
+
 
 
 const InteractiveWeeklyPlan = () => {
@@ -32,10 +34,12 @@ const InteractiveWeeklyPlan = () => {
         };
     });
     const setCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
+    const isCustomPlanSelected = useIsCustomPlanSelectedStore((state) => state.isCustomPlanSelected);
+
 
     useEffect(() => {
-        setCurrentNavSection('arma-tu-plan');
-    }, []);
+        isCustomPlanSelected? setCurrentNavSection('mi-plan') : setCurrentNavSection('arma-tu-plan');
+    }, [isCustomPlanSelected]);
 
     function handleClickOutside(e: any) {
         if (e.target === e.currentTarget) {

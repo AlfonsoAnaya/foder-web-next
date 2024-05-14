@@ -86,14 +86,14 @@ function MobileNavMenu(
                 {isCustomPlanSelected
                     ? (<li
                         onClick={props.toggleMobileNav}
-                        className={`${currentNavSection === "mi-plan" ? "current-nav-section" : ""} hidden hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
+                        className={`${currentNavSection === "mi-plan" ? "current-nav-section" : ""}  hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
                         <Link href="/mi-plan">
                             Mi plan
                         </Link>
                     </li>)
                     : (<li
                         onClick={props.toggleMobileNav}
-                        className={`${currentNavSection === "arma-tu-plan" ? "current-nav-section" : ""} hidden hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
+                        className={`${currentNavSection === "arma-tu-plan" ? "current-nav-section" : ""} hover:text-secondary hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]`}>
                         <Link href="/arma-tu-plan">
                             Arma tu plan
                         </Link>
