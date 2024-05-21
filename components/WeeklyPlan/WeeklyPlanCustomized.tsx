@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import "./WeeklyPlan.css";
 import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
@@ -10,6 +11,9 @@ import Weekdays from "../../app/utils/Weekdays";
 import useIsSidenavOpenStore from "@/app/ZustandStore/IsSidenavOpenStore";
 import selectRecipes from "@/app/utils/InteractivePlanSelectedRecipes";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
+import { IoIosArrowRoundBack } from "react-icons/io";
+
+
 
 
 
@@ -65,7 +69,16 @@ function WeeklyPlan() {
         <>
             <section className="relative weekly-plan-section w-[100%] flex flex-col items-center 
             mt-0 md:mt-4">
-
+                <Link href="/arma-tu-plan">
+                <button 
+                    className="absolute btn-toggle md:fixed flex flex-row gap-2 items-center justify-center top-[78px] left-[30px] 
+                    z-[1] md:z-[11] text-secondary hover:underline"
+                >
+                    <IoIosArrowRoundBack className="text-[1.75rem]"/>
+                    Modificar Plan
+                </button>
+                </Link>
+               
                 {isViewportMobile ? (
                     <WeeklyPlanMobile
                         weeksRecipes={weeksRecipes}
