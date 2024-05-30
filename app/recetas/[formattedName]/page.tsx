@@ -8,9 +8,12 @@ const RecipeDetails = dynamic(
 );
 
 export default function RecipeDetailsPage({params}:
-    {params:{recipeId:string}
+    {params:{
+        recipeId:string
+        formattedName:string
+    }
 }) {
-    const { recipeId } = params; 
+    const { recipeId, formattedName } = params; 
     
     return (
         <>
