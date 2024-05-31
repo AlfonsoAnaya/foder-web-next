@@ -9,13 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "rgb(36, 131, 123)",
+        primary: "rgb(52, 97, 66)",
         primaryAlpha: "rgb(36, 131, 123, .8)",
-        secondary: "rgb(218, 112, 44)",
+        secondary: "rgb(236, 102, 40)",
         tertiary: "#fcba03",
         quatertiary: "#d15036",
+        durazno: "rgb(255, 214, 174)",
         btn: "#68d463e8",
-        white: "rgb(255, 253, 252)",
+        white: "rgb(250, 245, 232)",
         dark: "rgb(54, 54, 51)",
         darker: "rgb(16, 15, 15)",
         beige: "rgb(240, 239, 235)",
