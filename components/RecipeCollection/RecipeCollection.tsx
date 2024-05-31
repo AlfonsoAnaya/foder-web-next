@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import RecipeCardCollection from "../Shared/RecipeCardForCollection";
+import RecipeCarousel from "../Shared/RecipeCarousel";
 import recipes from "../../app/utils/recipes";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import FilterButton from "../Shared/FilterButton";
@@ -17,14 +18,30 @@ function RecipeCollection() {
   const [currentRecipes, setCurrentRecipes] = useState(recipes);
   const [filters, setFilters] = useState<string[]>([]);
   const [search, setSearch] = useState<string>("");
+  // boolean state to store whether the viewport is mobile
+  const [isViewportMobile, setIsViewportMobile] = useState(false);
 
   useEffect(() => {
     setCurrentNavSection("recetas");
+    // Function to check if the viewport width is smaller than 768px
+    const handleResize = () => {
+      setIsViewportMobile(window.innerWidth < 768);
+      console.log(isViewportMobile)
+  };
+  // Initial check on component mount
+  handleResize();
+  // Event listener for window resize
+  window.addEventListener('resize', handleResize);
+  // Cleanup the event listener on component unmount
+  return () => {
+      window.removeEventListener('resize', handleResize);
+  };
   }, []);
 
   useEffect(() => {
     searchAndFilterRecipes();
   }, [filters, search]);
+
 
   const handleFilterClick = (str: string) => {
     if (filters.includes(str)) {
@@ -76,53 +93,19 @@ function RecipeCollection() {
     setCurrentRecipes(filteredRecipes);
   };
 
-  // const filteredRecipes = recipes.filter((recipe) => {
-  //   if (search.length > 0 && filters.length > 0) {
-  //     const recipeMatchesAllFilters = filters.every((filter) =>
-  //     doesRecipeMatchFilter(recipe, filter as keyof Recipe));
-  //     if (doesRecipeMatchSearch(recipe) && recipeMatchesAllFilters) {
-  //       return true;
-  //     }
-  //     if (doesIngredientMatchSearch(recipe) && recipeMatchesAllFilters) {
-  //       return true;
-  //     }
-  //     return false;
-  //   }
-    
-  //   if (search.length > 0) {
-  //     if (doesRecipeMatchSearch(recipe)) {
-  //       return true;
-  //     }
-  //     // Check if any ingredient in the recipe matches the search criteria
-  //     return doesIngredientMatchSearch(recipe);
-  //     }
-    
-  //   if (filters.length > 0) {
-  //     return filters.every((filter) =>
-  //       doesRecipeMatchFilter(recipe, filter as keyof Recipe)
-  //     );
-  //   }
-  //   return true;
-  // });
-
   return (
-    <section className="todays-recipe-section flex flex-col gap-[28px] items-center">
-      <h3 className="text-[2rem] text-primary font-[600 md:mt-[30px]">
-        Todas nuestras recetas {currentRecipes.length}
+    <section className="todays-recipe-section flex flex-col items-center overflow-hidden">
+      <h3 className="text-[1.7rem] md:text-[2rem] text-primary font-[500] py-[10px] md:py-[30px]">
+        Todas nuestras recetas
       </h3>
 
-      <div className="flex w-[100%] justify-center items-center">
+      <div className="flex w-[100%] justify-center items-center  pb-[10px] md:pb-[15px]">
         <SearchBar onSearch={handleSearch} />
       </div>
-      <div className="flex gap-4  justify-center items-center">
+      <div className="flex gap-y-2 gap-x-4 flex-wrap justify-center items-center pb-[25px] md:pb-[50px]">
         <FilterButton
           title={"vegetariano"}
           filterStr={"isVegetarian"}
-          handleClick={handleFilterClick}
-        />
-        <FilterButton
-          title={"sin gluten"}
-          filterStr={"isGlutenFree"}
           handleClick={handleFilterClick}
         />
         <FilterButton
@@ -130,17 +113,48 @@ function RecipeCollection() {
           filterStr={"isVegan"}
           handleClick={handleFilterClick}
         />
+        <FilterButton
+          title={"sin gluten"}
+          filterStr={"isGlutenFree"}
+          handleClick={handleFilterClick}
+        />
+        {/* <FilterButton
+          title={"pescado"}
+          filterStr={"pescado"}
+          handleClick={handleFilterClick}
+        />
+        <FilterButton
+          title={"legumbres"}
+          filterStr={"legumbres"}
+          handleClick={handleFilterClick}
+        /> */}
       </div>
-      <div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1100px] mx-[2rem] my-[1.5rem]">
+      {/* <div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1150px]">
         {currentRecipes.map((recipe, i) => {
           const formattedName = formatStringToUrl(recipe.name)
           return (
-            <Link key={recipe.name + i} href={`/recetas/${formattedName}`}>
+            <Link key={recipe.name + i} href={`/recetas/${formattedName}?recipeId=${recipe.id}`}>
               <RecipeCardCollection recipe={recipe} />
             </Link>
           );
         })}
-      </div>
+      </div> */}
+      {isViewportMobile
+        ? <RecipeCarousel 
+            visibleSlides={1}
+            recipes={currentRecipes}
+          />
+        : (<div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1150px]">
+          {currentRecipes.map((recipe, i) => {
+            const formattedName = formatStringToUrl(recipe.name)
+            return (
+              <Link key={recipe.name + i} href={`/recetas/${formattedName}?recipeId=${recipe.id}`}>
+                <RecipeCardCollection recipe={recipe} />
+              </Link>
+            );
+          })}
+        </div>)
+      }
     </section>
   );
 }
