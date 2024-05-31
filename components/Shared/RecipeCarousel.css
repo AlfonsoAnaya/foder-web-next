@@ -1,0 +1,8 @@
+.carousel__slider--horizontal {
+    overflow: visible !important;
+}
+
+.carousel__inner-slide {
+    width: calc(100% - 30px) !important;
+    left: 15px !important;
+}
