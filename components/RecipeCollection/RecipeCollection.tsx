@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import RecipeCardCollection from "../Shared/RecipeCardForCollection";
-import RecipeCarousel from "../Shared/RecipeCarousel";
+import RecipeCarousel from "./RecipeCarousel";
 import recipes from "../../app/utils/recipes";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 import FilterButton from "../Shared/FilterButton";
@@ -73,7 +73,9 @@ function RecipeCollection() {
     };
 
     const doesRecipeMatchFilter = (recipe: Recipe, filter: keyof Recipe) => {
-      return recipe[filter] === true;
+      if (recipe[filter] === true) return true;
+      if (recipe.type.includes(filter)) return true;
+      return false;
     };
 
     const filteredRecipes = recipes.filter((recipe) => {
@@ -118,16 +120,16 @@ function RecipeCollection() {
           filterStr={"isGlutenFree"}
           handleClick={handleFilterClick}
         />
-        {/* <FilterButton
+        <FilterButton
           title={"pescado"}
-          filterStr={"pescado"}
+          filterStr={"Pescado"}
           handleClick={handleFilterClick}
         />
         <FilterButton
           title={"legumbres"}
-          filterStr={"legumbres"}
+          filterStr={"Legumbres"}
           handleClick={handleFilterClick}
-        /> */}
+        />
       </div>
       {/* <div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1150px]">
         {currentRecipes.map((recipe, i) => {
@@ -139,12 +141,16 @@ function RecipeCollection() {
           );
         })}
       </div> */}
+      {currentRecipes.length === 0 ?
+        <p>Ninguna receta encontrada</p>
+        :''
+      }
       {isViewportMobile
         ? <RecipeCarousel 
             visibleSlides={1}
             recipes={currentRecipes}
           />
-        : (<div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1150px]">
+        : (<div className="recipe-grid flex flex-wrap justify-center gap-[2.5rem] max-w-[1200px] px-6">
           {currentRecipes.map((recipe, i) => {
             const formattedName = formatStringToUrl(recipe.name)
             return (
@@ -155,6 +161,7 @@ function RecipeCollection() {
           })}
         </div>)
       }
+      
     </section>
   );
 }
