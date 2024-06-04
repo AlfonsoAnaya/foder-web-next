@@ -1,4 +1,6 @@
+"use client"
 import dynamic from "next/dynamic"
+import { useSearchParams } from "next/navigation";
 
 const RecipeDetails = dynamic(
     () => import("../../../components/RecipeDetails/RecipeDetails"),
@@ -7,10 +9,14 @@ const RecipeDetails = dynamic(
     }
 );
 
-export default function RecipeDetailsPage({params}:
-    {params:{recipeId:string}
-}) {
-    const { recipeId } = params; 
+export default function RecipeDetailsPage() {
+    const searchParams = useSearchParams();
+    let recipeId = searchParams.get("recipeId");
+
+
+    if (recipeId === null) {
+        return <div>Loading...</div>;
+      }
     
     return (
         <>
