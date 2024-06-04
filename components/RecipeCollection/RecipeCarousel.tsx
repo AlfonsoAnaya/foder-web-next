@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import './RecipeCarousel.css'
 import Recipe from "@/types/recipe.d";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from 'pure-react-carousel';
-import RecipeCardCollection from "./RecipeCardForCollection";
+import { formatStringToUrl } from "@/app/utils/helpers/formatter";
+import RecipeCardCollection from "../Shared/RecipeCardForCollection";
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import '../../styles/carousel.css'
 import '../../styles/buttons.css'
+import Link from "next/link";
 
 interface RecipeCarouslProps {
     visibleSlides: number
@@ -28,17 +30,21 @@ function RecipeCarousel(
             >
                 <Slider className="h-[400px] w-[100%]">
                     {recipes.map((recipe, i) => {
+                        const formattedName = formatStringToUrl(recipe.name)
                         return (
                             <Slide index={i} key={`${recipe}${recipe.id}`}>
-                                <RecipeCardCollection
-                                    recipe={recipe}
-                                />
+                                <Link key={recipe.name + i} href={`/recetas/${formattedName}?recipeId=${recipe.id}`}>
+                                    <RecipeCardCollection
+                                        recipe={recipe}
+                                    />
+                                </Link>
+
                             </Slide>
                         )
                     })}
                 </Slider>
                 <DotGroup
-                    className="flex justify-center h-[45px] items-center max-w-[110%] [&>*]:w-[45px] [&>*]:h-[6px] [&>*]:bg-dark rounded-full"
+                    className="flex justify-center h-[45px] items-center max-w-[110%] [&>*]:w-[45px] [&>*]:h-[6px] [&>*]:bg-gray-300 rounded-full"
                 />
             </CarouselProvider>
         </div>
