@@ -9,15 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "rgb(36, 131, 123)",
-        primaryAlpha: "rgb(36, 131, 123, .8)",
-        secondary: "rgb(218, 112, 44)",
-        tertiary: "#fcba03",
-        quatertiary: "#d15036",
-        btn: "#68d463e8",
-        white: "rgb(255, 253, 252)",
-        dark: "rgb(54, 54, 51)",
+        primary: "rgb(182, 209, 148)", //verde (claro)
+        primaryLight: "rgb(217, 234, 211)", //verde (muy claro)
+        secondary: "rgb(255, 215, 77)", //amarillo
+        tertiary: "rgb(255, 205, 153)", //peach
+        quatertiary: "rgb(255, 207, 206)", //rosa
+        white: "rgb(255, 244, 229)",
+        dark: "rgb(30, 30, 30)",
         darker: "rgb(16, 15, 15)",
+
+        albahaca: "rgb(52, 97, 66)",
+        mandarina: "rgb(236, 102, 40)",
+
+
+        
+        
+        
+        btn: "#68d463e8",
         beige: "rgb(240, 239, 235)",
         grayLight: "rgb(243, 244, 246)",
         gray_2: "rgb(227, 229, 232)",
@@ -27,7 +35,7 @@ const config: Config = {
       fontFamily: {
         siteTitle: ['var(--font-tilt-neon)'],
         // primary: "'Josefin Sans', sans-serif",
-        sans: ['var(--font-raleway)'],
+        sans: ['var(--font-cutive)'],
         // primary: "'Jost', sans-serif",
         serif: ['var(--font-lora)'],
         tertiary: "sans-serif",

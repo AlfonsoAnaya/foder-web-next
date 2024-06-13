@@ -27,10 +27,10 @@ function RecipeCardCollection(
                         height={848}
                     />
 
-                    {/* RECIPE INFO */}
-                    <div className="absolute top-[15px] w-[100%] flex flex-col gap-2 justify-center items-center px-8 md:px-2">
-                        <div className="recipe-info flex flex-col gap-2 justify-center items-center px-[10px] py-[4px] bg-tertiary rounded-full">
-                            <h4 className="recipe-title text-[.8rem] md:text-[.95rem] text-dark  text-center font-[600]">
+                    {/* RECIPE NAME */}
+                    <div className="absolute top-[20px] w-[100%] flex flex-col gap-2 justify-center items-center">
+                        <div className="recipe-info flex flex-col w-[100%] gap-2 justify-center items-center px-[10px] py-[10px] bg-white bg-opacity-50">
+                            <h4 className="recipe-title text-[.7rem] md:text-[.85rem] text-dark text-center font-[600]">
                                 {recipe.name}
                             </h4>
                         </div>

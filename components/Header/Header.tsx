@@ -1,5 +1,6 @@
 'use client'
 //import SearchBar from "./Shared/SearchBar";
+import Image from "next/image";
 import MobileNavMenu from "./MobileNavMenu";
 import HeaderUtilities from "./HeaderUtilities";
 import "./Header.css";
@@ -21,17 +22,17 @@ function Header() {
     const updateCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
 
     return (
-        <header className="sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-10 nav: border-b-primary border-b-[1px]
-            bg-primary ">
+        <header className="sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-20 nav: border-b-dark border-b-[1px] border-dashed
+            bg-white ">
             <div className="flex flex-col justify-center align-center w-[100%] max-w-[1200px]">
-                <div className="flex flex-1 flex-row md:gap-16 items-center justify-between md:justify-start relative">
+                <div className="flex flex-1 flex-row md:gap-16 items-center justify-between relative">
 
                     {/* Website Name */}
                     
                         <h1 id="header-title"
                             className="large-text text-left  
                             font-siteTitle
-                            text-white uppercase
+                            text-dark uppercase
                             text-[2.5em] md:text-[3.15em] leading-[1em] py-[12px]"
                             onClick={() => {
                                 closeMobileNav;
@@ -41,7 +42,12 @@ function Header() {
                                 href="/"
                                 onClick={closeMobileNav}
                             >
-                                Pipián
+                                <Image 
+                                    src="/images/logos/logo-dark.svg"
+                                    width="200"
+                                    height="50"
+                                    alt="logo pipián"
+                                />
                             </Link>
                             
                         </h1>

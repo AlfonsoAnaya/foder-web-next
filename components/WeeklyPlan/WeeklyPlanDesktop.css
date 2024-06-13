@@ -1,6 +1,5 @@
 .current {
     text-underline-offset: 15px;
-    color: var(--color-secondary);
     border-bottom: solid 2px var(--color-secondary);
     transition: border-bottom ease-in 50ms;
 }

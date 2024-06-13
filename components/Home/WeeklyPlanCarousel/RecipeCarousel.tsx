@@ -49,21 +49,21 @@ function RecipeCarousel({ recipes }: CarouselProps) {
 
   return (
 
-    <div className="carousel-container relative bg-white md:bg-gray-100">
-      <Link href={`/plan-actual`}>
-        <h3 className="flex justify-center text-[2rem]  text-dark hover:text-secondary font-[600] pt-4 pb-8 md:py-8 bg-dark-10 underline decoration-secondary">
-          El plan de esta semana
+    <div className="carousel-container relative flex flex-col bg-white w-[100%]">
+      
+        <h3 className="text-center text-[2rem] w-fit self-center text-dark hover:text-albahaca font-[500] pt-4 pb-8 md:py-8 bg-dark-10 decoration-dark">
+        <Link href={`/plan-actual`}>El plan de esta semana</Link>
         </h3>
-      </Link>
+
 
       <CarouselProvider
-        className="flex flex-col items-center relative"
+        className="flex flex-col self-center items-center relative gap-4 w-[90%] max-w-[1200px]"
         naturalSlideWidth={200}
         naturalSlideHeight={300}
         totalSlides={recipes.length}
         visibleSlides={visibleSlides}
         infinite={true}>
-        <Slider className="h-[550px] md:h-[430px] w-[100%] md:w-[95%] max-w-[1300px]">
+        <Slider className="h-[550px] md:h-[430px] w-[100%] max-w-[1200px]">
           {recipes.map((recipe, i) => {
             return (
               <Slide index={i} key={recipe.name + i}
@@ -96,7 +96,7 @@ function RecipeCarousel({ recipes }: CarouselProps) {
           </svg>
         </ButtonNext>
         <DotGroup
-          className="flex justify-center gap-[2px] pb-10 max-w-[95%] [&>*]:w-[45px] [&>*]:h-[19px] [&>*]:border-y-[8px] [&>*]:border-y-white md:[&>*]:border-y-grayLight [&>*]:bg-dark [&>*]:rounded-sm"
+          className="flex justify-center gap-[2px] pb-10 max-w-[95%] [&>*]:w-[45px] [&>*]:h-[19px] [&>*]:border-y-[8px] [&>*]:border-y-white md:[&>*]:border-y-white [&>*]:bg-gray-600 [&>*]:rounded-sm"
         />
       </CarouselProvider>
 

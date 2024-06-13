@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from "react";
 import "./WeeklyPlan.css";
-import currentWeekRecipes from "../../app/utils/CurrentWeek/CurrentWeekRecipes";
-import currentWeekRecipesVeg from "@/app/utils/CurrentWeek/CurrentWeekRecipesVeg";
 import Recipe from "../../types/recipe.d";
 import WeeklyPlanDesktop from "./WeeklyPlanDesktop";
 import WeeklyPlanMobile from "./WeeklyPlanMobile";
@@ -79,15 +77,15 @@ function WeeklyPlan({ isWeekVegetarian, recipes }: WeeklyPlanProps) {
     return (
         <>  
             
-            <Link href={ isWeekVegetarian ? 
+            {/* <Link href={ isWeekVegetarian ? 
                 "/plan-actual-vegetariano/lista-de-compras": 
                 "/plan-actual/lista-de-compras"}>
                 <ShoppingListButton />
-            </Link>
+            </Link> */}
                 
             
-            <section className="relative weekly-plan-section w-[100%] flex flex-col items-center 
-            mt-0 md:mt-4">
+            <section className="relative top-[-1px] weekly-plan-section w-[100%] flex flex-col items-center 
+            mt-0">
 
                 {isViewportMobile ? (
                     <WeeklyPlanMobile

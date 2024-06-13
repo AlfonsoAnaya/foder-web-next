@@ -43,8 +43,8 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
               height={848}
             />
           </Link>
-          <span className="absolute top-[calc(100%-75px)] md:top-[25px] left-[50%] md:left-[25px] -translate-x-[50%] md:translate-x-0  bg-tertiary py-[.4rem] px-[1.5rem] rounded-full font-sans text-darker text-[1.15rem] font-[600]">
-            {todayString}
+          <span className="absolute top-[calc(100%-75px)] md:top-[25px] left-[50%] md:left-[25px] -translate-x-[50%] md:translate-x-0  bg-primary py-[.4rem] px-[1.5rem] rounded-full font-sans text-darker text-[1.15rem] font-[500]">
+            <span className="flex translate-y-[15%]">{todayString}</span>
           </span>
         </div>
 
@@ -56,7 +56,7 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
             href={`/plan-actual`}
             onClick={()=>handleClick(todayInt, true)}
           >
-            <h3 className="recipe-title underline text-[1.5rem] md:text-[1.75rem] text-primary  font-[600]">
+            <h3 className="recipe-title underline text-[1.5rem] md:text-[1.75rem] text-dark  font-[600]">
               {recipe.name}
             </h3>
           </Link>
