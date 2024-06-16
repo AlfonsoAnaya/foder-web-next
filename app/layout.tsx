@@ -1,6 +1,7 @@
 //Import Google Analytics
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Script from "next/script";
+import Head from "next/head";
 
 // import StoreProvider from "@/lib/StoreProvider";
 import type { Metadata } from "next";
@@ -48,9 +49,11 @@ export default function RootLayout({
     //   // isSidenavOpen={false}
     // >
       <html lang="en">
+        <Head> 
+        <Script src="https://cmp.osano.com/AzZZBuUFrPnYHIGKQ/b1ba713a-9737-4d07-a592-6ce8532b0171/osano.js" strategy="beforeInteractive"/>
+        </Head>
         <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white font-sans`}>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <Script src="https://cmp.osano.com/AzZZBuUFrPnYHIGKQ/b1ba713a-9737-4d07-a592-6ce8532b0171/osano.js" strategy="beforeInteractive"/>
 
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <GoogleAnalytics ga_id= 
