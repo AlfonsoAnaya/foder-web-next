@@ -50,7 +50,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white font-sans`}>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <Script src="https://cmp.osano.com/AzZZBuUFrPnYHIGKQ/b1ba713a-9737-4d07-a592-6ce8532b0171/osano.js" />
+        <Script src="https://cmp.osano.com/AzZZBuUFrPnYHIGKQ/b1ba713a-9737-4d07-a592-6ce8532b0171/osano.js" strategy="beforeInteractive"/>
 
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <GoogleAnalytics ga_id= 
