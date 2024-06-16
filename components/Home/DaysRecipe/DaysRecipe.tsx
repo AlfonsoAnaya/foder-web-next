@@ -27,15 +27,15 @@ function DaysRecipe({ recipes }: DaysRecipeProps) {
 
   return (
     <section className="todays-recipe-section flex flex-col items-center bg-grayLight md:bg-white">
-      <div className="flex flex-col justify-center items-center md:flex-row max-w-[1100px] md:mx-[20px] my-8 md:my-16 gap-[1.5rem] ">
+      <div className="flex flex-col justify-center items-center md:flex-row max-w-[1100px] md:mx-[20px] my-8 md:my-16 gap-[1.5rem]">
 
-        <div className="relative recipe-img w-[95%] md:max-w-[50%] max-h-[650px] order-2 md:order-1">
+        <div className="relative recipe-img w-[95%] md:max-w-[50%] h-[65vh] order-2 md:order-1 rounded-xl">
           <Link
             href={`/plan-actual`}
             onClick={()=>handleClick(todayInt, true)}
           >
             <Image
-              className="block object-cover w-[100%] h-[100%] object-center"
+              className="block object-cover w-[100%] h-[100%] object-center rounded-xl"
               src={`/images/recipes/${recipe.img}`}
               // alt={recipe.imgAlt} 
               alt="un plato de comida"

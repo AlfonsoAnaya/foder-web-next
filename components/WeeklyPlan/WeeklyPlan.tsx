@@ -84,7 +84,7 @@ function WeeklyPlan({ isWeekVegetarian, recipes }: WeeklyPlanProps) {
             </Link> */}
                 
             
-            <section className="relative top-[-1px] weekly-plan-section w-[100%] flex flex-col items-center 
+            <section className="relative weekly-plan-section w-[100%] flex flex-col items-center 
             mt-0">
 
                 {isViewportMobile ? (

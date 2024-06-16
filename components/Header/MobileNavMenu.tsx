@@ -74,18 +74,18 @@ function MobileNavMenu(
                     className={`${(currentNavSection === "plan-actual" || currentNavSection === "plan-actual-vegetariano" || currentNavSection === "planes-anteriores") 
                          ? "current-nav-section" 
                          : ""}
-                        relative hidden md:block`}
+                         hidden md:block`}
                     onClick={openMenu}
                     ref={ref}
                 >
-                    <div className="flex gap-2 items-center justify-center hover:text-dark hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
+                    <div className="flex relative gap-2 items-center justify-center hover:text-dark hover:cursor-pointer hover:underline hover:underline-offset-8 decoration-[3px]">
                         {selectedPlan} <span className="text-[10px]"><FaChevronDown /></span>
                     </div>
                     {isPlanMenuOpen ?
-                        <ul className="bg-primary absolute top-[140%] -left-[20px] w-fit">
+                        <ul className="bg-primaryLight absolute isolate top-[140%] -left-[20px] w-fit rounded-lg">
                             <Link href="/plan-actual">
                             <li 
-                                className={`${currentNavSection === "plan-actual" ? "current-nav-section" : ""} hover:bg-secondary px-4 py-2`}
+                                className={`${currentNavSection === "plan-actual" ? "current-nav-section" : ""} hover:bg-secondary hover:underline hover:underline-offset-[4px] decoration-[2px] px-4 py-2 rounded-t-lg`}
                                 onClick={()=>selectOption("plan actual")}    
                             >
                                 plan actual
@@ -93,14 +93,14 @@ function MobileNavMenu(
                             </Link>
                             
                             <Link href="/plan-actual-vegetariano"><li 
-                                className={`${currentNavSection === "plan-actual-vegetariano" ? "current-nav-section" : ""} hover:bg-secondary px-4 py-2`}
+                                className={`${currentNavSection === "plan-actual-vegetariano" ? "current-nav-section" : ""} hover:bg-secondary hover:underline hover:underline-offset-[4px] decoration-[2px] px-4 py-2`}
                                 onClick={()=>selectOption("plan actual veg")}    
                             >
                                 plan actual veg
                             </li>
                             </Link>
                             <Link href="/acervo-planes-semanales"><li 
-                                className={`${currentNavSection === "planes-anteriores" ? "current-nav-section" : ""} hover:bg-secondary px-4 py-2`}
+                                className={`${currentNavSection === "planes-anteriores" ? "current-nav-section" : ""} hover:bg-secondary hover:underline hover:underline-offset-[4px] decoration-[2px] px-4 py-2 rounded-b-lg`}
                                 onClick={()=>selectOption("planes anteriores")}    
                             >
                                 planes anteriores

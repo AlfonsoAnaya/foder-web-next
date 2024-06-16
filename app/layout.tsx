@@ -48,10 +48,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // <StoreProvider
-    //   // selectedDay={3}
-    //   // isSidenavOpen={false}
-    // >
       <html lang="en">
         <body className={`${cutive.variable} ${raleway.variable} ${lora.variable} ${tiltNeon.variable} bg-white font-sans`}>
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -64,7 +60,5 @@ export default function RootLayout({
           <Footer />
         </body>
       </html>
-    // </StoreProvider>
-
   );
 }

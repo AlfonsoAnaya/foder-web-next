@@ -1,13 +1,25 @@
 'use client'
 //import SearchBar from "./Shared/SearchBar";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import Image from "next/image";
 import MobileNavMenu from "./MobileNavMenu";
-import HeaderUtilities from "./HeaderUtilities";
 import "./Header.css";
 import Link from "next/link";
 import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore";
 
 function Header() {
+    const pathname = usePathname();
+    let hideBorder = false;
+
+    if (pathname === "/plan-actual-vegetariano"
+        || pathname === "/plan-actual"
+        || pathname === "/plan-actual/lista-de-compras"
+        || pathname === "/plan-actual-vegtariano/lista-de-compras"
+        || pathname === "/mi-plan"
+    ) hideBorder = true;
+
+
     const toggleMobileNav = () => {
         const navToggle = document.querySelector('.header-nav');
         if (navToggle?.classList.contains("nav-open")) navToggle?.classList.remove("nav-open")
@@ -22,8 +34,8 @@ function Header() {
     const updateCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
 
     return (
-        <header className="sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-20 nav: border-b-dark border-b-[1px] border-dashed
-            bg-white ">
+        <header className={`sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-20 nav: border-b-dark border-b-[1px] border-dashed
+            bg-white ${hideBorder ? "border-none" : ""}`}>
             <div className="flex flex-col justify-center align-center w-[100%] max-w-[1200px]">
                 <div className="flex flex-1 flex-row md:gap-16 items-center justify-between relative">
 

@@ -12,8 +12,9 @@ function FilterButton( {title, filterStr, handleClick}:FilterButtonProps ) {
 
     return (
         <button 
-            className={`${isActive? "bg-tertiary": "bg-white"}
-            filter-button whitespace-nowrap lowercase text-[.8rem] md:text-[1rem] border-[1px] border-tertiary text-darker hover:text-dark font-[600] rounded-full py-[.2rem] px-[.9rem] md:py-[.5rem] md:px-[1.7rem]`}
+            className={`filter-button whitespace-nowrap lowercase text-[.8rem] md:text-[1rem] border-[1px] border-dark text-darker hover:border-solid font-[600] rounded-full py-[.2rem] px-[.9rem] md:py-[.5rem] md:px-[1.7rem]
+            ${isActive? "bg-secondary border-solid": "bg-white border-dashed"}
+            `}
             onClick={() => {
                 handleClick(filterStr);
                 setIsActive(prevState => !prevState)

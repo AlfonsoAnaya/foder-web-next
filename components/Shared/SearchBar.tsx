@@ -31,7 +31,7 @@ function SearchBar({ onSearch }: SearchBarProps) {
                 value={searchTerm}
                 onChange={handleChange}
                 className="w-[100%] px-[.6rem] pt-[10px] pb-[6px] bg-beige bg-opacity-70 outline-none 
-                border-b-[transparent] border-b-[2px] focus:border-b-primary focus:border-b-[2px]
+                border-b-[transparent] border-b-[2px] focus:border-b-secondary focus:border-b-[2px]
                 duration-300"
             />
             <button type="submit" className="absolute right-[28px] text-[22px] top-1/2 transform -translate-y-1/2 opacity-60">

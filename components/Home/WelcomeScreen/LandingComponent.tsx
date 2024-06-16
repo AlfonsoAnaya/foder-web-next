@@ -21,7 +21,7 @@ function LandingComponent() {
                         src="./img/recipes/00004.jpg"
                         alt="un plato con dos tacos de carne, guacamole y pico de gallo" /> */}
                     <Image 
-                        className="block object-cover w-[100%] h-[100%] object-center md:rounded-l-[11px]"
+                        className="block object-cover w-[100%] h-[100%] object-center md:rounded-r-[11px]"
                         src="/images/recipes/00004.jpg"
                         alt="un plato con dos tacos de carne, guacamole y pico de gallo" 
                         width={666}
