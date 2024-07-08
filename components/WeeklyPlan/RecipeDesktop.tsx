@@ -1,5 +1,6 @@
 import RecipeInfo from '../Shared/RecipeComponents/RecipeInfo';
 import IngredientList from '../Shared/RecipeComponents/IngredientList';
+import RecipeTags from '../Shared/RecipeComponents/RecipeTags';
 import Method from '../Shared/RecipeComponents/Method';
 import Recipe from '../../types/recipe.d';
 import "./RecipeDesktop.css"
@@ -21,6 +22,7 @@ function RecipeDesktop({ recipe, isWeekVegetarian }: IndividualRecipeProps) {
           <div className="w-[50%] h-[100%]">
             <RecipeInfo
               recipe={recipe}
+              isWeekVegetarian={isWeekVegetarian}
             />
           </div>
 
@@ -39,10 +41,10 @@ function RecipeDesktop({ recipe, isWeekVegetarian }: IndividualRecipeProps) {
         </div>
 
         <div className="h-[100px] border-b-[1px] border-b-dark border-dashed">
-
+          <RecipeTags 
+            recipe={recipe}
+          />
         </div>
-
-
 
         <div className="py-[40px] flex">
           <div className="w-[40%]">
@@ -52,7 +54,7 @@ function RecipeDesktop({ recipe, isWeekVegetarian }: IndividualRecipeProps) {
             />
           </div>
 
-          <div className="w-[40%]">
+          <div className="w-[60%]">
             <Method
               recipe={recipe}
             />

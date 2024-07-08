@@ -33,7 +33,7 @@ function WeeklyPlanDesktop(
 
     return (
         <>
-            <nav className="sticky font-sans top-[5px] z-[19] border-box bg-white py-[24px] text-[14px]
+            <nav className="sticky font-sans top-[8px] z-[19] border-box bg-white py-[24px] text-[13px]
             w-[100%] flex flex-row justify-center gap-[.75em] border-b-[1px] border-dashed border-b-dark">
                 {Weekdays.map((day, i) => {
                     return (
@@ -43,8 +43,8 @@ function WeeklyPlanDesktop(
                                     handleNavClick(weeksRecipes[i], Weekdays[i]);
                                     handleClick(i);
                                 }}
-                                className={day === currentDay ? "day-container py-[10px] weekday current hover:cursor-pointer px-2 font-[500]" : "day-container relative py-[10px] weekday hover:cursor-pointer px-2 font-[500]"}>
-                                {day.toUpperCase()}
+                                className={`day-container py-[10px] weekday hover:cursor-pointer px-2 font-[500] ${day === currentDay ? 'current' : 'relative'}`}>
+                                <span className="translate-x-5">{day.toUpperCase()}</span>
 
                             </span>
                             {/* Bubble recipe name on hover */}

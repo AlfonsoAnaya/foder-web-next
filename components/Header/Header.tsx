@@ -11,6 +11,7 @@ import useCurrentNavSectionStore from "@/app/ZustandStore/CurrentNavSectionStore
 function Header() {
     const pathname = usePathname();
     let hideBorder = false;
+    let changeColor = false;
 
     if (pathname === "/plan-actual-vegetariano"
         || pathname === "/plan-actual"
@@ -18,6 +19,10 @@ function Header() {
         || pathname === "/plan-actual-vegtariano/lista-de-compras"
         || pathname === "/mi-plan"
     ) hideBorder = true;
+
+    if (pathname === "/plan-actual/lista-de-compras"
+    || pathname === "/plan-actual-vegtariano/lista-de-compras"
+    ) changeColor = true;
 
 
     const toggleMobileNav = () => {
@@ -34,9 +39,9 @@ function Header() {
     const updateCurrentNavSection = useCurrentNavSectionStore((state) => state.updateCurrentNavSection);
 
     return (
-        <header className={`sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-20 nav: border-b-dark border-b-[1px] border-dashed
-            bg-white ${hideBorder ? "border-none" : ""}`}>
-            <div className="flex flex-col justify-center align-center w-[100%] max-w-[1200px]">
+        <header className={`sticky header-nav top-0 z-20  w-100% flex justify-center align-center px-4 md:px-0 nav: border-b-dark border-b-[1px] border-dashed
+            bg-white ${hideBorder ? "border-none" : ""} ${changeColor ? "background-list": ""}`}>
+            <div className="flex flex-col justify-center align-center w-[90%] max-w-[1200px]">
                 <div className="flex flex-1 flex-row md:gap-16 items-center justify-between relative">
 
                     {/* Website Name */}

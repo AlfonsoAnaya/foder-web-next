@@ -1,7 +1,8 @@
 .current {
-    text-underline-offset: 15px;
-    border-bottom: solid 2px var(--color-secondary);
-    transition: border-bottom ease-in 50ms;
+    border: dashed 1px var(--color-dark);
+    border-radius: 20px;
+    background-color: var(--color-secondary);
+    padding: 8px 20px;
 }
 
 .weekday {

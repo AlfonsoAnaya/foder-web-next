@@ -59,10 +59,6 @@ details[open] + div.ingredients-content {
     transition: max-height 400ms ease-in, border 0ms linear;
 }
 
-.ingredients-span:first-child {
-    text-decoration: underline;
-}
-
 .ingredients-arrow {
     display: flex;
     font-size: 1rem;

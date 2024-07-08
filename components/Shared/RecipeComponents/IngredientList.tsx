@@ -1,8 +1,7 @@
 import './IngredientList.css'
 import Recipe from '@/types/recipe.d';
 import Ingredient from '@/types/ingredientd.d';
-import ShoppingListButtonIngredients from './ShoppingListButtonIngredients';
-import Link from 'next/link';
+import TipBox from './TipBox';
 
 interface IngredientListProps {
   recipe: Recipe;
@@ -11,13 +10,13 @@ interface IngredientListProps {
 
 function IngredientList({ recipe, isWeekVegetarian }: IngredientListProps) {
   return (
-    <div className="recipe-ingredients flex flex-col justify-start items-start pb-[20px] md:pb-0">
+    <div className="recipe-ingredients flex flex-col gap-8 justify-start items-start pb-[20px] md:pb-0 md:pr-[50px]">
 
       <details open className="overflow-hidden">
         <summary className="items-center flex gap-[5px] font-[600] mb-[.5rem] 
             text-[1.1rem] md:text-[1.5rem] hover:cursor-pointer
             mt-2 md:mt-0">
-          <span className="ingredients-span items-center flex">Ingredientes</span>
+          <span className="ingredients-span items-center flex uppercase  text-[16px] md:text-[18px]">Ingredientes</span>
           <span className="ingredients-arrow">
             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" className="self-start" fill="none" viewBox="0 0 24 24"><path stroke="rgb(16, 15, 15)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m6 9 6 6 6-6" /></svg>
           </span>
@@ -69,16 +68,14 @@ function IngredientList({ recipe, isWeekVegetarian }: IngredientListProps) {
             : ''
         }
       </div>
-      {(isWeekVegetarian == undefined) ?
-      '':
-      <Link href={isWeekVegetarian ?
-        "/plan-actual-vegetariano/lista-de-compras" :
-        "/plan-actual/lista-de-compras"}
-      >
-        <ShoppingListButtonIngredients />
-      </Link>
-      }
       
+      {recipe.tips ?
+        <TipBox
+          recipe={recipe}
+        />
+        : ''
+      }
+
     </div>
   )
 }

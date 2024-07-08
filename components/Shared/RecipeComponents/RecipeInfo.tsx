@@ -1,11 +1,15 @@
 import Recipe from "@/types/recipe.d"
+import ShoppingListButtonIngredients from "./ShoppingListButtonIngredients";
+import Link from "next/link";
 
 interface RecipeInfoProps {
     recipe: Recipe
+    isWeekVegetarian?: boolean
 }
 
-function RecipeInfo({ recipe }: RecipeInfoProps) {
+function RecipeInfo({ recipe, isWeekVegetarian }: RecipeInfoProps) {
     return (
+      <div className="flex flex-col gap-4 h-[100%]">
         <div className="recipe-title h-[100%] flex flex-col justify-between py-[0px] items-left ">
           <h2 className="text-[1.35rem] md:text-[2.5rem] text-dark font-[500] font-sans">
             {recipe.name}
@@ -36,6 +40,16 @@ function RecipeInfo({ recipe }: RecipeInfoProps) {
               : ''}
           </div> */}
         </div>
+        {(isWeekVegetarian == undefined) ?
+          '' :
+          <Link href={isWeekVegetarian ?
+            "/plan-actual-vegetariano/lista-de-compras" :
+            "/plan-actual/lista-de-compras"}
+          >
+            <ShoppingListButtonIngredients />
+          </Link>
+        }
+      </div>
     )
 }
 

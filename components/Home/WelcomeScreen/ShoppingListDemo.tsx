@@ -1,7 +1,7 @@
 function ShoppingListDemo() {
     return (
         <div className="h-[78vh] md:h-landingHeightDesktop flex flex-col justify-center items-center bg-grayLight md:bg-white ">
-            <div className="text-center md:text-left md:h-[90%] flex flex-col border-[2px] border-dark border-dashed bg-primary rounded-lg
+            <div className="text-center md:text-left md:h-[85%] flex flex-col border-[1px] border-dark border-dashed bg-primary rounded-lg
             md:flex-row justify-start md:justify-start items-center md:items-stretch w-[100%] md:w-[90%] max-w-[1200px] px-2 pt-4 md:p-0">
                 <h2 className="block md:hidden text-[1.1rem] md:text-[1.25rem] text-dark font-[600]">
                         Crea listas de compras interactivas en unos cuantos clicks

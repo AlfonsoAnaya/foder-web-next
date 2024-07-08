@@ -41,7 +41,7 @@ const config: Config = {
         tertiary: "sans-serif",
       },
       height: {
-        landingHeightDesktop: "73vh",
+        landingHeightDesktop: "78vh",
       },
     },
   },
