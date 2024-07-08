@@ -1,5 +1,5 @@
 .carousel__dot--selected {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
 }
 
 .hidden-content {

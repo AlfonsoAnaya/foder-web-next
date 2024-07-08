@@ -97,7 +97,7 @@ function RecipeCollection() {
 
   return (
     <section className="todays-recipe-section flex flex-col items-center overflow-hidden">
-      <h3 className="text-[1.7rem] md:text-[2rem] text-primary font-[500] py-[10px] md:py-[30px]">
+      <h3 className="text-[1.7rem] md:text-[2rem] text-dark font-[500] py-[10px] md:py-[30px]">
         Todas nuestras recetas
       </h3>
 

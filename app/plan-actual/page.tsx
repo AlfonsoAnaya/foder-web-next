@@ -23,7 +23,6 @@ function WeeklyPlanPage() {
                 recipes={currentWeekRecipes}
             />
         </main>
-
     )
 };
 

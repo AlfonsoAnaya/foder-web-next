@@ -9,10 +9,7 @@ function DesktopShoppingList(
     { ingredientsState, toggleStrikethrough }: DesktopShoppingListProps
 ) {
     return (
-        <div className="w-[60%]">
-            <h3 className="font-[600] mb-[.5rem] underline text-[1.5rem] mt-0">
-                Lista de compras
-            </h3>
+        <div className="w-[50%]">
             <ul>
 
                 {/* MAP THROUGH THE KEYS OF THE OBEJCT HOLDING THE CATEGORIZED INGREDIENTS */}

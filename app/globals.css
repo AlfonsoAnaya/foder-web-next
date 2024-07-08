@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: rgb(36, 131, 123);
-  --color-secondary: rgb(218, 112, 44);
-  --color-white: #fffcfb;
-  --color-dark: rgb(54, 54, 51);
+  --color-primary: rgb(182, 209, 148);
+  --color-secondary: rgb(255, 215, 77);
+  --color-tertiary: rgb(255, 205, 153);
+  --color-quatertiary: rgb(255, 207, 206);
+  --color-white: rgb(255, 244, 229);
+  --color-dark: rgb(30, 30, 30);
   --color-darker: rgb(16, 15, 15);
   --color-gray-light: rgb(243, 244, 246);
+
+  --color-albahaca: rgb(52, 97, 66);
+  --color-mandarina: rgb(236, 102, 40);
 }
 
 

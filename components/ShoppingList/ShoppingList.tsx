@@ -152,21 +152,21 @@ function ShoppingList({ recipes, isWeekVegetarian }: ShoppingListProps) {
     }
 
     return (
-        <section className="shopping-list-section w-[100%] flex flex-col items-center p-4 mt-0 md:mt-12">
-            <div className="max-w-[1100px] w-[100%] flex gap-8">
-                <div className="w-[100%] md:w-[30%] flex flex-col items-center gap-2">
-                    {isViewportMobile ?
-                        <h3
-                            className="text-dark font-[500] text-[1.25rem] text-center mt-2 mb-2">
-                            ¿Cuáles recetas quieres agregar a tu lista de compras?
-                        </h3>
-                        : ''}
+        <section className="relative shopping-list-section w-[100%] flex flex-col items-center p-4 md:p-0 mt-0 bg-secondary min-h-[100vh]">
+            <div className="sticky top-[73px] bg-secondary border-dashed border-b-[1px] border-b-dark pt-6 pb-4 text-[1.5rem] w-[100%]
+                flex justify-center">
+                <h2 className="w-[90%] max-w-[1200px]">Lista de Compras</h2>
+            </div>
+            
+            <div className="max-w-[1200px] w-[90%] flex">
+                <div className="w-[100%] md:w-[50%] flex flex-col items-center gap-2 border-dashed border-r-[1px] border-r-dark">
+                    <h3 className="md:pt-8">RECETAS</h3>
                     <div className="w-[100%] flex flex-col gap-[.5em]">
                         {recipes.map((recipe, i) => {
                             return (
                                 <div key={`Day ${i}`} id={`Day ${i + 1}`}>
                                     <div
-                                        className={`border-b-[1px] border-b-gray-500 flex flex-col hover:cursor-pointer`}
+                                        className={`border-b-[1px] border-b-dark border-dashed flex flex-col hover:cursor-pointer`}
                                     >
                                         <div
                                             className={selectedRecipes.includes(i) ? "selected-day" : ""}

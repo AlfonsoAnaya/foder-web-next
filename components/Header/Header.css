@@ -62,4 +62,9 @@
     text-underline-offset: 8px;
     text-decoration: underline;
     text-decoration-color: var(--color-secondary);
+    text-decoration-thickness: 3px;
+}
+
+.background-list {
+    background-color: var(--color-secondary) !important;
 }

@@ -2,6 +2,11 @@
     background-color: var(--color-secondary);
 }
 
+.carousel__slider-tray,
+.carousel__inner-slide {
+    overflow: hidden;
+}
+
 .hidden-content {
     opacity:0;
     transition: opacity 0.3s ease-in-out;
