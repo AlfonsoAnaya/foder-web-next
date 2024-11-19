@@ -24,6 +24,12 @@ details[open] + div.ingredients-content {
     text-decoration: none !important;
 }
 
+@media screen and (min-width: 720px) {
+    .ingredients-arrow {
+        display: none !important;
+    }
+}
+
 details[open] .ingredients-arrow {
     transform: rotate(0deg);
     transition: all 200ms ease-out;

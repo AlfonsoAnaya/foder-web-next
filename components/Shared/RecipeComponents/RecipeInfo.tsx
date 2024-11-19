@@ -7,10 +7,18 @@ interface RecipeInfoProps {
     isWeekVegetarian?: boolean
 }
 
+// Takes a recipe as a prop
+// and the boolean isWeekVegetarian 
+// Renders:
+  //  recipe's title (name)
+  //  recipe's tagline
+  //  if isWeekVegetarian not undefined
+      //  Shopping list button
+
 function RecipeInfo({ recipe, isWeekVegetarian }: RecipeInfoProps) {
     return (
-      <div className="flex flex-col gap-4 h-[100%]">
-        <div className="recipe-title h-[100%] flex flex-col justify-between py-[0px] items-left ">
+      <div className="flex flex-col gap-8 h-[100%]">
+        <div className="recipe-title h-[100%] flex flex-col justify-between gap-[20px] md:gap-[0] py-[0px] items-left ">
           <h2 className="text-[1.35rem] md:text-[2.5rem] text-dark font-[500] font-sans">
             {recipe.name}
           </h2>

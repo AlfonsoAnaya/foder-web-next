@@ -13,7 +13,7 @@ function Method({ recipe }: MethodProps) {
             <ul className="">
                 {recipe.method.map((text: string, i: number) => {
                     return (
-                        <li key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem] flex flex-col">
+                        <li key={`paragraph ${i}`} className="method-text font-[400] mb-[1rem] flex flex-col pb-4">
                             <span>{i + 1}</span>
                             <span>{`${text}`}</span>
                         </li>
