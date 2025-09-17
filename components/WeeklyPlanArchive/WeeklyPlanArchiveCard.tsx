@@ -12,10 +12,10 @@ function WeeklyPlanArchiveCard(
 ) {
 
   return (
-    <div className="weeklyplancard w-[90%] h-[80vh] md:h-[300px] flex flex-col md:flex-row gap-0 md:gap-6 bg-gray-200 hover:shadow-lg rounded-[5px] md:rounded-none">
+    <div className="weeklyplancard w-[90%] h-[80vh] md:h-[300px] flex flex-col md:flex-row gap-0 md:gap-6 bg-primary hover:shadow-lg border-[1px] border-dark border-dashed rounded-xl">
       <div className="md:w-[25%] h-[55%] md:h-[100%] relative">
         <Image
-          className="block object-cover w-[100%] h-[100%] object-center rounded-t-[5px] md:rounded-t-[0px]"
+          className="block object-cover w-[100%] h-[100%] object-center rounded-xl"
           src={`/images/recipes/${recipeArray[3].img}`}
           // alt={recipe.imgAlt} 
           alt="un plato de comida"
@@ -34,7 +34,7 @@ function WeeklyPlanArchiveCard(
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 h-[45%] md:h-[100%] justify-center px-4 md:px-0 text-[.95rem] md:text-[1.25rem] items-start text-primary font-[500] md:font-[600]">
+      <div className="flex flex-col gap-2 h-[45%] md:h-[100%] justify-center px-4 md:px-0 text-[.95rem] md:text-[1.15rem] items-start text-dark font-[500] md:font-[500]">
         {recipeArray.map((recipe, i: number) => {
           return (
             <h3 key={"recipeName" + i}>{recipe.name}</h3>

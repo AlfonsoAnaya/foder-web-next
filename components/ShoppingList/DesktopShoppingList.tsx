@@ -9,8 +9,8 @@ function DesktopShoppingList(
     { ingredientsState, toggleStrikethrough }: DesktopShoppingListProps
 ) {
     return (
-        <div className="w-[50%]">
-            <ul>
+        <div className="w-[50%] px-10">
+            <ul className="flex flex-col gap-3">
 
                 {/* MAP THROUGH THE KEYS OF THE OBEJCT HOLDING THE CATEGORIZED INGREDIENTS */}
                 {Object.keys(ingredientsState).map((key) => {
@@ -18,9 +18,12 @@ function DesktopShoppingList(
 
                         // RENDER A CATEGORY TITLE ONLY WHEN IT CONTAINS AT LEAST ONE ELEMENT
                         ingredientsState[key].length > 0 ?
-                            <div key={key} className="font-sans">
-                                <h3 className="text-[1.25rem] font-[600]">{key}</h3>
-                                <ul className="mb-[1em] text-[1.1rem] font-[400]">
+                            <div key={key}>
+                                
+                                <h3 className="text-[1.1rem] font-[500] uppercase">
+                                    {key}
+                                </h3>
+                                <ul className="mb-[1em] text-[1rem] font-[400]">
 
                                     {/* RENDER THE LIST OF INGREDIENTS IN EACH KEY  */}
                                     {ingredientsState[key].map((ingredient: Ingredient, i: number) => {
@@ -28,9 +31,9 @@ function DesktopShoppingList(
                                             <li key={ingredient.name.singular + i}
                                                 className="shopping-list-item mb-[.5em] flex gap-2 items-center hover:cursor-pointer"
                                                 onClick={toggleStrikethrough}>
-                                                <span className="checkbox flex justify-center items-center">
+                                                {/* <span className="checkbox flex justify-center items-center">
                                                     <span className="checkmark"></span>
-                                                </span>
+                                                </span> */}
                                                 {ingredient.unit === "unidad" ?
                                                     (ingredient.quantity > 1 ?
                                                         <span>{`${ingredient.quantity} ${ingredient.name.plural} `}</span>
@@ -42,6 +45,7 @@ function DesktopShoppingList(
                                         )
                                     })}
                                 </ul>
+                                
                             </div>
                             : ''
                     )

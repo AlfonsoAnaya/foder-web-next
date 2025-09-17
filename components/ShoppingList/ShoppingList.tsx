@@ -158,10 +158,10 @@ function ShoppingList({ recipes, isWeekVegetarian }: ShoppingListProps) {
                 <h2 className="w-[90%] max-w-[1200px]">Lista de Compras</h2>
             </div>
             
-            <div className="max-w-[1200px] w-[90%] flex">
-                <div className="w-[100%] md:w-[50%] flex flex-col items-center gap-2 border-dashed border-r-[1px] border-r-dark">
-                    <h3 className="md:pt-8">RECETAS</h3>
-                    <div className="w-[100%] flex flex-col gap-[.5em]">
+            <div className="max-w-[1200px] w-[90%] min-h-[80vh] flex py-6">
+                <div className="w-[100%] md:w-[50%] flex flex-col items-start gap-2 border-dashed border-r-[1px] border-r-dark">
+                    <h3 className=" md:pb-4 uppercase">Recetas</h3>
+                    <div className="w-[100%] flex flex-col items-stretch gap-[.5em]">
                         {recipes.map((recipe, i) => {
                             return (
                                 <div key={`Day ${i}`} id={`Day ${i + 1}`}>

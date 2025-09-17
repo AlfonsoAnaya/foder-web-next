@@ -77,7 +77,7 @@ function Header() {
                     
                     <div className="block md:hidden"
                         onClick={toggleMobileNav}>
-                        <span className="hamburger bg-white">
+                        <span className="hamburger bg-dark">
                         </span>
                     </div>
                 </div>

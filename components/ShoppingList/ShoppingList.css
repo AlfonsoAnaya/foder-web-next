@@ -6,7 +6,7 @@
     transition: transform 200ms cubic-bezier(.5, 0, .5, 1);
 }
 
-.checkbox, .day-checkbox {
+.checkbox {
     width: .8rem;
     height: .8rem;
     border: solid 1px var(--color-dark);
@@ -17,7 +17,8 @@
 .day-checkbox {
     width: 1.25rem;
     height: 1.25rem;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: solid 1px var(--color-dark);
 }
 
 @media(min-width: 768px) {
@@ -38,7 +39,7 @@
 }
 
 .selected-day .day-checkbox {
-    border-color: var(--color-primary);
+    border-color: var(--color-dark);
     background-color: var(--color-white)
 }
 
@@ -51,16 +52,15 @@
 }
 
 .selected-day .day-checkmark {
-    background-color: var(--color-primary);
+    background-color: var(--color-dark);
 }
 
-.selected-day .week-day {
+.recipe-title {
     opacity: 1;
-    color: var(--color-primary)
+    color: var(--color-dark)
 }
-
 
 .selected-day .recipe-title {
     opacity: 1;
-    color: var(--color-primary)
+    color: var(--color-dark)
 }
