@@ -14,7 +14,7 @@ function RecipeCardCollection(
         <div className="flex justify-center align-center border-dashed border-[1px] border-dark rounded-lg">
             <div
                 className="recipe-card max-w-[330px] h-[400px] md:max-w-[225px] md:h-[380px]
-                flex flex-col gap-4">
+                flex flex-col">
 
                 {/* RECIPE IMAGE */}
                 <div className="relative recipe-img w-[100%] h-[80%] ">
@@ -26,16 +26,16 @@ function RecipeCardCollection(
                         width={666}
                         height={848}
                     />
-
+                    </div>
                     {/* RECIPE NAME */}
-                    <div className=" w-[100%] flex flex-col gap-2 justify-center items-center">
-                        <div className="recipe-info flex flex-col w-[100%] gap-2 justify-center items-center px-[10px] py-[10px] bg-white bg-opacity-50">
+                    <div className=" w-[100%] flex flex-col gap-2 justify-center items-center h-[20%]">
+                        <div className="recipe-info flex flex-col w-[100%] h- gap-2 justify-center items-center px-[10px] py-[10px] bg-white bg-opacity-50">
                             <h4 className="recipe-title text-[.7rem] md:text-[.85rem] text-dark text-center font-[600]">
                                 {recipe.name}
                             </h4>
                         </div>
                     </div>
-                </div>
+                
             </div>
 
         </div>

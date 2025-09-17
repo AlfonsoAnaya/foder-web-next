@@ -3,7 +3,7 @@ import Link from "next/link";
 function Footer() {
 
     return (
-        <footer className="w-100% h-[150px] flex flex-col md:flex-row gap-2 md:gap-10 justify-center items-start md:items-center p-6 bg-dark text-white">
+        <footer className="w-100% h-[150px] mt-[100px] flex flex-col md:flex-row gap-2 md:gap-10 justify-center items-start md:items-center p-6 bg-dark text-white">
             <div className="font-siteTitle company-info">© PIPIÁN Inc.</div>
             <div className="social-media">
                 <Link href="https://instagram.com/somospipian">
